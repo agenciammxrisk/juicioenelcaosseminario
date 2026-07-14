@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- Página de Inicio -->
+  <url>
+    <loc>https://agenciammxrisk.github.io/juicioenelcaosseminario/index.html</loc>
+    <priority>1.0</priority>
+  </url>
+  <!-- Página del Seminario (Arquitectura) -->
+  <url>
+    <loc>https://agenciammxrisk.github.io/juicioenelcaosseminario/arquitectura.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <!-- Página del Libro -->
+  <url>
+    <loc>https://agenciammxrisk.github.io/juicioenelcaosseminario/libro.html</loc>
+    <priority>0.8</priority>
+  </url>
+</urlset>
