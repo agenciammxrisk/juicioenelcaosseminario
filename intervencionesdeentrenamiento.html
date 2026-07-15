@@ -145,72 +145,187 @@
 
             <div class="cases-grid">
 
-                <!-- CASO 1 (Inicial) -->
-                <div class="case-card">
-                    <span class="case-category">1. Riesgo Patrimonial</span>
-                    <h3 class="case-title">Caso 01: El Costo de la Confrontación Visceral</h3>
-                    
-                    <h4 class="case-section-title">Escenario Inicial</h4>
-                    <p class="case-text">
-                        Un socio en una firma comercializadora de alta facturación es descubierto desviando flujos de capital equivalentes al 10% de la utilidad anual. La auditoría técnica es concluyente y los abogados sugieren una denuncia penal inmediata. Sin embargo, el socio infractor controla de manera personal las relaciones clave con el 80% de los proveedores estratégicos de la compañía.
-                    </p>
-
-                    <h4 class="case-section-title">Conclusión del Ejercicio</h4>
-                    <p class="case-text">
-                        El ejercicio demostró que una salida jurídica tradicional habría provocado el colapso operativo en menos de 45 días debido al desabasto. Los participantes aprendieron a diseñar un marco de transición silenciosa, aislando el poder de firma del socio antes de iniciar cualquier procedimiento legal, protegiendo así el 100% de la operación activa.
-                    </p>
-
-                    <h4 class="case-section-title">Evidencia de la Intervención</h4>
-                    <div class="video-container">
-                        <!-- Reemplaza el 'src' con el ID real de tu video de YouTube/Vimeo cuando lo subas -->
-                        <iframe src="https://www.youtube.com/embed/tgbNymZ7vqY" frameborder="0" allowfullscreen></iframe>
-                    </div>
-                </div>
-
-                <!-- CASO 2 (Inicial) -->
-                <div class="case-card">
-                    <span class="case-category">2. Fraude Interno</span>
-                    <h3 class="case-title">Caso 02: Extracción en Silencio en el Sector Logístico</h3>
-                    
-                    <h4 class="case-section-title">Escenario Inicial</h4>
-                    <p class="case-text">
-                        Pérdidas sistemáticas de activos en tránsito que el equipo interno de seguridad atribuye a factores externos de carretera. El análisis de datos sugiere, en cambio, un patrón de colusión interna donde los manifiestos de carga son alterados desde el propio sistema ERP antes del despacho.
-                    </p>
-
-                    <h4 class="case-section-title">Conclusión del Ejercicio</h4>
-                    <p class="case-text">
-                        Se estructuró una simulación de contingencia forense digital. Se concluyó que la solución óptima no era confrontar inmediatamente a los operadores de carga sospechosos, sino implementar un sistema de trazabilidad defendible paralela que permitió identificar la terminal y el usuario exacto de administración que autorizaba las mermas.
-                    </p>
-
-                    <h4 class="case-section-title">Evidencia de la Intervención</h4>
-                    <div class="video-container">
-                        <iframe src="https://www.youtube.com/embed/tgbNymZ7vqY" frameborder="0" allowfullscreen></iframe>
-                    </div>
-                </div>
-
-                <!-- CASO 3 (Inicial) -->
-                <div class="case-card">
-                    <span class="case-category">4. Decisiones bajo Presión</span>
-                    <h3 class="case-title">Caso 03: El Tiempo Hostil y la Ola Informativa</h3>
-                    
-                    <h4 class="case-section-title">Escenario Inicial</h4>
-                    <p class="case-text">
-                        Un incidente de seguridad en una planta industrial genera una crisis informativa en redes sociales con un potencial de daño de marca multimillonario. El departamento de relaciones públicas presiona por emitir un comunicado de disculpa de inmediato, a pesar de no contar aún con el peritaje técnico sobre el origen del evento.
-                    </p>
-
-                    <h4 class="case-section-title">Conclusión del Ejercicio</h4>
-                    <p class="case-text">
-                        Los participantes experimentaron cómo la velocidad mal enfocada destruye la defensa legal posterior. Se entrenó la técnica del "Punto Irreducible", retrasando el comunicado defensivo solo 90 minutos para anclarlo a datos duros validados, reduciendo el impacto negativo y blindando a la empresa contra demandas civiles oportunistas.
-                    </p>
-
-                    <h4 class="case-section-title">Evidencia de la Intervención</h4>
-                    <div class="video-container">
-                        <iframe src="https://www.youtube.com/embed/tgbNymZ7vqY" frameborder="0" allowfullscreen></iframe>
-                    </div>
-                </div>
-
-            </div>
+               <!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juicio en el Caos — Intervenciones de Entrenamiento</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* Estilos específicos para la sección de casos */
+        .cases-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+        .case-card {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 2.5rem;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+        .case-card:hover {
+            border-color: rgba(255, 255, 255, 0.15);
+            background: rgba(255, 255, 255, 0.04);
+        }
+        .case-category {
+            font-family: 'DM Mono', monospace;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #a3a3a3;
+            margin-bottom: 1rem;
+            display: inline-block;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            padding-bottom: 4px;
+        }
+        .case-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: #fff;
+        }
+        .case-section-title {
+            font-family: 'DM Mono', monospace;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            color: #fff;
+            margin-top: 1.5rem;
+            margin-bottom: 0.5rem;
+            letter-spacing: 1px;
+        }
+        .case-text {
+            color: #ccc;
+            font-size: 1.05rem;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* Relación de aspecto 16:9 */
+            height: 0;
+            overflow: hidden;
+            margin-top: 1.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            background: #000;
+        }
+        .video-container iframe, .video-container video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        /* Categorías en la parte superior */
+        .category-filter {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 3rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .category-tag {
+            font-family: 'DM Mono', monospace;
+            font-size: 0.85rem;
+            padding: 0.5rem 1rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            color: #ccc;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        .category-tag:hover, .category-tag.active {
+            background: #fff;
+            color: #000;
+            border-color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">Juicio en el Caos</a>
+            <ul class="nav-menu">
+                <li><a href="index.html#inicio">Inicio</a></li>
+                <li><a href="index.html#sobre">Sobre</a></li>
+                <li><a href="arquitectura.html">Seminario</a></li>
+                <li><a href="libro.html">Libro</a></li>
+                <li><a href="intervencionesdeentrenamiento.html">Intervenciones</a></li>
+                <li><a href="index.html#instructores">Facilitador</a></li>
+                <li><a href="index.html#contacto">Contacto</a></li>
+            </ul>
         </div>
+    </nav>
+
+    <section class="hero architecture-hero">
+        <div class="container">
+            <h1>Intervenciones de Entrenamiento</h1>
+            <p>Casos de estudio prácticos, simulaciones operativas y la evidencia del criterio puesto a prueba.</p>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            
+            <div class="section-meta">
+                <span class="section-num">01</span>
+                <div class="section-rule"></div>
+                <span class="section-tag">Categorías de Análisis</span>
+            </div>
+
+            <!-- Listado de las 5 Categorías Requeridas -->
+            <div class="category-filter">
+                <a href="#" class="category-tag active">Todos los Casos</a>
+                <a href="#" class="category-tag">1. Riesgo Patrimonial</a>
+                <a href="#" class="category-tag">2. Fraude Interno</a>
+                <a href="#" class="category-tag">3. Continuidad de Negocio</a>
+                <a href="#" class="category-tag">4. Decisiones bajo Presión</a>
+                <a href="#" class="category-tag">5. Inteligencia Corporativa</a>
+            </div>
+
+            <div class="cases-grid">
+
+               
+    </section>
+
+    <!-- Sección CTA vinculada al formulario del index para conversiones -->
+    <section class="section contact" style="border-top: 1px solid rgba(255, 255, 255, 0.05);">
+        <div class="container">
+            <h2>Lleve estas simulaciones a su equipo</h2>
+            <p style="margin-bottom: 2rem; max-width: 600px; font-size: 1.15rem; line-height: 1.6; color: #ccc;">
+                Cada uno de estos casos forma parte del entrenamiento dinámico en Juicio en el Caos. Diseñamos intervenciones a la medida de la estructura de riesgo de su organización.
+            </p>
+            <a href="index.html#contacto" class="btn btn-primary">Solicitar Admisión al Seminario</a>
+        </div>
+        <!-- Contenedor temporal de Próximamente / Bajo Construcción -->
+            <div class="cases-grid" style="display: flex; justify-content: center; align-items: center; min-height: 300px; text-align: center;">
+                <div class="case-card" style="max-width: 600px; width: 100%; border: 1px dashed rgba(255, 255, 255, 0.15); padding: 3rem 2rem;">
+                    <span class="case-category" style="border-color: rgba(255,255,255,0.4);">Acceso Restringido</span>
+                    <h3 class="case-title" style="font-size: 1.8rem; margin-top: 1rem;">Intervenciones en Fase de Documentación</h3>
+                    <p class="case-text" style="color: #a3a3a3; font-size: 1.05rem; margin-bottom: 0;">
+                        Estamos editando y anonimizando la evidencia en video de las simulaciones tácticas para proteger el secreto industrial y patrimonial de las organizaciones participantes. 
+                        <br><br>
+                        <span style="font-family: 'DM Mono', monospace; font-size: 0.9rem; color: #fff;">→ Nuevos casos disponibles semanalmente a partir de la próxima edición.</span>
+                    </p>
+                </div>
+            </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Juicio en el Caos. Todos los derechos reservados.</p>
+        <p>Seminario Privado de Decisión Bajo Incertidumbre para Fundadores</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html> 
     </section>
 
     <!-- Sección CTA vinculada al formulario del index para conversiones -->
