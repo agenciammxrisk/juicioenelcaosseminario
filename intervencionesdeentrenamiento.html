@@ -13,13 +13,13 @@
         .cases-grid {
             display: grid;
             grid-template-columns: 1fr;
-            gap: 3rem;
+            gap: 4rem;
             margin-top: 3rem;
         }
         .case-card {
             background: rgba(255, 255, 255, 0.02);
             border: 1px solid rgba(255, 255, 255, 0.05);
-            padding: 2.5rem;
+            padding: 3rem;
             border-radius: 4px;
             transition: all 0.3s ease;
         }
@@ -32,48 +32,59 @@
             font-size: 0.8rem;
             text-transform: uppercase;
             letter-spacing: 2px;
-            color: #a3a3a3;
+            color: #ff3e3e;
             margin-bottom: 1rem;
             display: inline-block;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            border-bottom: 1px solid rgba(255, 62, 62, 0.3);
             padding-bottom: 4px;
         }
         .case-title {
             font-family: 'Cormorant Garamond', serif;
-            font-size: 2rem;
-            margin-bottom: 1.5rem;
+            font-size: 2.2rem;
+            margin-bottom: 2rem;
             color: #fff;
+            line-height: 1.3;
         }
-        .case-section-title {
+        .case-details-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .case-details-list > li {
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: #ccc;
+        }
+        .case-details-list > li:last-child {
+            margin-bottom: 0;
+        }
+        .case-details-list strong {
+            color: #fff;
+            display: block;
             font-family: 'DM Mono', monospace;
             font-size: 0.9rem;
             text-transform: uppercase;
-            color: #fff;
-            margin-top: 1.5rem;
-            margin-bottom: 0.5rem;
             letter-spacing: 1px;
+            margin-bottom: 0.5rem;
         }
-        .case-text {
-            color: #ccc;
+        .case-sub-list {
+            list-style: none;
+            padding-left: 0;
+            margin-top: 1rem;
+        }
+        .case-sub-list li {
+            margin-bottom: 1.25rem;
             font-size: 1.05rem;
-            line-height: 1.6;
-            margin-bottom: 1.5rem;
-        }
-        .video-container {
             position: relative;
-            padding-bottom: 56.25%; /* Relación de aspecto 16:9 */
-            height: 0;
-            overflow: hidden;
-            margin-top: 1.5rem;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            background: #000;
+            padding-left: 1.5rem;
         }
-        .video-container iframe, .video-container video {
+        .case-sub-list li::before {
+            content: "→";
             position: absolute;
-            top: 0;
             left: 0;
-            width: 100%;
-            height: 100%;
+            color: #ff3e3e;
+            font-family: 'DM Mono', monospace;
         }
         /* Categorías en la parte superior */
         .category-filter {
@@ -130,202 +141,108 @@
             <div class="section-meta">
                 <span class="section-num">01</span>
                 <div class="section-rule"></div>
-                <span class="section-tag">Categorías de Análisis</span>
+                <span class="section-tag">Análisis Operativo de Casos</span>
             </div>
 
-            <!-- Listado de las 5 Categorías Requeridas -->
+            <!-- Listado de las Categorías Requeridas -->
             <div class="category-filter">
                 <a href="#" class="category-tag active">Todos los Casos</a>
-                <a href="#" class="category-tag">1. Riesgo Patrimonial</a>
-                <a href="#" class="category-tag">2. Fraude Interno</a>
-                <a href="#" class="category-tag">3. Continuidad de Negocio</a>
-                <a href="#" class="category-tag">4. Decisiones bajo Presión</a>
-                <a href="#" class="category-tag">5. Inteligencia Corporativa</a>
+                <a href="#" class="category-tag">Riesgo Patrimonial</a>
+                <a href="#" class="category-tag">Continuidad de Negocio</a>
+                <a href="#" class="category-tag">Decisiones bajo Presión</a>
+                <a href="#" class="category-tag">Inteligencia Corporativa</a>
             </div>
 
             <div class="cases-grid">
-
-               <!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Juicio en el Caos — Intervenciones de Entrenamiento</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
-    <style>
-        /* Estilos específicos para la sección de casos */
-        .cases-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 3rem;
-            margin-top: 3rem;
-        }
-        .case-card {
-            background: rgba(255, 255, 255, 0.02);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            padding: 2.5rem;
-            border-radius: 4px;
-            transition: all 0.3s ease;
-        }
-        .case-card:hover {
-            border-color: rgba(255, 255, 255, 0.15);
-            background: rgba(255, 255, 255, 0.04);
-        }
-        .case-category {
-            font-family: 'DM Mono', monospace;
-            font-size: 0.8rem;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            color: #a3a3a3;
-            margin-bottom: 1rem;
-            display: inline-block;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-            padding-bottom: 4px;
-        }
-        .case-title {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 2rem;
-            margin-bottom: 1.5rem;
-            color: #fff;
-        }
-        .case-section-title {
-            font-family: 'DM Mono', monospace;
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            color: #fff;
-            margin-top: 1.5rem;
-            margin-bottom: 0.5rem;
-            letter-spacing: 1px;
-        }
-        .case-text {
-            color: #ccc;
-            font-size: 1.05rem;
-            line-height: 1.6;
-            margin-bottom: 1.5rem;
-        }
-        .video-container {
-            position: relative;
-            padding-bottom: 56.25%; /* Relación de aspecto 16:9 */
-            height: 0;
-            overflow: hidden;
-            margin-top: 1.5rem;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            background: #000;
-        }
-        .video-container iframe, .video-container video {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-        }
-        /* Categorías en la parte superior */
-        .category-filter {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1rem;
-            margin-bottom: 3rem;
-            padding-bottom: 1rem;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-        }
-        .category-tag {
-            font-family: 'DM Mono', monospace;
-            font-size: 0.85rem;
-            padding: 0.5rem 1rem;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 20px;
-            color: #ccc;
-            text-decoration: none;
-            transition: all 0.3s ease;
-        }
-        .category-tag:hover, .category-tag.active {
-            background: #fff;
-            color: #000;
-            border-color: #fff;
-        }
-    </style>
-</head>
-<body>
-    <nav class="navbar">
-        <div class="container">
-            <a href="index.html" class="logo">Juicio en el Caos</a>
-            <ul class="nav-menu">
-                <li><a href="index.html#inicio">Inicio</a></li>
-                <li><a href="index.html#sobre">Sobre</a></li>
-                <li><a href="arquitectura.html">Seminario</a></li>
-                <li><a href="libro.html">Libro</a></li>
-                <li><a href="intervencionesdeentrenamiento.html">Intervenciones</a></li>
-                <li><a href="index.html#instructores">Facilitador</a></li>
-                <li><a href="index.html#contacto">Contacto</a></li>
-            </ul>
-        </div>
-    </nav>
-
-    <section class="hero architecture-hero">
-        <div class="container">
-            <h1>Intervenciones de Entrenamiento</h1>
-            <p>Casos de estudio prácticos, simulaciones operativas y la evidencia del criterio puesto a prueba.</p>
-        </div>
-    </section>
-
-    <section class="section">
-        <div class="container">
-            
-            <div class="section-meta">
-                <span class="section-num">01</span>
-                <div class="section-rule"></div>
-                <span class="section-tag">Categorías de Análisis</span>
-            </div>
-
-            <!-- Listado de las 5 Categorías Requeridas -->
-            <div class="category-filter">
-                <a href="#" class="category-tag active">Todos los Casos</a>
-                <a href="#" class="category-tag">1. Riesgo Patrimonial</a>
-                <a href="#" class="category-tag">2. Fraude Interno</a>
-                <a href="#" class="category-tag">3. Continuidad de Negocio</a>
-                <a href="#" class="category-tag">4. Decisiones bajo Presión</a>
-                <a href="#" class="category-tag">5. Inteligencia Corporativa</a>
-            </div>
-
-            <div class="cases-grid">
-
-               
-    </section>
-
-    <!-- Sección CTA vinculada al formulario del index para conversiones -->
-    <section class="section contact" style="border-top: 1px solid rgba(255, 255, 255, 0.05);">
-        <div class="container">
-            <h2>Lleve estas simulaciones a su equipo</h2>
-            <p style="margin-bottom: 2rem; max-width: 600px; font-size: 1.15rem; line-height: 1.6; color: #ccc;">
-                Cada uno de estos casos forma parte del entrenamiento dinámico en Juicio en el Caos. Diseñamos intervenciones a la medida de la estructura de riesgo de su organización.
-            </p>
-            <a href="index.html#contacto" class="btn btn-primary">Solicitar Admisión al Seminario</a>
-        </div>
-        <!-- Contenedor temporal de Próximamente / Bajo Construcción -->
-            <div class="cases-grid" style="display: flex; justify-content: center; align-items: center; min-height: 300px; text-align: center;">
-                <div class="case-card" style="max-width: 600px; width: 100%; border: 1px dashed rgba(255, 255, 255, 0.15); padding: 3rem 2rem;">
-                    <span class="case-category" style="border-color: rgba(255,255,255,0.4);">Acceso Restringido</span>
-                    <h3 class="case-title" style="font-size: 1.8rem; margin-top: 1rem;">Intervenciones en Fase de Documentación</h3>
-                    <p class="case-text" style="color: #a3a3a3; font-size: 1.05rem; margin-bottom: 0;">
-                        Estamos editando y anonimizando la evidencia en video de las simulaciones tácticas para proteger el secreto industrial y patrimonial de las organizaciones participantes. 
-                        <br><br>
-                        <span style="font-family: 'DM Mono', monospace; font-size: 0.9rem; color: #fff;">→ Nuevos casos disponibles semanalmente a partir de la próxima edición.</span>
-                    </p>
+                
+                <!-- CASO 1: OPERACIÓN UCI -->
+                <div class="case-card">
+                    <span class="case-category">Continuidad de Negocio // Toma de Decisiones Bajo Presión</span>
+                    <h3 class="case-title">Resumen Ejecutivo: Operación Unidad de Cuidados Intensivos (UCI)</h3>
+                    
+                    <ul class="case-details-list">
+                        <li>
+                            <strong>Escenario descrito (La crisis aparente):</strong>
+                            El director de un hospital privado enfrentaba una amenaza de huelga de brazos caídos y un bloqueo total de la Unidad de Cuidados Intensivos (UCI) por parte del sindicato de enfermería, liderado por una secretaria general con motivaciones políticas. La crisis ponía en riesgo inminente la vida de los pacientes en estado crítico y amenazaba con destruir la reputación del hospital ante los medios de comunicación en cuestión de horas.
+                        </li>
+                        <li>
+                            <strong>Motivo de la parálisis:</strong>
+                            El director estaba atrapado en la extorsión emocional y el miedo al escándalo público. Su parálisis se debía a que estaba respondiendo desde la capa de la moralidad y la culpa, sintiéndose responsable directo de la vida de los pacientes, lo que lo llevaba a considerar ceder a las demandas sindicales desproporcionadas para evitar una tragedia y el linchamiento mediático.
+                        </li>
+                        <li>
+                            <strong>Resultado en términos de escenario real:</strong>
+                            <ul class="case-sub-list">
+                                <li><strong>Transferencia de la responsabilidad civil y penal:</strong> La intervención cambió el enfoque de un problema humanitario a uno legal y de consecuencias. Se obligó al director a notificar formalmente a las autoridades de salud y ministeriales sobre el secuestro de la UCI, convirtiendo el paro laboral en un delito en flagrancia.</li>
+                                <li><strong>Quiebre de la narrativa sindical:</strong> Al formalizar las actas y hacer responsable legal a la líder sindical por cada minuto que pasara y pusiera en riesgo la vida de los pacientes, el costo de mantener la huelga se volvió prohibitivo para el sindicato. El escenario real mutó de "un hospital negligente" a "un sindicato cometiendo tentativa de homicidio/omisión de auxilio", forzando la liberación inmediata del área crítica sin ceder a las extorsiones.</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong>Número de interacciones:</strong>
+                            <u>3 intervenciones clave</u> para desactivar el secuestro de la UCI y reconfigurar la responsabilidad legal.
+                        </li>
+                    </ul>
                 </div>
+
+                <!-- CASO 2: OPERACIÓN AEGIS -->
+                <div class="case-card">
+                    <span class="case-category">Riesgo Patrimonial // Inteligencia Corporativa</span>
+                    <h3 class="case-title">Resumen Ejecutivo: Operación Aegis (MedTech)</h3>
+                    
+                    <ul class="case-details-list">
+                        <li>
+                            <strong>Escenario descrito (La crisis aparente):</strong>
+                            La Directora de Operaciones de MedTech Solutions se enfrentaba a una extorsión de 3 millones de dólares en Bitcoin a menos de 72 horas de cerrar la venta de la compañía a una multinacional suiza por 42 millones de dólares (programada para el viernes a las 10:00 AM). Un correo anónimo contenía un PDF que demostraba el plagio de 40 líneas de código bajo una licencia "viral" (GPLv3) que obligaría a liberar el software al dominio público, destruyendo su valor comercial. Su socio histórico (el CTO) había confirmado el error de inmediato y suplicaba pagar el chantaje para salvar el trato.
+                        </li>
+                        <li>
+                            <strong>Motivo de la parálisis:</strong>
+                            La toma de decisiones estaba anulada por el anclaje psicológico de la culpa interna y la inminencia de la ruina financiera o penal. Al estar la confirmación del CTO alineada con la amenaza externa, la directora asumió el problema técnico como un hecho consumado e irrefutable. Estaba atrapada en la falsa dicotomía de financiar un delito (extorsión) para salvar la venta, o no pagar y enfrentar demandas multimillonarias por fraude el viernes por la mañana.
+                        </li>
+                        <li>
+                            <strong>Resultado en términos de escenario real:</strong>
+                            <ul class="case-sub-list">
+                                <li><strong>Identificación del vector de ataque real:</strong> Se determinó que el verdadero peligro no era el código abierto, sino la falta de filtros independientes. El custodio del código (el CTO) era el único intermediario con los auditores, convirtiéndose en el principal sospechoso de una fuga o un montaje interno.</li>
+                                <li><strong>Recuperación del margen de maniobra:</strong> Se rompió la urgencia artificial del extorsionador mediante una prórroga administrativa legítima (ajustes fiscales regulatorios), posponiendo la firma y bloqueando la transferencia de fondos (evitando que el fraude se consumara legalmente).</li>
+                                <li><strong>Apertura de la tercera vía (El contraataque):</strong> Se ordenó una auditoría forense externa y secreta que respondiera solo a la Dirección. Esto reveló el escenario real definitivo: la posibilidad de un montaje total. Si el software estaba limpio, se destruía la extorsión de 3 millones, se ejecutaba la venta de 42 millones intacta y se obtenían las pruebas científicas para encarcelar a la insurgencia interna.</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong>Número de interacciones:</strong>
+                            <u>4 intervenciones clave</u> (desde la redefinición del rol de la directora hasta el quiebre de la premisa del código existente).
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- CASO 3: OPERACIÓN ALTAMIRA -->
+                <div class="case-card">
+                    <span class="case-category">Toma de Decisiones Bajo Presión // Riesgo Patrimonial</span>
+                    <h3 class="case-title">Resumen Ejecutivo: Operación Altamira</h3>
+                    
+                    <ul class="case-details-list">
+                        <li>
+                            <strong>Escenario descrito (La crisis aparente):</strong>
+                            El director general de Inversiones Altamira enfrentaba la paralización de un proyecto inmobiliario de 15 millones de dólares a menos de 72 horas de una junta crucial con inversionistas. Un líder sindical (Mateo) amenazaba con denunciar ante el INAH el hallazgo masivo de restos arqueológicos en el terreno si no se cedía a una extorsión financiera y operativa. Paralelamente, el ingeniero de obra presionaba al director a cometer un delito federal (destruir los restos con maquinaria) antes de tomar un vuelo esa misma tarde.
+                        </li>
+                        <li>
+                            <strong>Motivo de la parálisis:</strong>
+                            El tomador de decisiones estaba atrapado en el efecto túnel y una urgencia artificial. Su parálisis operativa se debía a que aceptó como verdad absoluta la narrativa del extorsionador (que el hallazgo era masivo y legítimo) y operaba bajo el pánico de una ventana de tiempo ficticia (el vuelo de las 4:00 PM y la junta del lunes). Sentía que debía elegir inmediatamente entre dos opciones destructivas: ceder a la extorsión o cometer un delito.
+                        </li>
+                        <li>
+                            <strong>Resultado en términos de escenario real:</strong>
+                            <ul class="case-sub-list">
+                                <li><strong>Desmantelamiento del engaño:</strong> Se identificó que el conflicto con el sindicato y el INAH eran solo síntomas. El escenario real era una conspiración interna o una grave vulnerabilidad en el gobierno corporativo (el ingeniero y el líder sindical operaban en perfecta coordinación para forzar un delito o una extorsión).</li>
+                                <li><strong>Uso del vacío estratégico:</strong> Se determinó que el hallazgo requería verificación científica independiente y secreta (perito privado). En lugar de reaccionar, el director mantuvo su agenda normal y tomó su vuelo, utilizando el vacío de su ausencia y el silencio como herramientas de presión psicológica. Esto transfirió el pánico hacia los extorsionadores, congeló el peligro de fraude y retuvo el control absoluto del tablero y del dinero.</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong>Número de interacciones:</strong>
+                            <u>4 intervenciones clave</u> para resolver la crisis (desde el cuestionamiento del origen del dato hasta la ejecución del vacío operativo).
+                        </li>
+                    </ul>
+                </div>
+
             </div>
-    </section>
 
-    <footer>
-        <p>&copy; 2026 Juicio en el Caos. Todos los derechos reservados.</p>
-        <p>Seminario Privado de Decisión Bajo Incertidumbre para Fundadores</p>
-    </footer>
-
-    <script src="js/script.js"></script>
-</body>
-</html> 
+        </div>
     </section>
 
     <!-- Sección CTA vinculada al formulario del index para conversiones -->
