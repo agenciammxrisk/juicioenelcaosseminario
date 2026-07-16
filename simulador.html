@@ -112,14 +112,12 @@
             color: #ccc;
         }
 
-        .seminar-title {
-            font-family: 'DM Mono', monospace;
-            font-size: 14px;
-            font-weight: bold;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            margin-bottom: 15px;
-            color: #fff;
+        .seminar-quote {
+            font-style: italic;
+            border-left: 2px solid #ff3e3e;
+            padding-left: 1.5rem;
+            margin-bottom: 2rem;
+            color: #e5e5e5;
         }
 
         .cta-btn {
@@ -204,12 +202,16 @@
                 ¿Y quién le dijo a usted que esto era una crisis?
             </div>
             <div class="seminar-info">
-                <div class="seminar-title">Juicio en el Caos</div>
-                <p>Usted acaba de tomar decisiones críticas bajo simulación táctica hostil. El pánico operativo destruye el valor de una compañía mucho más rápido que el incidente inicial.</p>
-                <p>Saber cuándo, cómo y con qué intensidad activar la estructura de contingencia corporativa sin caer en la parálisis o la sobrerreacción es el núcleo de nuestro entrenamiento.</p>
+                <div class="seminar-quote">
+                    "Las decisiones que más valor destruyen nacen de escenarios correctamente analizados... de manera incompleta."
+                </div>
+                <p>El seminario Juicio en el Caos no enseña a gestionar crisis. Enseña a auditar la arquitectura con la que usted construye sus escenarios antes de decidir.</p>
+                <p style="margin-top: 2rem; color: #fff; font-family: 'DM Mono', monospace; font-size: 0.95rem;">
+                    Si esta experiencia le resultó incómoda, probablemente está listo para el seminario.
+                </p>
             </div>
             <a href="index.html#contacto" class="cta-btn">Solicitar Admisión al Seminario</a>
-            <a href="index.html" class="back-link">← Volver al inicio corporativo</a>
+            <a href="index.html" class="back-link">← Volver al inicio</a>
         </div>
     </div>
 
@@ -364,7 +366,6 @@
             pregunta.respuestas.forEach((resp, idx) => {
                 const btn = document.createElement("button");
                 btn.className = "option-btn";
-                // Letra para cada opción (A, B, C)
                 const letra = String.fromCharCode(65 + idx);
                 btn.innerText = `${letra}) ${resp.texto}`;
                 
@@ -391,7 +392,7 @@
             document.getElementById("chaos-indicator").style.width = "100%";
             document.getElementById("question-container").classList.remove("active");
             document.getElementById("step-final").classList.add("active");
-            document.getElementById("progress-header").innerText = "Colapso Evitado";
+            document.getElementById("progress-header").innerText = "Fin del Simulacro";
         }
 
         window.onload = iniciarSimulador;
