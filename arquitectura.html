@@ -6,151 +6,107 @@
     <title>Juicio en el Caos - Arquitectura del Seminario</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
+    <style>
+        *{box-sizing:border-box;margin:0;padding:0}
+        html,body{height:100%}
+        body{background:#0d0d0d;color:#e8e8e8;font-family:'Inter',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;line-height:1.6;padding:24px}
+        .wrap{max-width:880px;margin:36px auto;padding:44px 48px;background:linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01));border-radius:12px;border:1px solid rgba(255,255,255,0.03);box-shadow:0 10px 30px rgba(0,0,0,0.6)}
+        nav.navbar{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px}
+        .logo{color:#fff;text-decoration:none;font-weight:700;font-family:'Playfair Display',serif;font-size:1.1rem}
+        .nav-menu{list-style:none;display:flex;gap:14px}
+        .nav-menu a{color:#cfcfcf;text-decoration:none;font-size:0.95rem}
+        .panel{background:linear-gradient(180deg,#151515,#121212);padding:22px;border-radius:10px;border:1px solid rgba(255,255,255,0.03)}
+        .kicker{font-size:0.78rem;color:#9a9a9a;letter-spacing:1.6px;text-transform:uppercase;margin-bottom:10px}
+        h1{font-family:'Playfair Display',serif;font-weight:700;font-size:2.2rem;color:#fff;margin-bottom:8px}
+        p{color:#d0d0d0;margin-bottom:12px}
+        .muted{color:#9a9a9a}
+        .section-meta{display:flex;align-items:center;gap:12px;margin:18px 0}
+        .format-card{background:transparent;padding:14px;border-radius:8px;border:1px solid rgba(255,255,255,0.02);margin-bottom:12px}
+        .case-card{background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.05);padding:20px;border-radius:6px}
+        .case-category{font-family:'DM Mono',monospace;font-size:0.78rem;text-transform:uppercase;letter-spacing:1.6px;color:#bfbfbf;display:inline-block;margin-bottom:8px}
+        .case-title{font-family:'Playfair Display',serif;font-size:1.4rem;color:#fff;margin-bottom:12px}
+        .btn{display:inline-block;background:#ffffff;color:#0d0d0d;padding:10px 20px;border-radius:999px;text-decoration:none;font-weight:700}
+        footer{margin-top:28px;color:#8f8f8f;font-size:0.95rem}
+        @media(max-width:800px){.wrap{padding:20px}.nav-menu{display:none}h1{font-size:1.6rem}}
+    </style>
 </head>
 <body>
-    <nav class="navbar">
-        <div class="container">
+    <div class="wrap">
+        <nav class="navbar">
             <a href="index.html" class="logo">Juicio en el Caos</a>
             <ul class="nav-menu">
-                <li><a href="index.html#inicio">Inicio</a></li>
+                <li><a href="index.html">Inicio</a></li>
                 <li><a href="index.html#sobre">Sobre</a></li>
                 <li><a href="arquitectura.html">Seminario</a></li>
                 <li><a href="libro.html">Libro</a></li>
                 <li><a href="intervencionesdeentrenamiento.html">Intervenciones</a></li>
-                <li><a href="index.html#instructores">Facilitador</a></li>
+                <li><a href="simulador.html">Simulador</a></li>
                 <li><a href="index.html#contacto">Contacto</a></li>
             </ul>
-        </div>
-    </nav>
+        </nav>
 
-    <section class="hero architecture-hero">
-        <div class="container">
+        <header>
+            <div class="kicker">Arquitectura · Seminario</div>
             <h1>Arquitectura del Seminario</h1>
             <p>Un seminario sobre la construcción del criterio que necesitará cuando nadie pueda decidir por usted. Diseñado para Fundadores, Dueños de Negocio y Directores Generales.</p>
-        </div>
-    </section>
+        </header>
 
-    <section class="section architecture-section">
-        <div class="container">
-            
+        <section class="panel" style="margin-top:18px">
             <div class="section-meta">
                 <span class="section-num">01</span>
-                <div class="section-rule"></div>
-                <span class="section-tag">Formato</span>
+                <div style="flex:1;height:1px;background:rgba(255,255,255,0.03)"></div>
+                <span class="section-tag muted">Formato</span>
             </div>
 
-            <div class="architecture-intro">
-                <h2>Un Fin de Semana de Inmersión Total</h2>
-                <p>Trabajamos sobre decisiones reales. Con presión real. En un entorno donde nadie puede decidir por usted.</p>
+            <h2 style="color:#fff">Un Fin de Semana de Inmersión Total</h2>
+            <p class="muted">Trabajamos sobre decisiones reales. Con presión real. En un entorno donde nadie puede decidir por usted.</p>
+
+            <div style="margin:18px 0;padding:18px;background:transparent;border-left:3px solid rgba(255,255,255,0.06);border-radius:8px">
+                <h4 style="font-family:'Playfair Display',serif;font-weight:600;font-size:1.1rem;margin-bottom:8px;color:#fff">Un Caso Real</h4>
+                <p>Hace algunos años, un empresario descubrió que su socio desviaba cerca de diez millones de pesos al año. La investigación técnica fue impecable y la evidencia concluyente, pero la decisión operativa conllevaba riesgos legales y de reputación imposibles de prever sin un marco claro.</p>
+                <p style="font-weight:600;color:#fff">¿Cómo decidir cuando la solución técnica destruye la viabilidad operativa? Este caso real es la base de nuestro entrenamiento: exponer al tomador de decisiones a la tensión de elegir con información parcial.</p>
+                <p class="muted" style="margin-top:10px;font-style:italic">Las decisiones que más valor destruyen rara vez nacen de la incompetencia. Con frecuencia nacen de escenarios invisibles y supuestos no validados.</p>
             </div>
 
-            <!-- Caso Real completo con pregunta gancho -->
-            <div style="margin: 2.5rem 0 3.5rem 0; padding: 2rem; background: var(--bg-secondary); border-left: 3px solid var(--accent-color);">
-                <h4 style="font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: 1.3rem; margin-bottom: 0.75rem;">Un Caso Real</h4>
-                <p style="margin-bottom: 1rem;">Hace algunos años, un empresario descubrió que su socio desviaba cerca de diez millones de pesos al año. La investigación técnica era impecable y el fraude estaba comprobado. Sin embargo, antes de actuar, surgió una pregunta de viabilidad: ¿Qué empresa quedará en pie al día siguiente de confrontarlo?</p>
-                <p style="margin-bottom: 1rem;">El socio infractor controlaba clientes, proveedores y la operación diaria de un negocio que facturaba más de cien millones de pesos anuales. Detener el abuso de diez millones de forma visceral ponía en riesgo el patrimonio entero.</p>
-                <p style="font-weight: 600; font-size: 1.1rem;">¿Cómo decidir cuando la solución técnica destruye la viabilidad operativa? Este caso real, y la manera en que el marco de decisión del dueño determinó el destino de la organización, es el punto de partida de nuestro entrenamiento.</p>
-                <p style="margin-top: 1rem; font-style: italic; color: var(--text-muted);">Las decisiones que más valor destruyen rara vez nacen de la incompetencia. Con frecuencia nacen de escenarios correctamente analizados... de manera incompleta.</p>
-            </div>
-
-            <div class="format-details">
-                <h3>Estructura del Fin de Semana</h3>
-                
+            <div class="format-details" style="margin-top:18px">
+                <h3 style="color:#fff">Estructura del Fin de Semana</h3>
                 <div class="format-card">
                     <h4>Duración</h4>
                     <p>Viernes 6:00 pm — Domingo 2:00 pm</p>
-                    <p class="format-subtext">Inmersión ininterrumpida: sin salir de la sede, sin regreso a la rutina, durante todo el fin de semana.</p>
+                    <p class="muted">Inmersión ininterrumpida: sin salir de la sede, sin regreso a la rutina, durante todo el fin de semana.</p>
                 </div>
-
                 <div class="format-card">
                     <h4>Grupo Reducido</h4>
                     <p>Entre 4 y 10 participantes</p>
-                    <p class="format-subtext">Por encima de 10, se pierde la exposición individual real que el formato requiere. Edición para directivos y ejecutivos independientes — existe una edición privada separada para consejos y equipos de una misma organización; consulte disponibilidad.</p>
+                    <p class="muted">Por encima de 10 se pierde la exposición individual real que el formato requiere.</p>
                 </div>
-
                 <div class="format-card">
                     <h4>Sede Privada</h4>
                     <p>Confirmada directamente con cada grupo antes de la edición</p>
-                    <p class="format-subtext">Garantiza confidencialidad y profundidad en el análisis.</p>
+                    <p class="muted">Garantiza confidencialidad y profundidad en el análisis.</p>
                 </div>
             </div>
 
-            <!-- Sección ¿Qué Cambiará? con el cierre contundente -->
-            <div style="margin: 4rem 0; padding: 2rem 0; border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color);">
-                <h3 style="font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: 1.8rem; margin-bottom: 1rem;">¿Qué Cambiará?</h3>
-                <p style="margin-bottom: 1rem;">Cuando termine el seminario seguirá enfrentando incertidumbre. Seguirá tomando decisiones con información incompleta. Seguirá asumiendo el peso de la última palabra en su empresa.</p>
-                <p style="margin-bottom: 1rem; font-weight: 500;">Lo que cambia es esto: sabrá reconocer el momento en el que ya no hay más información que esperar, y podrá actuar en él sin requerir una certeza que nunca llegará.</p>
-                <p style="font-style: italic; color: var(--text-muted);">Porque cuando las consecuencias finales cuestionen la ruta elegida, o cuando toque comparecer ante un tribunal, los socios o su propia conciencia tras el fallo, la respuesta no podrá improvisarse. Tendrá que haber sido construida desde antes, y usted tendrá el criterio para sostenerla, sin importar qué responda el resultado.</p>
+            <div style="margin-top:22px;border-top:1px solid rgba(255,255,255,0.03);padding-top:18px">
+                <h3 style="font-family:'Playfair Display',serif;color:#fff">¿Qué Cambiará?</h3>
+                <p class="muted">Cuando termine el seminario seguirá enfrentando incertidumbre. Seguirá tomando decisiones con información incompleta. Lo que cambia es que sabrá reconocer el punto de justificabilidad y actuar con trazabilidad defendible.</p>
             </div>
 
-            <div class="section-meta">
-                <span class="section-num">02</span>
-                <div class="section-rule"></div>
-                <span class="section-tag">Fases de la Agenda</span>
+        </section>
+
+        <section style="margin-top:22px">
+            <div class="panel">
+                <h3 style="color:#fff">Disponibilidad</h3>
+                <p class="muted">Cupo limitado por edición. La disponibilidad se confirma directamente al recibir su solicitud de contacto.</p>
+                <p style="margin-top:12px"><a href="index.html#contacto" class="btn">Consultar Disponibilidad</a></p>
             </div>
+        </section>
 
-            <div class="format-details" style="margin-bottom: 4rem;">
-                <h3>El Sistema de 3 Fases</h3>
-                
-                <div class="format-card" style="margin-bottom: 1.5rem;">
-                    <h4>Fase 1: Deconstrucción del Criterio Lineal</h4>
-                    <p><strong>Viernes por la tarde.</strong> El problema no es la decisión. Aprenderá a identificar cómo decidimos correctamente sobre escenarios invisibles o equivocados. Descubrirá cómo el marco de entrada predetermina el resultado antes de haber elegido.</p>
-                </div>
+        <footer>
+            <p>&copy; 2026 Juicio en el Caos. Todos los derechos reservados.</p>
+        </footer>
 
-                <div class="format-card" style="margin-bottom: 1.5rem;">
-                    <h4>Fase 2: La Ampliación del Escenario</h4>
-                    <p><strong>Sábado completo.</strong> El patrimonio invisible y la variable del tiempo. Un entrenamiento para mapear activos que no aparecen en ningún balance contable (credibilidad, licencia social, tiempo de reacción) y aprender a distinguir cuándo el tiempo le pertenece a usted y cuándo ya es propiedad del caos.</p>
-                </div>
-
-                <div class="format-card">
-                    <h4>Fase 3: Integración y Portabilidad</h4>
-                    <p><strong>Domingo por la mañana.</strong> Explicar vs. Justificar. Instalación de un lenguaje y un marco mental de alta velocidad diseñado para sobrevivir a preguntas hostiles y ser aplicable a cualquier escenario de alta responsabilidad, dentro y fuera de la empresa.</p>
-                </div>
-            </div>
-
-            <div class="availability">
-                <h3>Disponibilidad</h3>
-                <p>Cupo limitado por edición. La disponibilidad se confirma directamente al recibir su solicitud de contacto.</p>
-                <p class="availability-notice">→ Consulte disponibilidad abajo</p>
-            </div>
-
-            <div class="contact-details" id="contacto">
-                <h3>Información de Contacto</h3>
-                <div class="contact-info">
-                    <p><strong>Agencia MMX</strong></p>
-                    <p>Torreón, Coahuila</p>
-                    <p><a href="tel:+528717821011">+52 871 782 1011</a></p>
-                    <p><a href="mailto:maae800618@hotmail.com">maae800618@hotmail.com</a></p>
-                </div>
-
-                <div class="contact-form-section">
-                    <h4>Solicitar Admisión</h4>
-                    <p style="margin-bottom: 1.5rem; font-size: 0.95rem; line-height: 1.5; color: var(--text-muted);">
-                        Este no es un seminario de conferencias pasivas o diapositivas teóricas. Cada concepto de nuestro sistema de 12 transformaciones será vivido antes de ser nombrado. Si usted está listo para someter su propio criterio a una prueba de esfuerzo en un entorno de estricta confidencialidad, solicite su acceso.
-                    </p>
-                    <form action="https://formspree.io/f/xqerabgq" method="POST" class="contact-form">
-                        <input type="text" name="name" placeholder="Tu nombre" required>
-                        <input type="email" name="email" placeholder="Tu correo corporativo" required>
-                        <textarea name="message" placeholder="¿Cuál es el principal dilema de incertidumbre que enfrenta actualmente su organización?" rows="5" required></textarea>
-                        <button type="submit" class="btn btn-primary">Solicitar Admisión</button>
-                    </form> 
-                </div>
-            </div>
-
-            <div class="seminario-link">
-                <p><a href="index.html#sobre" class="link-arrow">← Volver a Sobre el Seminario</a></p>
-            </div>
-
-        </div>
-    </section>
-
-    <footer>
-        <p>&copy; 2026 Juicio en el Caos. Todos los derechos reservados.</p>
-        <p>Seminario Ejecutivo | Decisión bajo Incertidumbre</p>
-    </footer>
-
-    <script src="js/script.js"></script>
+    </div>
 </body>
 </html>
