@@ -6,7 +6,7 @@
     <title>Juicio en el Caos · Arquitectura de Decisión</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600&display=swap" rel="stylesheet">
     <style>
         /* ===== RESET Y BASE ===== */
         * {
@@ -16,16 +16,17 @@
         }
 
         body {
-            background-color: #ffffff;
-            color: #1a1a1a;
+            background-color: #0d0d0d;
+            color: #e8e8e8;
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            font-weight: 300;
             line-height: 1.7;
             padding: 0 20px;
             -webkit-font-smoothing: antialiased;
         }
 
         .container {
-            max-width: 720px;
+            max-width: 680px;
             margin: 0 auto;
             padding: 80px 0 100px;
         }
@@ -33,82 +34,101 @@
         /* ===== TIPOGRAFÍA ===== */
         h1 {
             font-size: 3.2rem;
-            font-weight: 600;
+            font-weight: 500;
             letter-spacing: -0.03em;
             line-height: 1.1;
             margin-bottom: 0.5rem;
+            color: #ffffff;
         }
 
         .subtitle {
             font-size: 1.4rem;
             font-weight: 300;
-            color: #444444;
-            margin-bottom: 2.5rem;
+            color: #aaaaaa;
+            margin-bottom: 3rem;
             line-height: 1.4;
         }
 
         h2 {
             font-size: 1.8rem;
-            font-weight: 600;
+            font-weight: 400;
             letter-spacing: -0.01em;
             margin-top: 3.5rem;
             margin-bottom: 1rem;
             line-height: 1.2;
+            color: #ffffff;
         }
 
         h3 {
             font-size: 1.2rem;
-            font-weight: 600;
+            font-weight: 400;
             margin-top: 2rem;
             margin-bottom: 0.5rem;
+            color: #ffffff;
         }
 
         p {
             font-size: 1.05rem;
-            color: #2a2a2a;
+            color: #cccccc;
             margin-bottom: 1.2rem;
             font-weight: 300;
         }
 
         .text-muted {
-            color: #777777;
+            color: #888888;
             font-size: 0.95rem;
         }
 
         .text-small {
             font-size: 0.85rem;
-            color: #999999;
-        }
-
-        .highlight-text {
-            background-color: #f0f0f0;
-            padding: 0.1rem 0.3rem;
-            font-weight: 400;
+            color: #666666;
         }
 
         /* ===== COMPONENTES ===== */
-        .gap-block {
-            background-color: #fafafa;
+        .doctrine-block {
+            background-color: #1a1a1a;
             padding: 2rem 2.5rem;
             border-radius: 12px;
             margin: 2rem 0 2.5rem;
-            border-left: 4px solid #1a1a1a;
+            border-left: 3px solid #ffffff;
+        }
+
+        .doctrine-block .label {
+            font-weight: 400;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #666666;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .doctrine-block p {
+            color: #cccccc;
+        }
+
+        .doctrine-block p:last-child {
+            margin-bottom: 0;
         }
 
         .case-block {
-            background-color: #fafafa;
+            background-color: #1a1a1a;
             padding: 2rem 2.5rem;
             border-radius: 12px;
             margin: 2.5rem 0;
-            border-left: 4px solid #1a1a1a;
+            border-left: 3px solid #ffffff;
         }
 
         .case-block .impact {
             font-size: 1.5rem;
-            font-weight: 600;
-            color: #1a1a1a;
+            font-weight: 400;
+            color: #ffffff;
             margin: 0.8rem 0;
             letter-spacing: -0.01em;
+        }
+
+        .case-block p {
+            color: #cccccc;
         }
 
         .case-block p:last-child {
@@ -127,7 +147,7 @@
             gap: 1.25rem;
             align-items: flex-start;
             padding: 0.9rem 0;
-            border-bottom: 1px solid #f0f0f0;
+            border-bottom: 1px solid #2a2a2a;
         }
 
         .quality-item:last-child {
@@ -135,8 +155,8 @@
         }
 
         .quality-item .num {
-            font-weight: 500;
-            color: #bbbbbb;
+            font-weight: 400;
+            color: #444444;
             min-width: 2.2rem;
             font-size: 0.85rem;
             padding-top: 0.1rem;
@@ -144,19 +164,20 @@
 
         .quality-item strong {
             display: block;
-            font-weight: 600;
+            font-weight: 400;
             font-size: 1rem;
             margin-bottom: 0.05rem;
+            color: #ffffff;
         }
 
         .quality-item span {
             font-size: 0.95rem;
-            color: #555555;
+            color: #888888;
             font-weight: 300;
         }
 
         .format-block {
-            background-color: #fafafa;
+            background-color: #1a1a1a;
             padding: 1.8rem 2.5rem;
             border-radius: 12px;
             margin: 2rem 0;
@@ -165,10 +186,12 @@
         .format-block p {
             margin-bottom: 0.4rem;
             font-weight: 300;
+            color: #cccccc;
         }
 
         .format-block strong {
-            font-weight: 600;
+            font-weight: 400;
+            color: #ffffff;
         }
 
         .format-block p:last-child {
@@ -178,43 +201,43 @@
         .cta-block {
             text-align: center;
             padding: 3rem 0 1rem;
-            border-top: 1px solid #eaeaea;
+            border-top: 1px solid #2a2a2a;
             margin-top: 3rem;
         }
 
         .btn {
             display: inline-block;
-            background-color: #1a1a1a;
-            color: #ffffff;
+            background-color: #ffffff;
+            color: #0d0d0d;
             padding: 0.9rem 3rem;
-            font-size: 1.05rem;
-            font-weight: 500;
+            font-size: 1rem;
+            font-weight: 400;
             text-decoration: none;
             border-radius: 40px;
             border: none;
             cursor: pointer;
-            transition: background-color 0.25s ease, transform 0.1s ease;
-            letter-spacing: -0.01em;
+            transition: background-color 0.3s ease, transform 0.1s ease;
+            letter-spacing: 0.5px;
         }
 
         .btn:hover {
-            background-color: #333333;
+            background-color: #cccccc;
             transform: scale(1.01);
         }
 
         hr {
             border: none;
-            border-top: 1px solid #eaeaea;
+            border-top: 1px solid #2a2a2a;
             margin: 3.5rem 0;
         }
 
         .tag {
             display: inline-block;
             font-size: 0.7rem;
-            font-weight: 600;
+            font-weight: 400;
             text-transform: uppercase;
-            letter-spacing: 1.5px;
-            color: #aaaaaa;
+            letter-spacing: 2px;
+            color: #666666;
             margin-bottom: 0.3rem;
         }
 
@@ -226,14 +249,15 @@
 
         .synthesis-block .big-statement {
             font-size: 2rem;
-            font-weight: 600;
+            font-weight: 400;
             letter-spacing: -0.02em;
             line-height: 1.2;
             margin-bottom: 1rem;
+            color: #ffffff;
         }
 
         .synthesis-block p {
-            color: #444444;
+            color: #aaaaaa;
             font-size: 1.05rem;
         }
 
@@ -261,7 +285,7 @@
             .container {
                 padding: 40px 0 60px;
             }
-            .gap-block,
+            .doctrine-block,
             .case-block,
             .format-block {
                 padding: 1.5rem;
@@ -279,94 +303,73 @@
 
     <div class="container">
 
-        <!-- ===== 1. HERO: IDENTIDAD + PROPUESTA DE VALOR ===== -->
+        <!-- ===== 1. HERO ===== -->
         <h1>Juicio en el Caos</h1>
         <p class="subtitle">Intervención diseñada para desarrollar el criterio y potenciar las 7 cualidades más valoradas en el liderazgo ejecutivo.</p>
 
         <hr />
 
-        <!-- ===== 2. DIAGNÓSTICO DEL MERCADO ===== -->
+        <!-- ===== 2. DIAGNÓSTICO ===== -->
         <span class="tag">Alta demanda en el mercado</span>
         <h2 style="margin-top: 0.2rem;">Las 7 cualidades más valoradas en los niveles directivos</h2>
-        <p style="color: #444444;">El mercado reconoce estas cualidades como críticas para el liderazgo y la toma de decisiones. Sin embargo, no existen programas que las desarrollen de forma conjunta, vivencial y acelerada.</p>
+        <p style="color: #aaaaaa;">El mercado reconoce estas cualidades como críticas para el liderazgo y la toma de decisiones. Sin embargo, no existen programas que las desarrollen de forma conjunta, vivencial y acelerada.</p>
 
         <div class="qualities-grid">
-            <div class="quality-item">
-                <div class="num">01</div>
-                <div><strong>Tolerancia a la ambigüedad</strong><span>Mantenerse productivo frente a información contradictoria.</span></div>
-            </div>
-            <div class="quality-item">
-                <div class="num">02</div>
-                <div><strong>Decisión con información incompleta</strong><span>Tomar determinaciones firmes sin certeza absoluta.</span></div>
-            </div>
-            <div class="quality-item">
-                <div class="num">03</div>
-                <div><strong>Claridad estratégica bajo presión</strong><span>Crear foco cuando el entorno genera confusión.</span></div>
-            </div>
-            <div class="quality-item">
-                <div class="num">04</div>
-                <div><strong>Autorregulación operativa</strong><span>Gestionar el estrés antes de que interfiera en el juicio.</span></div>
-            </div>
-            <div class="quality-item">
-                <div class="num">05</div>
-                <div><strong>Construcción de escenarios compartidos</strong><span>Coordinar criterio entre múltiples decisores.</span></div>
-            </div>
-            <div class="quality-item">
-                <div class="num">06</div>
-                <div><strong>Justificación de decisiones (MDT)</strong><span>Explicar la lógica del juicio sin burocracia.</span></div>
-            </div>
-            <div class="quality-item">
-                <div class="num">07</div>
-                <div><strong>Soledad del criterio</strong><span>Asumir la responsabilidad final, sin delegarla.</span></div>
-            </div>
+            <div class="quality-item"><div class="num">01</div><div><strong>Tolerancia a la ambigüedad</strong><span>Mantenerse productivo frente a información contradictoria.</span></div></div>
+            <div class="quality-item"><div class="num">02</div><div><strong>Decisión con información incompleta</strong><span>Tomar determinaciones firmes sin certeza absoluta.</span></div></div>
+            <div class="quality-item"><div class="num">03</div><div><strong>Claridad estratégica bajo presión</strong><span>Crear foco cuando el entorno genera confusión.</span></div></div>
+            <div class="quality-item"><div class="num">04</div><div><strong>Autorregulación operativa</strong><span>Gestionar el estrés antes de que interfiera en el juicio.</span></div></div>
+            <div class="quality-item"><div class="num">05</div><div><strong>Construcción de escenarios compartidos</strong><span>Coordinar criterio entre múltiples decisores.</span></div></div>
+            <div class="quality-item"><div class="num">06</div><div><strong>Justificación de decisiones (MDT)</strong><span>Explicar la lógica del juicio sin burocracia.</span></div></div>
+            <div class="quality-item"><div class="num">07</div><div><strong>Soledad del criterio</strong><span>Asumir la responsabilidad final, sin delegarla.</span></div></div>
         </div>
 
         <hr />
 
-        <!-- ===== 3. LA BRECHA Y LA SOLUCIÓN ===== -->
-        <div class="gap-block">
-            <span class="tag" style="color: #999999;">La brecha</span>
-            <p style="font-size: 1.1rem; font-weight: 400; color: #1a1a1a; margin-bottom: 0.5rem;">Actualmente no existe un programa que desarrolle estas 7 habilidades de forma conjunta, vivencial y acelerada.</p>
-            <p style="color: #555555; font-size: 0.95rem;">Los programas de liderazgo tradicionales las abordan de manera aislada, con enfoques teóricos o experiencias que no logran integrarlas. El resultado es que los directivos desarrollan competencias sueltas, pero no un criterio de decisión coherente y sostenible bajo presión.</p>
+        <!-- ===== 3. BRECHA Y SOLUCIÓN ===== -->
+        <div class="doctrine-block">
+            <span class="label" style="color: #666666;">La brecha</span>
+            <p style="font-size: 1.1rem; font-weight: 400; color: #ffffff; margin-bottom: 0.5rem;">Actualmente no existe un programa que desarrolle estas 7 habilidades de forma conjunta, vivencial y acelerada.</p>
+            <p style="color: #888888; font-size: 0.95rem;">Los programas de liderazgo tradicionales las abordan de manera aislada, con enfoques teóricos o experiencias que no logran integrarlas. El resultado es que los directivos desarrollan competencias sueltas, pero no un criterio de decisión coherente y sostenible bajo presión.</p>
         </div>
 
         <h2 style="margin-top: 2.5rem;">Juicio en el Caos desarrolla, en el transcurso de un fin de semana, 12 transformaciones diseñadas para potenciar estas 7 habilidades</h2>
-        <p style="color: #444444;">No es un curso teórico. Es una experiencia de inmersión total que expone al participante a escenarios de presión real, con información incompleta y consecuencias visibles. Cada transformación está diseñada para ejercitar una o varias de las 7 cualidades, de forma integrada y progresiva.</p>
+        <p style="color: #aaaaaa;">No es un curso teórico. Es una experiencia de inmersión total que expone al participante a escenarios de presión real, con información incompleta y consecuencias visibles. Cada transformación está diseñada para ejercitar una o varias de las 7 cualidades, de forma integrada y progresiva.</p>
 
         <div class="format-block">
             <p><strong>Formato:</strong> Viernes 6:00 pm — Domingo 5:00 pm</p>
             <p><strong>Cupo:</strong> Máximo 12 participantes</p>
             <p><strong>Condición:</strong> Sin celulares</p>
-            <p style="margin-top: 1rem; font-size: 0.95rem; color: #666666; font-weight: 300;">El criterio no se desarrolla en condiciones cómodas. Se desarrolla bajo presión real, con información incompleta y consecuencias visibles.</p>
+            <p style="margin-top: 1rem; font-size: 0.95rem; color: #888888; font-weight: 300;">El criterio no se desarrolla en condiciones cómodas. Se desarrolla bajo presión real, con información incompleta y consecuencias visibles.</p>
         </div>
 
         <hr />
 
-        <!-- ===== 4. EVIDENCIA (CASO REAL) ===== -->
+        <!-- ===== 4. EVIDENCIA ===== -->
         <span class="tag">Evidencia</span>
         <h2 style="margin-top: 0.2rem;">Un caso real</h2>
 
         <div class="case-block">
-            <p style="color: #333333;">Un empresario descubrió que su socio le estaba extrayendo valor de forma sistemática. La decisión de investigar era correcta. El fraude era real. La investigación lo confirmó con evidencia suficiente para actuar.</p>
+            <p style="color: #cccccc;">Un empresario descubrió que su socio le estaba extrayendo valor de forma sistemática. La decisión de investigar era correcta. El fraude era real. La investigación lo confirmó con evidencia suficiente para actuar.</p>
             <p class="impact">Al siguiente lunes, la empresa que facturaba 200 millones al año ya no existía.</p>
-            <p style="color: #444444;">La investigación detonó una reacción en cadena que ninguno de los dos anticipó. El escenario completo había quedado fuera de la lectura. La decisión fue correcta. El marco desde el que se tomó era incompleto.</p>
+            <p style="color: #aaaaaa;">La investigación detonó una reacción en cadena que ninguno de los dos anticipó. El escenario completo había quedado fuera de la lectura. La decisión fue correcta. El marco desde el que se tomó era incompleto.</p>
         </div>
 
         <hr />
 
-        <!-- ===== 5. SÍNTESIS Y CIERRE ===== -->
+        <!-- ===== 5. SÍNTESIS ===== -->
         <div class="synthesis-block">
             <p class="big-statement">La diferencia entre una empresa que llega a 100 millones y una que se detiene ahí</p>
-            <p style="font-size: 1.2rem; font-weight: 400; color: #1a1a1a; margin-bottom: 0.8rem;">está en cuántas decisiones importantes siguen dependiendo de una sola persona.</p>
-            <p style="color: #555555; font-size: 1rem;">El fundador no decide mal. El problema es que su criterio no escala con la empresa. Y cuando el equipo directivo no tiene el mismo marco de lectura que él, cada decisión importante regresa al centro, aunque nadie lo diga.</p>
+            <p style="font-size: 1.2rem; font-weight: 400; color: #ffffff; margin-bottom: 0.8rem;">está en cuántas decisiones importantes siguen dependiendo de una sola persona.</p>
+            <p style="color: #aaaaaa; font-size: 1rem;">El fundador no decide mal. El problema es que su criterio no escala con la empresa. Y cuando el equipo directivo no tiene el mismo marco de lectura que él, cada decisión importante regresa al centro, aunque nadie lo diga.</p>
         </div>
 
         <!-- ===== 6. CTA ===== -->
         <div class="cta-block">
-            <p style="font-size: 1.2rem; font-weight: 500; margin-bottom: 0.5rem;">El siguiente paso</p>
-            <p style="font-weight: 300; color: #555555; margin-bottom: 2rem; max-width: 450px; margin-left: auto; margin-right: auto;">Una conversación de 30 minutos para determinar si su equipo es el grupo correcto para esta experiencia.</p>
+            <p style="font-size: 1.2rem; font-weight: 400; margin-bottom: 0.5rem; color: #ffffff;">El siguiente paso</p>
+            <p style="font-weight: 300; color: #888888; margin-bottom: 2rem; max-width: 450px; margin-left: auto; margin-right: auto;">Una conversación de 30 minutos para determinar si su equipo es el grupo correcto para esta experiencia.</p>
             <a href="#" class="btn">Solicitar Admisión</a>
-            <p style="margin-top: 1.5rem; font-size: 0.8rem; color: #bbbbbb;">Sin compromiso · Cupo limitado</p>
+            <p style="margin-top: 1.5rem; font-size: 0.8rem; color: #555555;">Sin compromiso · Cupo limitado</p>
         </div>
 
     </div>
