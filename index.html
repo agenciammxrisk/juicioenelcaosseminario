@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Juicio en el Caos</title>
+    <title>Juicio en el Caos · Arquitectura de Decisión</title>
     <style>
-        /* ========== RESET Y BASE ========== */
+        /* ===== RESET Y BASE ===== */
         * {
             margin: 0;
             padding: 0;
@@ -26,7 +26,7 @@
             padding: 60px 0 80px;
         }
 
-        /* ========== TIPOGRAFÍA ========== */
+        /* ===== TIPOGRAFÍA ===== */
         h1 {
             font-size: 2.8rem;
             font-weight: 600;
@@ -47,7 +47,7 @@
             font-size: 1.8rem;
             font-weight: 600;
             letter-spacing: -0.01em;
-            margin-top: 3rem;
+            margin-top: 3.5rem;
             margin-bottom: 1.2rem;
             line-height: 1.2;
         }
@@ -70,12 +70,20 @@
             font-size: 0.95rem;
         }
 
-        /* ========== COMPONENTES ========== */
+        /* ===== COMPONENTES ===== */
+        .doctrine-block {
+            background-color: #fafafa;
+            padding: 2rem 2rem;
+            border-radius: 8px;
+            margin: 1.5rem 0 2rem;
+            border-left: 4px solid #1a1a1a;
+        }
+
         .case-block {
             background-color: #f7f7f7;
             border-left: 4px solid #1a1a1a;
             padding: 1.8rem 2rem;
-            margin: 2rem 0;
+            margin: 2.5rem 0;
             border-radius: 0 8px 8px 0;
         }
 
@@ -155,17 +163,6 @@
             background-color: #333333;
         }
 
-        .btn-outline {
-            background-color: transparent;
-            color: #1a1a1a;
-            border: 1px solid #1a1a1a;
-        }
-
-        .btn-outline:hover {
-            background-color: #1a1a1a;
-            color: #ffffff;
-        }
-
         .list-check {
             list-style: none;
             padding: 0;
@@ -184,7 +181,16 @@
             margin: 2.5rem 0;
         }
 
-        /* ========== RESPONSIVE ========== */
+        .tag {
+            display: inline-block;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #888888;
+            margin-bottom: 0.5rem;
+        }
+
         @media (min-width: 600px) {
             .qualities-grid {
                 grid-template-columns: 1fr 1fr;
@@ -215,34 +221,22 @@
         <h1>Juicio en el Caos</h1>
         <p class="subtitle">La diferencia entre una empresa que llega a 100 millones y una que se detiene ahí está en cuántas decisiones importantes siguen dependiendo de una sola persona.</p>
 
-        <!-- ===== CASO REAL ===== -->
-        <div class="case-block">
-            <p style="font-weight: 500; margin-bottom: 0.4rem;">Un caso real</p>
-            <p>Un empresario descubrió que su socio le estaba extrayendo valor de forma sistemática. La decisión de investigar era correcta. El fraude era real. La investigación lo confirmó con evidencia suficiente para actuar.</p>
-            <p class="impact">Al siguiente lunes, la empresa que facturaba 200 millones al año ya no existía.</p>
-            <p style="margin-bottom: 0;">La investigación detonó una reacción en cadena que ninguno de los dos anticipó. El escenario completo había quedado fuera de la lectura.</p>
+        <!-- ===== DOCTRINA ===== -->
+        <div class="doctrine-block">
+            <p style="font-weight: 500; margin-bottom: 0.4rem;">El marco</p>
+            <p style="margin-bottom: 0.5rem; font-size: 1.05rem;">El problema no es la decisión. Es el escenario desde el que se decide.</p>
+            <p style="font-size: 1rem; color: #333333; margin-bottom: 0;">Una decisión técnicamente correcta tomada sin el marco adecuado produce exactamente el mismo resultado que una decisión equivocada. Juicio en el Caos entrena la capacidad de construir el escenario completo antes de que la decisión sea irreversible.</p>
         </div>
-
-        <!-- ===== EL PROBLEMA ===== -->
-        <h2>El problema</h2>
-        <p>Hay situaciones que se vuelven cotidianas cuando una persona ocupa una posición en la que sus decisiones tienen consecuencias directas:</p>
-        <ul class="list-check">
-            <li>Reuniones que consumen tiempo sin llegar a una resolución definitiva.</li>
-            <li>Decisiones que parecían correctas hasta que aparece una variable que nadie consideró.</li>
-            <li>Interpretaciones radicalmente distintas sobre un mismo problema dentro del mismo equipo directivo.</li>
-            <li>Explicaciones que se construyen después de conocer el resultado.</li>
-            <li>Experiencia acumulada durante años que resulta difícil de transferir cuando el escenario cambia.</li>
-        </ul>
-        <p class="text-muted">El costo real no siempre es un error evidente. A veces es una decisión que llegó demasiado tarde, una oportunidad no reconocida, o una posibilidad descartada antes de ser comprendida.</p>
 
         <hr />
 
         <!-- ===== 7 CUALIDADES ===== -->
-        <h2>Lo que desarrolla: Las 7 Cualidades del Juicio</h2>
-        <p style="margin-bottom: 1.5rem;">Juicio en el Caos no busca enseñar qué decisión tomar. Busca desarrollar la arquitectura de criterio necesaria para construir y cuestionar el escenario desde el cual se decide.</p>
+        <span class="tag">Alta demanda en el mercado</span>
+        <h2 style="margin-top: 0.2rem;">Las 7 Cualidades del Juicio</h2>
+        <p>El mercado reconoce estas cualidades como críticas para el liderazgo y la toma de decisiones. Juicio en el Caos las desarrolla de forma integrada, no como habilidades aisladas.</p>
 
         <div class="qualities-grid">
-            <div class="quality-item"><div class="num">1</div><div><strong>Tolerancia a la ambigüedad</strong><span>Mantenerse productivo y claro frente a información contradictoria.</span></div></div>
+            <div class="quality-item"><div class="num">1</div><div><strong>Tolerancia a la ambigüedad</strong><span>Mantenerse productivo frente a información contradictoria.</span></div></div>
             <div class="quality-item"><div class="num">2</div><div><strong>Decisión con información incompleta</strong><span>Tomar determinaciones firmes sin certeza absoluta.</span></div></div>
             <div class="quality-item"><div class="num">3</div><div><strong>Claridad estratégica bajo presión</strong><span>Crear foco cuando el entorno genera confusión.</span></div></div>
             <div class="quality-item"><div class="num">4</div><div><strong>Autorregulación operativa</strong><span>Gestionar el estrés antes de que interfiera en el juicio.</span></div></div>
@@ -251,30 +245,15 @@
             <div class="quality-item"><div class="num">7</div><div><strong>Soledad del criterio</strong><span>Asumir la responsabilidad final, sin delegarla.</span></div></div>
         </div>
 
-        <hr />
-
-        <!-- ===== APORTE A LA ORGANIZACIÓN ===== -->
-        <h2>Lo que aporta a una organización</h2>
-        <p>Cuando estas cualidades se consolidan en el equipo directivo, se convierten en una capacidad organizacional:</p>
-        <ul class="list-check">
-            <li><strong>Capacidad estratégica</strong> — Distinguir entre acontecimientos, escenarios y sistemas antes de comprometer recursos.</li>
-            <li><strong>Gobernanza</strong> — Decisiones con una lógica clara, consistente y defendible.</li>
-            <li><strong>Continuidad del liderazgo</strong> — Sostener decisiones de alta consecuencia sin depender de una sola persona.</li>
-            <li><strong>Generación de valor</strong> — Reconocer oportunidades y anticipar cambios.</li>
-            <li><strong>Continuidad del criterio</strong> — Convertir la experiencia en una capacidad transferible para la sucesión.</li>
-        </ul>
-
-        <!-- ===== DOBLE CONSECUENCIA ===== -->
-        <h3>Una doble consecuencia</h3>
-        <ul class="list-check">
-            <li><strong>Proteger valor</strong> — Reducir el costo de decisiones tardías y puntos ciegos.</li>
-            <li><strong>Capturar valor</strong> — Reconocer oportunidades antes de que sean evidentes para el mercado.</li>
-        </ul>
+        <p class="text-muted">Estas cualidades no se enseñan. Se ejercitan bajo presión real, con información incompleta y consecuencias visibles.</p>
 
         <hr />
 
-        <!-- ===== FORMATO ===== -->
-        <h2>El formato</h2>
+        <!-- ===== CÓMO LAS DESARROLLAMOS ===== -->
+        <span class="tag">El vehículo</span>
+        <h2 style="margin-top: 0.2rem;">Cómo las desarrollamos</h2>
+
+        <h3>Formato inmersivo</h3>
         <div class="format-block">
             <p><strong>Viernes 6:00 pm — Domingo 5:00 pm</strong></p>
             <p><strong>Máximo 12 participantes</strong></p>
@@ -282,9 +261,20 @@
             <p style="margin-top: 1rem; font-size: 0.95rem; color: #555;">El criterio no se desarrolla en condiciones cómodas. Se desarrolla bajo presión real, con información incompleta y consecuencias visibles.</p>
         </div>
 
-        <!-- ===== PRINCIPIO METODOLÓGICO ===== -->
         <h3>Vivir antes de explicar</h3>
         <p>Juicio en el Caos no parte de contenidos teóricos. Parte de situaciones que el participante debe resolver. Solo después de resolverlas, el concepto se nombra. La transformación ocurre a través de la experiencia, no de la teoría.</p>
+
+        <hr />
+
+        <!-- ===== CASO PRÁCTICO (como evidencia) ===== -->
+        <span class="tag">Evidencia</span>
+        <h2 style="margin-top: 0.2rem;">Un caso real</h2>
+
+        <div class="case-block">
+            <p>Un empresario descubrió que su socio le estaba extrayendo valor de forma sistemática. La decisión de investigar era correcta. El fraude era real. La investigación lo confirmó con evidencia suficiente para actuar.</p>
+            <p class="impact">Al siguiente lunes, la empresa que facturaba 200 millones al año ya no existía.</p>
+            <p style="margin-bottom: 0;">La investigación detonó una reacción en cadena que ninguno de los dos anticipó. El escenario completo había quedado fuera de la lectura. La decisión fue correcta. El marco desde el que se tomó era incompleto.</p>
+        </div>
 
         <hr />
 
