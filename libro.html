@@ -1,113 +1,93 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Juicio en el Caos - El Libro</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Libro · Juicio en el Caos</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
+    <style>
+        /* ===== RESET Y BASE ===== */
+        *{box-sizing:border-box;margin:0;padding:0}
+        html,body{height:100%}
+
+        body{
+            background: #0d0d0d;
+            color: #e8e8e8;
+            font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+            font-weight:300;
+            line-height:1.6;
+            -webkit-font-smoothing:antialiased;
+            padding: 24px;
+        }
+
+        .wrap{
+            max-width:880px;
+            margin:36px auto;
+            padding:44px 48px;
+            background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+            border-radius:12px;
+            border:1px solid rgba(255,255,255,0.03);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+        }
+
+        header{margin-bottom:28px}
+        .kicker{font-size:0.78rem;color:#9a9a9a;letter-spacing:1.6px;text-transform:uppercase;margin-bottom:10px}
+        h1{
+            font-family:'Playfair Display', serif;
+            font-weight:700;
+            font-size:2.6rem;
+            color:#ffffff;
+            line-height:1.05;
+            margin-bottom:6px;
+        }
+        .subtitle{color:#cfcfcf;font-size:1.05rem;max-width:72ch;font-weight:300}
+
+        /* ===== NAV ===== */
+        .main-nav{display:flex;gap:10px;flex-wrap:wrap;margin:14px 0}
+        .main-nav a{color:#dcdcdc;text-decoration:none;padding:8px 12px;border-radius:8px;border:1px solid rgba(255,255,255,0.03);background:transparent;font-weight:600;font-size:0.95rem}
+        .main-nav a:hover{background:rgba(255,255,255,0.03)}
+        .main-nav a.active{background:#ffffff;color:#0d0d0d}
+
+        hr.sep{border:none;border-top:1px solid rgba(255,255,255,0.04);margin:36px 0}
+
+        .panel{background: linear-gradient(180deg, #151515, #121212);padding:22px;border-radius:10px;border:1px solid rgba(255,255,255,0.03)}
+        p{color:#d0d0d0;font-size:1rem;margin-bottom:12px}
+
+        @media(max-width:800px){
+            .wrap{padding:20px}
+            h1{font-size:1.9rem}
+            .main-nav{gap:8px}
+            .main-nav a{padding:8px 10px;font-size:0.9rem}
+        }
+    </style>
 </head>
 <body>
-    <nav class="navbar">
-        <div class="container">
-            <a href="index.html" class="logo">Juicio en el Caos</a>
-            <ul class="nav-menu">
-                <li><a href="index.html#inicio">Inicio</a></li>
-                <li><a href="index.html#sobre">Sobre</a></li>
-                <li><a href="arquitectura.html">Seminario</a></li>
-                <li><a href="libro.html">Libro</a></li>
-                <li><a href="intervencionesdeentrenamiento.html">Intervenciones</a></li>
-                <li><a href="index.html#instructores">Facilitador</a></li>
-                <li><a href="index.html#contacto">Contacto</a></li>
-            </ul>
-        </div>
-    </nav>
+    <div class="wrap">
+        <header>
+            <div class="kicker">Recursos · Juicio en el Caos</div>
+            <h1>Libro</h1>
+            <p class="subtitle">Información, capítulos y extractos del libro que acompaña la intervención.</p>
 
-    <section class="hero book-hero">
-        <div class="container">
-            <h1>Juicio en el Caos</h1>
-            <p>Judgment in Chaos — Defensible Judgment & Traceability in Chaos</p>
-        </div>
-    </section>
+            <nav class="main-nav" aria-label="Navegación principal">
+                <a href="index.html">Inicio</a>
+                <a href="libro.html" class="active">Libro</a>
+                <a href="intervenciones.html">Intervenciones</a>
+                <a href="entrenamiento.html">Entrenamiento</a>
+                <a href="simulador.html">Simulador</a>
+                <a href="arquitectura.html">Arquitectura</a>
+                <a href="assessment.html">Assessment</a>
+            </nav>
+        </header>
 
-    <section class="section book-section">
-        <div class="container">
-            
-            <div class="section-meta">
-                <span class="section-num">01</span>
-                <div class="section-rule"></div>
-                <span class="section-tag">El Libro</span>
-            </div>
+        <hr class="sep" />
 
-            <div class="book-intro">
-                <p class="book-opening">Toda decisión importante se toma sin la información completa que se necesitaría para tomarla bien. Eso no es una excepción — es la condición normal de cualquier momento crítico.</p>
-                
-                <p><strong>Juicio en el Caos</strong> nace de más de veinte años al mando de operaciones de alto riesgo en México, y responde a una sola pregunta: <em>¿cómo se decide, y cómo se defiende después esa decisión, cuando nunca va a haber suficiente certeza?</em></p>
-            </div>
+        <section class="panel">
+            <h2>Próximamente: extractos y guía de lectura</h2>
+            <p>Esta página servirá como punto central para compartir extractos, índice y posibles descargas del libro. Si quieres, puedo añadir el contenido del primer capítulo o un PDF para descarga.</p>
+        </section>
 
-            <div class="book-content">
-                <h2>Sobre el Libro</h2>
-                
-                <p>El libro documenta la doctrina construida en el terreno — investigaciones, crisis, negociaciones bajo presión real — y la convierte en un marco operativo transferible a cualquier entorno donde una persona tiene que decidir sola, con información incompleta, y sostener el resultado frente a otros.</p>
-                
-                <div class="book-core-ideas">
-                    <h3>Dos Ideas Centrales</h3>
-                    
-                    <div class="idea-card">
-                        <h4>Trazabilidad Mínima Defendible (TMD)</h4>
-                        <p>El punto donde ya se tiene lo suficiente para actuar de forma justificable, sin necesidad de completitud. No es sobre tener todas las respuestas — es sobre saber cuándo tienes lo suficiente para decidir con criterio.</p>
-                    </div>
-                    
-                    <div class="idea-card">
-                        <h4>Certeza Funcional</h4>
-                        <p>La capacidad de reconocer ese punto en el momento en que importa, no después. Es la habilidad de identificar cuándo has cruzado la línea de la justificabilidad defendible, justo cuando necesitas actuar.</p>
-                    </div>
-                </div>
-
-                <div class="book-audience">
-                    <h3>Para Quién Es</h3>
-                    <p>Para quien toma decisiones irreversibles y no puede esperar a tener el panorama completo:</p>
-                    <ul>
-                        <li>Fundadores y emprendedores</li>
-                        <li>Directivos y ejecutivos</li>
-                        <li>Cualquier persona cuya posición no le permite delegar el juicio final en nadie más</li>
-                    </ul>
-                </div>
-
-                <div class="book-editions">
-                    <h3>Ediciones Disponibles</h3>
-                    <p>Disponible en inglés y español.</p>
-                    <p><strong>ISBN: 9798250263412</strong></p>
-                    
-                    <div class="edition-links">
-                        <div class="edition">
-                            <h4>Español</h4>
-                            <a href="https://a.co/d/09k9QTgl" class="btn btn-primary" target="_blank">Comprar en Amazon</a>
-                        </div>
-                        <div class="edition">
-                            <h4>English</h4>
-                            <a href="https://a.co/d/0b0TIq7c" class="btn btn-primary" target="_blank">Buy on Amazon</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="book-complement">
-                    <h3>Más Allá del Libro</h3>
-                    <p><strong>Juicio en el Caos</strong> es también el nombre de un seminario privado de fin de semana, donde estas ideas se viven en vez de solo leerse.</p>
-                    <p><a href="arquitectura.html" class="link-arrow">Conocer el seminario →</a></p>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-    <footer>
-        <p>&copy; 2026 Juicio en el Caos. Todos los derechos reservados.</p>
-        <p>Seminario Ejecutivo | Decisión bajo Incertidumbre</p>
-    </footer>
-
-    <script src="js/script.js"></script>
+    </div>
 </body>
 </html>
