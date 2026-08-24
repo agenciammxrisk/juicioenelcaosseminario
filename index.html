@@ -4,6 +4,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Juicio en el Caos · Arquitectura de Decisión</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
     <style>
         /* ===== RESET Y BASE ===== */
         * {
@@ -18,6 +21,7 @@
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             line-height: 1.6;
             padding: 0 20px;
+            -webkit-font-smoothing: antialiased;
         }
 
         .container {
@@ -37,7 +41,7 @@
 
         .subtitle {
             font-size: 1.4rem;
-            font-weight: 400;
+            font-weight: 300;
             color: #333333;
             margin-bottom: 2.5rem;
             line-height: 1.3;
@@ -66,25 +70,47 @@
         }
 
         .text-muted {
-            color: #555555;
+            color: #666666;
             font-size: 0.95rem;
+        }
+
+        .text-small {
+            font-size: 0.85rem;
+            color: #888888;
         }
 
         /* ===== COMPONENTES ===== */
         .doctrine-block {
-            background-color: #fafafa;
-            padding: 2rem 2rem;
-            border-radius: 8px;
-            margin: 1.5rem 0 2rem;
+            background-color: #f7f7f7;
+            padding: 2rem 2.5rem;
+            border-radius: 12px;
+            margin: 1.5rem 0 2.5rem;
             border-left: 4px solid #1a1a1a;
+        }
+
+        .doctrine-block p {
+            font-weight: 300;
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 0.5rem;
+        }
+
+        .doctrine-block .label {
+            font-weight: 600;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: #888888;
+            margin-bottom: 0.5rem;
+            display: block;
         }
 
         .case-block {
             background-color: #f7f7f7;
-            border-left: 4px solid #1a1a1a;
-            padding: 1.8rem 2rem;
+            padding: 2rem 2.5rem;
+            border-radius: 12px;
             margin: 2.5rem 0;
-            border-radius: 0 8px 8px 0;
+            border-left: 4px solid #1a1a1a;
         }
 
         .case-block .impact {
@@ -92,56 +118,69 @@
             font-weight: 600;
             color: #1a1a1a;
             margin: 0.8rem 0;
+            letter-spacing: -0.01em;
         }
 
         .qualities-grid {
             display: grid;
             grid-template-columns: 1fr;
-            gap: 1.2rem;
-            margin: 1.5rem 0 2rem;
+            gap: 0.8rem;
+            margin: 2rem 0 2.5rem;
         }
 
         .quality-item {
             display: flex;
-            gap: 1rem;
+            gap: 1.25rem;
             align-items: flex-start;
             padding: 0.8rem 0;
-            border-bottom: 1px solid #eeeeee;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .quality-item:last-child {
+            border-bottom: none;
         }
 
         .quality-item .num {
-            font-weight: 600;
-            color: #888888;
+            font-weight: 500;
+            color: #aaaaaa;
             min-width: 2rem;
-            font-size: 0.95rem;
+            font-size: 0.85rem;
+            padding-top: 0.05rem;
         }
 
         .quality-item strong {
             display: block;
             font-weight: 600;
             font-size: 1rem;
+            margin-bottom: 0.05rem;
         }
 
         .quality-item span {
             font-size: 0.95rem;
-            color: #444444;
+            color: #555555;
+            font-weight: 300;
         }
 
         .format-block {
             background-color: #f7f7f7;
-            padding: 1.8rem 2rem;
-            border-radius: 8px;
+            padding: 1.8rem 2.5rem;
+            border-radius: 12px;
             margin: 2rem 0;
         }
 
         .format-block p {
             margin-bottom: 0.4rem;
+            font-weight: 300;
+        }
+
+        .format-block strong {
+            font-weight: 600;
         }
 
         .cta-block {
             text-align: center;
-            padding: 2.5rem 0 1rem;
-            border-top: 1px solid #e0e0e0;
+            padding: 3rem 0 1rem;
+            border-top: 1px solid #e8e8e8;
             margin-top: 3rem;
         }
 
@@ -149,14 +188,15 @@
             display: inline-block;
             background-color: #1a1a1a;
             color: #ffffff;
-            padding: 1rem 2.8rem;
-            font-size: 1.1rem;
+            padding: 0.9rem 2.8rem;
+            font-size: 1.05rem;
             font-weight: 500;
             text-decoration: none;
             border-radius: 40px;
             border: none;
             cursor: pointer;
-            transition: background-color 0.2s;
+            transition: background-color 0.25s ease;
+            letter-spacing: -0.01em;
         }
 
         .btn:hover {
@@ -173,24 +213,41 @@
             padding: 0.4rem 0 0.4rem 1.8rem;
             background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="%231a1a1a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>') left center no-repeat;
             background-size: 1.2rem;
+            font-weight: 300;
+        }
+
+        .list-check li strong {
+            font-weight: 600;
         }
 
         hr {
             border: none;
-            border-top: 1px solid #e0e0e0;
-            margin: 2.5rem 0;
+            border-top: 1px solid #e8e8e8;
+            margin: 3rem 0;
         }
 
         .tag {
             display: inline-block;
-            font-size: 0.75rem;
+            font-size: 0.7rem;
             font-weight: 600;
             text-transform: uppercase;
-            letter-spacing: 1px;
-            color: #888888;
-            margin-bottom: 0.5rem;
+            letter-spacing: 1.5px;
+            color: #999999;
+            margin-bottom: 0.3rem;
         }
 
+        .link-underline {
+            color: #1a1a1a;
+            text-decoration: none;
+            border-bottom: 1px solid #d0d0d0;
+            transition: border-color 0.2s ease;
+        }
+
+        .link-underline:hover {
+            border-bottom-color: #1a1a1a;
+        }
+
+        /* ===== RESPONSIVE ===== */
         @media (min-width: 600px) {
             .qualities-grid {
                 grid-template-columns: 1fr 1fr;
@@ -210,6 +267,11 @@
             .container {
                 padding: 30px 0 60px;
             }
+            .doctrine-block,
+            .case-block,
+            .format-block {
+                padding: 1.5rem;
+            }
         }
     </style>
 </head>
@@ -223,9 +285,9 @@
 
         <!-- ===== DOCTRINA ===== -->
         <div class="doctrine-block">
-            <p style="font-weight: 500; margin-bottom: 0.4rem;">El marco</p>
-            <p style="margin-bottom: 0.5rem; font-size: 1.05rem;">El problema no es la decisión. Es el escenario desde el que se decide.</p>
-            <p style="font-size: 1rem; color: #333333; margin-bottom: 0;">Una decisión técnicamente correcta tomada sin el marco adecuado produce exactamente el mismo resultado que una decisión equivocada. Juicio en el Caos entrena la capacidad de construir el escenario completo antes de que la decisión sea irreversible.</p>
+            <span class="label">El marco</span>
+            <p style="font-weight: 400; margin-bottom: 0.5rem;">El problema no es la decisión. Es el escenario desde el que se decide.</p>
+            <p style="font-size: 0.95rem; color: #444444; margin-bottom: 0;">Una decisión técnicamente correcta tomada sin el marco adecuado produce exactamente el mismo resultado que una decisión equivocada. Juicio en el Caos entrena la capacidad de construir el escenario completo antes de que la decisión sea irreversible.</p>
         </div>
 
         <hr />
@@ -233,16 +295,37 @@
         <!-- ===== 7 CUALIDADES ===== -->
         <span class="tag">Alta demanda en el mercado</span>
         <h2 style="margin-top: 0.2rem;">Las 7 Cualidades del Juicio</h2>
-        <p>El mercado reconoce estas cualidades como críticas para el liderazgo y la toma de decisiones. Juicio en el Caos las desarrolla de forma integrada, no como habilidades aisladas.</p>
+        <p style="font-weight: 300; color: #444444;">El mercado reconoce estas cualidades como críticas para el liderazgo y la toma de decisiones. Juicio en el Caos las desarrolla de forma integrada, no como habilidades aisladas.</p>
 
         <div class="qualities-grid">
-            <div class="quality-item"><div class="num">1</div><div><strong>Tolerancia a la ambigüedad</strong><span>Mantenerse productivo frente a información contradictoria.</span></div></div>
-            <div class="quality-item"><div class="num">2</div><div><strong>Decisión con información incompleta</strong><span>Tomar determinaciones firmes sin certeza absoluta.</span></div></div>
-            <div class="quality-item"><div class="num">3</div><div><strong>Claridad estratégica bajo presión</strong><span>Crear foco cuando el entorno genera confusión.</span></div></div>
-            <div class="quality-item"><div class="num">4</div><div><strong>Autorregulación operativa</strong><span>Gestionar el estrés antes de que interfiera en el juicio.</span></div></div>
-            <div class="quality-item"><div class="num">5</div><div><strong>Construcción de escenarios compartidos</strong><span>Coordinar criterio entre múltiples decisores.</span></div></div>
-            <div class="quality-item"><div class="num">6</div><div><strong>Justificación de decisiones (MDT)</strong><span>Explicar la lógica del juicio sin burocracia.</span></div></div>
-            <div class="quality-item"><div class="num">7</div><div><strong>Soledad del criterio</strong><span>Asumir la responsabilidad final, sin delegarla.</span></div></div>
+            <div class="quality-item">
+                <div class="num">01</div>
+                <div><strong>Tolerancia a la ambigüedad</strong><span>Mantenerse productivo frente a información contradictoria.</span></div>
+            </div>
+            <div class="quality-item">
+                <div class="num">02</div>
+                <div><strong>Decisión con información incompleta</strong><span>Tomar determinaciones firmes sin certeza absoluta.</span></div>
+            </div>
+            <div class="quality-item">
+                <div class="num">03</div>
+                <div><strong>Claridad estratégica bajo presión</strong><span>Crear foco cuando el entorno genera confusión.</span></div>
+            </div>
+            <div class="quality-item">
+                <div class="num">04</div>
+                <div><strong>Autorregulación operativa</strong><span>Gestionar el estrés antes de que interfiera en el juicio.</span></div>
+            </div>
+            <div class="quality-item">
+                <div class="num">05</div>
+                <div><strong>Construcción de escenarios compartidos</strong><span>Coordinar criterio entre múltiples decisores.</span></div>
+            </div>
+            <div class="quality-item">
+                <div class="num">06</div>
+                <div><strong>Justificación de decisiones (MDT)</strong><span>Explicar la lógica del juicio sin burocracia.</span></div>
+            </div>
+            <div class="quality-item">
+                <div class="num">07</div>
+                <div><strong>Soledad del criterio</strong><span>Asumir la responsabilidad final, sin delegarla.</span></div>
+            </div>
         </div>
 
         <p class="text-muted">Estas cualidades no se enseñan. Se ejercitan bajo presión real, con información incompleta y consecuencias visibles.</p>
@@ -258,11 +341,11 @@
             <p><strong>Viernes 6:00 pm — Domingo 5:00 pm</strong></p>
             <p><strong>Máximo 12 participantes</strong></p>
             <p><strong>Sin celulares</strong></p>
-            <p style="margin-top: 1rem; font-size: 0.95rem; color: #555;">El criterio no se desarrolla en condiciones cómodas. Se desarrolla bajo presión real, con información incompleta y consecuencias visibles.</p>
+            <p style="margin-top: 1rem; font-size: 0.95rem; color: #666666; font-weight: 300;">El criterio no se desarrolla en condiciones cómodas. Se desarrolla bajo presión real, con información incompleta y consecuencias visibles.</p>
         </div>
 
-        <h3>Vivir antes de explicar</h3>
-        <p>Juicio en el Caos no parte de contenidos teóricos. Parte de situaciones que el participante debe resolver. Solo después de resolverlas, el concepto se nombra. La transformación ocurre a través de la experiencia, no de la teoría.</p>
+        <h3 style="margin-top: 2rem;">Vivir antes de explicar</h3>
+        <p style="font-weight: 300; color: #444444;">Juicio en el Caos no parte de contenidos teóricos. Parte de situaciones que el participante debe resolver. Solo después de resolverlas, el concepto se nombra. La transformación ocurre a través de la experiencia, no de la teoría.</p>
 
         <hr />
 
@@ -271,19 +354,19 @@
         <h2 style="margin-top: 0.2rem;">Un caso real</h2>
 
         <div class="case-block">
-            <p>Un empresario descubrió que su socio le estaba extrayendo valor de forma sistemática. La decisión de investigar era correcta. El fraude era real. La investigación lo confirmó con evidencia suficiente para actuar.</p>
+            <p style="font-weight: 300; margin-bottom: 0.8rem;">Un empresario descubrió que su socio le estaba extrayendo valor de forma sistemática. La decisión de investigar era correcta. El fraude era real. La investigación lo confirmó con evidencia suficiente para actuar.</p>
             <p class="impact">Al siguiente lunes, la empresa que facturaba 200 millones al año ya no existía.</p>
-            <p style="margin-bottom: 0;">La investigación detonó una reacción en cadena que ninguno de los dos anticipó. El escenario completo había quedado fuera de la lectura. La decisión fue correcta. El marco desde el que se tomó era incompleto.</p>
+            <p style="font-weight: 300; margin-bottom: 0; color: #444444;">La investigación detonó una reacción en cadena que ninguno de los dos anticipó. El escenario completo había quedado fuera de la lectura. La decisión fue correcta. El marco desde el que se tomó era incompleto.</p>
         </div>
 
         <hr />
 
         <!-- ===== CIERRE Y CTA ===== -->
         <div class="cta-block">
-            <p style="font-size: 1.2rem; font-weight: 500; margin-bottom: 0.8rem;">El siguiente paso</p>
-            <p style="margin-bottom: 1.8rem; max-width: 500px; margin-left: auto; margin-right: auto;">Una conversación de 30 minutos para determinar si su equipo es el grupo correcto para esta experiencia.</p>
+            <p style="font-size: 1.2rem; font-weight: 500; margin-bottom: 0.5rem;">El siguiente paso</p>
+            <p style="font-weight: 300; color: #555555; margin-bottom: 2rem; max-width: 450px; margin-left: auto; margin-right: auto;">Una conversación de 30 minutos para determinar si su equipo es el grupo correcto para esta experiencia.</p>
             <a href="#" class="btn">Solicitar Admisión</a>
-            <p style="margin-top: 1.5rem; font-size: 0.85rem; color: #888;">Sin compromiso · Cupo limitado</p>
+            <p style="margin-top: 1.5rem; font-size: 0.8rem; color: #aaaaaa;">Sin compromiso · Cupo limitado</p>
         </div>
 
     </div>
