@@ -25,14 +25,14 @@
         }
 
         .container {
-            max-width: 680px;
+            max-width: 720px;
             margin: 0 auto;
             padding: 80px 0 100px;
         }
 
         /* ===== TIPOGRAFÍA ===== */
         h1 {
-            font-size: 3rem;
+            font-size: 3.2rem;
             font-weight: 600;
             letter-spacing: -0.03em;
             line-height: 1.1;
@@ -80,33 +80,19 @@
             color: #999999;
         }
 
+        .highlight-text {
+            background-color: #f0f0f0;
+            padding: 0.1rem 0.3rem;
+            font-weight: 400;
+        }
+
         /* ===== COMPONENTES ===== */
-        .doctrine-block {
+        .gap-block {
             background-color: #fafafa;
             padding: 2rem 2.5rem;
             border-radius: 12px;
             margin: 2rem 0 2.5rem;
             border-left: 4px solid #1a1a1a;
-        }
-
-        .doctrine-block .label {
-            font-weight: 600;
-            font-size: 0.7rem;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            color: #999999;
-            margin-bottom: 0.5rem;
-            display: block;
-        }
-
-        .doctrine-block p {
-            font-size: 1.05rem;
-            line-height: 1.6;
-            margin-bottom: 0.5rem;
-        }
-
-        .doctrine-block p:last-child {
-            margin-bottom: 0;
         }
 
         .case-block {
@@ -216,23 +202,6 @@
             transform: scale(1.01);
         }
 
-        .list-check {
-            list-style: none;
-            padding: 0;
-            margin: 1rem 0 1.5rem;
-        }
-
-        .list-check li {
-            padding: 0.4rem 0 0.4rem 1.8rem;
-            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="%231a1a1a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>') left center no-repeat;
-            background-size: 1.2rem;
-            font-weight: 300;
-        }
-
-        .list-check li strong {
-            font-weight: 600;
-        }
-
         hr {
             border: none;
             border-top: 1px solid #eaeaea;
@@ -249,15 +218,23 @@
             margin-bottom: 0.3rem;
         }
 
-        .link-underline {
-            color: #1a1a1a;
-            text-decoration: none;
-            border-bottom: 1px solid #d0d0d0;
-            transition: border-color 0.2s ease;
+        /* ===== SÍNTESIS DE CIERRE ===== */
+        .synthesis-block {
+            padding: 2rem 0 1.5rem;
+            margin-top: 2.5rem;
         }
 
-        .link-underline:hover {
-            border-bottom-color: #1a1a1a;
+        .synthesis-block .big-statement {
+            font-size: 2rem;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+        }
+
+        .synthesis-block p {
+            color: #444444;
+            font-size: 1.05rem;
         }
 
         /* ===== RESPONSIVE ===== */
@@ -270,18 +247,21 @@
 
         @media (max-width: 480px) {
             h1 {
-                font-size: 2rem;
+                font-size: 2.2rem;
             }
             .subtitle {
-                font-size: 1rem;
+                font-size: 1.1rem;
             }
             .case-block .impact {
                 font-size: 1.1rem;
             }
+            .synthesis-block .big-statement {
+                font-size: 1.4rem;
+            }
             .container {
                 padding: 40px 0 60px;
             }
-            .doctrine-block,
+            .gap-block,
             .case-block,
             .format-block {
                 padding: 1.5rem;
@@ -299,23 +279,16 @@
 
     <div class="container">
 
-        <!-- ===== HERO ===== -->
+        <!-- ===== 1. HERO: IDENTIDAD + PROPUESTA DE VALOR ===== -->
         <h1>Juicio en el Caos</h1>
-        <p class="subtitle">La diferencia entre una empresa que llega a 100 millones y una que se detiene ahí está en cuántas decisiones importantes siguen dependiendo de una sola persona.</p>
-
-        <!-- ===== DOCTRINA ===== -->
-        <div class="doctrine-block">
-            <span class="label">El marco</span>
-            <p>El problema no es la decisión. Es el escenario desde el que se decide.</p>
-            <p style="color: #444444; font-size: 0.95rem;">Una decisión técnicamente correcta tomada sin el marco adecuado produce exactamente el mismo resultado que una decisión equivocada. Juicio en el Caos entrena la capacidad de construir el escenario completo antes de que la decisión sea irreversible.</p>
-        </div>
+        <p class="subtitle">Intervención diseñada para desarrollar el criterio y potenciar las 7 cualidades más valoradas en el liderazgo ejecutivo.</p>
 
         <hr />
 
-        <!-- ===== 7 CUALIDADES ===== -->
+        <!-- ===== 2. DIAGNÓSTICO DEL MERCADO ===== -->
         <span class="tag">Alta demanda en el mercado</span>
-        <h2 style="margin-top: 0.2rem;">Las 7 Cualidades del Juicio</h2>
-        <p style="color: #444444;">El mercado reconoce estas cualidades como críticas para el liderazgo y la toma de decisiones. Juicio en el Caos las desarrolla de forma integrada, no como habilidades aisladas.</p>
+        <h2 style="margin-top: 0.2rem;">Las 7 cualidades más valoradas en los niveles directivos</h2>
+        <p style="color: #444444;">El mercado reconoce estas cualidades como críticas para el liderazgo y la toma de decisiones. Sin embargo, no existen programas que las desarrollen de forma conjunta, vivencial y acelerada.</p>
 
         <div class="qualities-grid">
             <div class="quality-item">
@@ -348,28 +321,28 @@
             </div>
         </div>
 
-        <p class="text-muted">Estas cualidades no se enseñan. Se ejercitan bajo presión real, con información incompleta y consecuencias visibles.</p>
-
         <hr />
 
-        <!-- ===== CÓMO LAS DESARROLLAMOS ===== -->
-        <span class="tag">El vehículo</span>
-        <h2 style="margin-top: 0.2rem;">Cómo las desarrollamos</h2>
+        <!-- ===== 3. LA BRECHA Y LA SOLUCIÓN ===== -->
+        <div class="gap-block">
+            <span class="tag" style="color: #999999;">La brecha</span>
+            <p style="font-size: 1.1rem; font-weight: 400; color: #1a1a1a; margin-bottom: 0.5rem;">Actualmente no existe un programa que desarrolle estas 7 habilidades de forma conjunta, vivencial y acelerada.</p>
+            <p style="color: #555555; font-size: 0.95rem;">Los programas de liderazgo tradicionales las abordan de manera aislada, con enfoques teóricos o experiencias que no logran integrarlas. El resultado es que los directivos desarrollan competencias sueltas, pero no un criterio de decisión coherente y sostenible bajo presión.</p>
+        </div>
 
-        <h3>Formato inmersivo</h3>
+        <h2 style="margin-top: 2.5rem;">Juicio en el Caos desarrolla, en el transcurso de un fin de semana, 12 transformaciones diseñadas para potenciar estas 7 habilidades</h2>
+        <p style="color: #444444;">No es un curso teórico. Es una experiencia de inmersión total que expone al participante a escenarios de presión real, con información incompleta y consecuencias visibles. Cada transformación está diseñada para ejercitar una o varias de las 7 cualidades, de forma integrada y progresiva.</p>
+
         <div class="format-block">
-            <p><strong>Viernes 6:00 pm — Domingo 5:00 pm</strong></p>
-            <p><strong>Máximo 12 participantes</strong></p>
-            <p><strong>Sin celulares</strong></p>
+            <p><strong>Formato:</strong> Viernes 6:00 pm — Domingo 5:00 pm</p>
+            <p><strong>Cupo:</strong> Máximo 12 participantes</p>
+            <p><strong>Condición:</strong> Sin celulares</p>
             <p style="margin-top: 1rem; font-size: 0.95rem; color: #666666; font-weight: 300;">El criterio no se desarrolla en condiciones cómodas. Se desarrolla bajo presión real, con información incompleta y consecuencias visibles.</p>
         </div>
 
-        <h3 style="margin-top: 2rem;">Vivir antes de explicar</h3>
-        <p style="color: #444444;">Juicio en el Caos no parte de contenidos teóricos. Parte de situaciones que el participante debe resolver. Solo después de resolverlas, el concepto se nombra. La transformación ocurre a través de la experiencia, no de la teoría.</p>
-
         <hr />
 
-        <!-- ===== CASO PRÁCTICO (como evidencia) ===== -->
+        <!-- ===== 4. EVIDENCIA (CASO REAL) ===== -->
         <span class="tag">Evidencia</span>
         <h2 style="margin-top: 0.2rem;">Un caso real</h2>
 
@@ -381,7 +354,14 @@
 
         <hr />
 
-        <!-- ===== CIERRE Y CTA ===== -->
+        <!-- ===== 5. SÍNTESIS Y CIERRE ===== -->
+        <div class="synthesis-block">
+            <p class="big-statement">La diferencia entre una empresa que llega a 100 millones y una que se detiene ahí</p>
+            <p style="font-size: 1.2rem; font-weight: 400; color: #1a1a1a; margin-bottom: 0.8rem;">está en cuántas decisiones importantes siguen dependiendo de una sola persona.</p>
+            <p style="color: #555555; font-size: 1rem;">El fundador no decide mal. El problema es que su criterio no escala con la empresa. Y cuando el equipo directivo no tiene el mismo marco de lectura que él, cada decisión importante regresa al centro, aunque nadie lo diga.</p>
+        </div>
+
+        <!-- ===== 6. CTA ===== -->
         <div class="cta-block">
             <p style="font-size: 1.2rem; font-weight: 500; margin-bottom: 0.5rem;">El siguiente paso</p>
             <p style="font-weight: 300; color: #555555; margin-bottom: 2rem; max-width: 450px; margin-left: auto; margin-right: auto;">Una conversación de 30 minutos para determinar si su equipo es el grupo correcto para esta experiencia.</p>
