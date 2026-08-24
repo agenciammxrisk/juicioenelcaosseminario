@@ -46,6 +46,12 @@
         }
         .subtitle{color:#cfcfcf;font-size:1.05rem;max-width:72ch;font-weight:300}
 
+        /* NAVIGATION */
+        .main-nav{display:flex;gap:10px;flex-wrap:wrap;margin:14px 0}
+        .main-nav a{color:#dcdcdc;text-decoration:none;padding:8px 12px;border-radius:8px;border:1px solid rgba(255,255,255,0.03);background:transparent;font-weight:600;font-size:0.95rem}
+        .main-nav a:hover{background:rgba(255,255,255,0.03)}
+        .main-nav a.active{background:#ffffff;color:#0d0d0d}
+
         hr.sep{border:none;border-top:1px solid rgba(255,255,255,0.04);margin:36px 0}
 
         /* cards & panels */
@@ -89,6 +95,8 @@
             .qualities-grid{grid-template-columns:1fr}
             h1{font-size:1.9rem}
             .case-block .impact{font-size:1.15rem}
+            .main-nav{gap:8px}
+            .main-nav a{padding:8px 10px;font-size:0.9rem}
         }
     </style>
 </head>
@@ -98,6 +106,15 @@
             <div class="kicker">Intervención · Arquitectura de Decisión</div>
             <h1>Juicio en el Caos</h1>
             <p class="subtitle">Intervención diseñada para desarrollar el criterio y potenciar las 7 cualidades más valoradas en el liderazgo ejecutivo.</p>
+
+            <!-- Navegación principal añadida -->
+            <nav class="main-nav" aria-label="Navegación principal">
+                <a href="libro.html">Libro</a>
+                <a href="intervenciones.html">Intervenciones</a>
+                <a href="entrenamiento.html">Entrenamiento</a>
+                <a href="simulador.html">Simulador</a>
+                <a href="arquitectura.html">Arquitectura</a>
+            </nav>
         </header>
 
         <hr class="sep" />
@@ -105,7 +122,7 @@
         <section class="panel">
             <span class="tag">Alta demanda en el mercado</span>
             <h2 style="margin-top:8px">Las 7 cualidades más valoradas en los niveles directivos</h2>
-            <p class="muted">El mercado reconoce estas cualidades como críticas para el liderazgo y la toma de decisiones. Sin embargo, no existen programas que las desarrollen de forma conjunta, vivencial y aplicada en contextos reales.</p>
+            <p class="muted">El mercado reconoce estas cualidades como críticas para el liderazgo y la toma de decisiones. Sin embargo, no existen programas que las desarrollen de forma conjunta[...]</p>
 
             <div class="qualities-grid">
                 <div class="quality"><div class="num">01</div><div><strong>Tolerancia a la ambigüedad</strong><span>Mantenerse productivo frente a información contradictoria.</span></div></div>
@@ -122,19 +139,19 @@
 
         <section class="doctrine-block">
             <span class="label">La brecha</span>
-            <p style="font-size:1.02rem;color:#ffffff;font-weight:400;margin-bottom:0.6rem;">Actualmente no existe un programa que desarrolle estas 7 habilidades de forma conjunta, vivencial y aplicada. Los enfoques tradicionales las trabajan por separado o con metodologías que no generan transferencia al entorno real.</p>
-            <p class="muted">Los programas de liderazgo tradicionales las abordan de manera aislada, con enfoques teóricos o experiencias que no logran integrarlas. El resultado es un criterio que no escala con la organización.</p>
+            <p style="font-size:1.02rem;color:#ffffff;font-weight:400;margin-bottom:0.6rem;">Actualmente no existe un programa que desarrolle estas 7 habilidades de forma conjunta, vivencial y ap[...]</p>
+            <p class="muted">Los programas de liderazgo tradicionales las abordan de manera aislada, con enfoques teóricos o experiencias que no logran integrarlas. El resultado es un criterio q[...]</p>
         </section>
 
         <h2 style="margin-top:18px;color:#ffffff">Juicio en el Caos desarrolla, en el transcurso de un fin de semana, 12 transformaciones diseñadas para potenciar estas 7 habilidades</h2>
-        <p class="muted">No es un curso teórico. Es una experiencia de inmersión total que expone al participante a escenarios de presión real, con información incompleta y consecuencias directas que exigen aplicación de criterio.</p>
+        <p class="muted">No es un curso teórico. Es una experiencia de inmersión total que expone al participante a escenarios de presión real, con información incompleta y consec[...]</p>
 
         <div class="format-block">
             <div class="panel" style="margin-top:12px">
                 <p><strong>Formato:</strong> Viernes 6:00 pm — Domingo 5:00 pm</p>
                 <p><strong>Cupo:</strong> Máximo 12 participantes</p>
                 <p><strong>Condición:</strong> Sin celulares</p>
-                <p style="margin-top:8px;color:#9a9a9a;font-size:0.95rem">El criterio no se desarrolla en condiciones cómodas. Se desarrolla bajo presión real, con información parcial y consecuencias visibles.</p>
+                <p style="margin-top:8px;color:#9a9a9a;font-size:0.95rem">El criterio no se desarrolla en condiciones cómodas. Se desarrolla bajo presión real, con información parcial y consec[...]</p>
             </div>
         </div>
 
@@ -144,7 +161,7 @@
             <div class="panel">
                 <span class="tag">Evidencia</span>
                 <h2 style="margin-top:8px;color:#fff">Un caso real</h2>
-                <p class="muted">Un empresario descubrió que su socio le estaba extrayendo valor de forma sistemática. La decisión de investigar era correcta. El fraude era real. La investigación obligó a decisiones rápidas en un entorno con información parcial.</p>
+                <p class="muted">Un empresario descubrió que su socio le estaba extrayendo valor de forma sistemática. La decisión de investigar era correcta. El fraude era real. La investigac[...]</p>
                 <p class="impact">Al siguiente lunes, la empresa que facturaba 200 millones al año ya no existía.</p>
                 <p class="muted">La investigación detonó una reacción en cadena que ninguno de los dos anticipó. El escenario completo había quedado fuera de la lectura inicial.</p>
             </div>
@@ -154,14 +171,14 @@
             <div class="panel" style="margin-top:18px">
                 <p class="big">La diferencia entre una empresa que llega a 100 millones y una que se detiene ahí</p>
                 <p style="font-size:1.05rem;color:#ffffff;margin-bottom:8px">está en cuántas decisiones importantes siguen dependiendo de una sola persona.</p>
-                <p class="muted">El fundador no decide mal. El problema es que su criterio no escala con la empresa. Y cuando el equipo directivo no tiene el mismo marco de lectura, las decisiones se vuelven frágiles.</p>
+                <p class="muted">El fundador no decide mal. El problema es que su criterio no escala con la empresa. Y cuando el equipo directivo no tiene el mismo marco de lectura, las decisione[...]</p>
             </div>
         </section>
 
         <div class="cta">
             <div class="panel" style="text-align:center;max-width:700px">
                 <p style="font-size:1.15rem;color:#fff;margin-bottom:6px">El siguiente paso</p>
-                <p class="muted" style="max-width:640px;margin:0 auto 18px">Una conversación de 30 minutos para determinar si su equipo es elegible y qué transformación podemos diseñar para su liderazgo.</p>
+                <p class="muted" style="max-width:640px;margin:0 auto 18px">Una conversación de 30 minutos para determinar si su equipo es elegible y qué transformación podemos diseñar para s[...]</p>
                 <a href="#" class="btn">Solicitar Admisión</a>
                 <p class="note">Sin compromiso · Cupo limitado</p>
             </div>
