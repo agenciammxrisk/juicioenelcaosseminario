@@ -19,22 +19,22 @@
             background-color: #ffffff;
             color: #1a1a1a;
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            line-height: 1.6;
+            line-height: 1.7;
             padding: 0 20px;
             -webkit-font-smoothing: antialiased;
         }
 
         .container {
-            max-width: 720px;
+            max-width: 680px;
             margin: 0 auto;
-            padding: 60px 0 80px;
+            padding: 80px 0 100px;
         }
 
         /* ===== TIPOGRAFÍA ===== */
         h1 {
-            font-size: 2.8rem;
+            font-size: 3rem;
             font-weight: 600;
-            letter-spacing: -0.02em;
+            letter-spacing: -0.03em;
             line-height: 1.1;
             margin-bottom: 0.5rem;
         }
@@ -42,9 +42,9 @@
         .subtitle {
             font-size: 1.4rem;
             font-weight: 300;
-            color: #333333;
+            color: #444444;
             margin-bottom: 2.5rem;
-            line-height: 1.3;
+            line-height: 1.4;
         }
 
         h2 {
@@ -52,47 +52,41 @@
             font-weight: 600;
             letter-spacing: -0.01em;
             margin-top: 3.5rem;
-            margin-bottom: 1.2rem;
+            margin-bottom: 1rem;
             line-height: 1.2;
         }
 
         h3 {
             font-size: 1.2rem;
             font-weight: 600;
-            margin-top: 1.8rem;
-            margin-bottom: 0.6rem;
+            margin-top: 2rem;
+            margin-bottom: 0.5rem;
         }
 
         p {
             font-size: 1.05rem;
             color: #2a2a2a;
             margin-bottom: 1.2rem;
+            font-weight: 300;
         }
 
         .text-muted {
-            color: #666666;
+            color: #777777;
             font-size: 0.95rem;
         }
 
         .text-small {
             font-size: 0.85rem;
-            color: #888888;
+            color: #999999;
         }
 
         /* ===== COMPONENTES ===== */
         .doctrine-block {
-            background-color: #f7f7f7;
+            background-color: #fafafa;
             padding: 2rem 2.5rem;
             border-radius: 12px;
-            margin: 1.5rem 0 2.5rem;
+            margin: 2rem 0 2.5rem;
             border-left: 4px solid #1a1a1a;
-        }
-
-        .doctrine-block p {
-            font-weight: 300;
-            font-size: 1.1rem;
-            line-height: 1.6;
-            margin-bottom: 0.5rem;
         }
 
         .doctrine-block .label {
@@ -100,13 +94,23 @@
             font-size: 0.7rem;
             text-transform: uppercase;
             letter-spacing: 1.5px;
-            color: #888888;
+            color: #999999;
             margin-bottom: 0.5rem;
             display: block;
         }
 
+        .doctrine-block p {
+            font-size: 1.05rem;
+            line-height: 1.6;
+            margin-bottom: 0.5rem;
+        }
+
+        .doctrine-block p:last-child {
+            margin-bottom: 0;
+        }
+
         .case-block {
-            background-color: #f7f7f7;
+            background-color: #fafafa;
             padding: 2rem 2.5rem;
             border-radius: 12px;
             margin: 2.5rem 0;
@@ -114,17 +118,21 @@
         }
 
         .case-block .impact {
-            font-size: 1.4rem;
+            font-size: 1.5rem;
             font-weight: 600;
             color: #1a1a1a;
             margin: 0.8rem 0;
             letter-spacing: -0.01em;
         }
 
+        .case-block p:last-child {
+            margin-bottom: 0;
+        }
+
         .qualities-grid {
             display: grid;
             grid-template-columns: 1fr;
-            gap: 0.8rem;
+            gap: 0.2rem;
             margin: 2rem 0 2.5rem;
         }
 
@@ -132,7 +140,7 @@
             display: flex;
             gap: 1.25rem;
             align-items: flex-start;
-            padding: 0.8rem 0;
+            padding: 0.9rem 0;
             border-bottom: 1px solid #f0f0f0;
         }
 
@@ -142,10 +150,10 @@
 
         .quality-item .num {
             font-weight: 500;
-            color: #aaaaaa;
-            min-width: 2rem;
+            color: #bbbbbb;
+            min-width: 2.2rem;
             font-size: 0.85rem;
-            padding-top: 0.05rem;
+            padding-top: 0.1rem;
         }
 
         .quality-item strong {
@@ -162,7 +170,7 @@
         }
 
         .format-block {
-            background-color: #f7f7f7;
+            background-color: #fafafa;
             padding: 1.8rem 2.5rem;
             border-radius: 12px;
             margin: 2rem 0;
@@ -177,10 +185,14 @@
             font-weight: 600;
         }
 
+        .format-block p:last-child {
+            margin-bottom: 0;
+        }
+
         .cta-block {
             text-align: center;
             padding: 3rem 0 1rem;
-            border-top: 1px solid #e8e8e8;
+            border-top: 1px solid #eaeaea;
             margin-top: 3rem;
         }
 
@@ -188,19 +200,20 @@
             display: inline-block;
             background-color: #1a1a1a;
             color: #ffffff;
-            padding: 0.9rem 2.8rem;
+            padding: 0.9rem 3rem;
             font-size: 1.05rem;
             font-weight: 500;
             text-decoration: none;
             border-radius: 40px;
             border: none;
             cursor: pointer;
-            transition: background-color 0.25s ease;
+            transition: background-color 0.25s ease, transform 0.1s ease;
             letter-spacing: -0.01em;
         }
 
         .btn:hover {
             background-color: #333333;
+            transform: scale(1.01);
         }
 
         .list-check {
@@ -222,8 +235,8 @@
 
         hr {
             border: none;
-            border-top: 1px solid #e8e8e8;
-            margin: 3rem 0;
+            border-top: 1px solid #eaeaea;
+            margin: 3.5rem 0;
         }
 
         .tag {
@@ -232,7 +245,7 @@
             font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 1.5px;
-            color: #999999;
+            color: #aaaaaa;
             margin-bottom: 0.3rem;
         }
 
@@ -251,6 +264,7 @@
         @media (min-width: 600px) {
             .qualities-grid {
                 grid-template-columns: 1fr 1fr;
+                gap: 0.2rem 2rem;
             }
         }
 
@@ -259,18 +273,24 @@
                 font-size: 2rem;
             }
             .subtitle {
-                font-size: 1.1rem;
+                font-size: 1rem;
             }
             .case-block .impact {
                 font-size: 1.1rem;
             }
             .container {
-                padding: 30px 0 60px;
+                padding: 40px 0 60px;
             }
             .doctrine-block,
             .case-block,
             .format-block {
                 padding: 1.5rem;
+            }
+            .btn {
+                padding: 0.8rem 2rem;
+                font-size: 0.95rem;
+                width: 100%;
+                text-align: center;
             }
         }
     </style>
@@ -286,8 +306,8 @@
         <!-- ===== DOCTRINA ===== -->
         <div class="doctrine-block">
             <span class="label">El marco</span>
-            <p style="font-weight: 400; margin-bottom: 0.5rem;">El problema no es la decisión. Es el escenario desde el que se decide.</p>
-            <p style="font-size: 0.95rem; color: #444444; margin-bottom: 0;">Una decisión técnicamente correcta tomada sin el marco adecuado produce exactamente el mismo resultado que una decisión equivocada. Juicio en el Caos entrena la capacidad de construir el escenario completo antes de que la decisión sea irreversible.</p>
+            <p>El problema no es la decisión. Es el escenario desde el que se decide.</p>
+            <p style="color: #444444; font-size: 0.95rem;">Una decisión técnicamente correcta tomada sin el marco adecuado produce exactamente el mismo resultado que una decisión equivocada. Juicio en el Caos entrena la capacidad de construir el escenario completo antes de que la decisión sea irreversible.</p>
         </div>
 
         <hr />
@@ -295,7 +315,7 @@
         <!-- ===== 7 CUALIDADES ===== -->
         <span class="tag">Alta demanda en el mercado</span>
         <h2 style="margin-top: 0.2rem;">Las 7 Cualidades del Juicio</h2>
-        <p style="font-weight: 300; color: #444444;">El mercado reconoce estas cualidades como críticas para el liderazgo y la toma de decisiones. Juicio en el Caos las desarrolla de forma integrada, no como habilidades aisladas.</p>
+        <p style="color: #444444;">El mercado reconoce estas cualidades como críticas para el liderazgo y la toma de decisiones. Juicio en el Caos las desarrolla de forma integrada, no como habilidades aisladas.</p>
 
         <div class="qualities-grid">
             <div class="quality-item">
@@ -345,7 +365,7 @@
         </div>
 
         <h3 style="margin-top: 2rem;">Vivir antes de explicar</h3>
-        <p style="font-weight: 300; color: #444444;">Juicio en el Caos no parte de contenidos teóricos. Parte de situaciones que el participante debe resolver. Solo después de resolverlas, el concepto se nombra. La transformación ocurre a través de la experiencia, no de la teoría.</p>
+        <p style="color: #444444;">Juicio en el Caos no parte de contenidos teóricos. Parte de situaciones que el participante debe resolver. Solo después de resolverlas, el concepto se nombra. La transformación ocurre a través de la experiencia, no de la teoría.</p>
 
         <hr />
 
@@ -354,9 +374,9 @@
         <h2 style="margin-top: 0.2rem;">Un caso real</h2>
 
         <div class="case-block">
-            <p style="font-weight: 300; margin-bottom: 0.8rem;">Un empresario descubrió que su socio le estaba extrayendo valor de forma sistemática. La decisión de investigar era correcta. El fraude era real. La investigación lo confirmó con evidencia suficiente para actuar.</p>
+            <p style="color: #333333;">Un empresario descubrió que su socio le estaba extrayendo valor de forma sistemática. La decisión de investigar era correcta. El fraude era real. La investigación lo confirmó con evidencia suficiente para actuar.</p>
             <p class="impact">Al siguiente lunes, la empresa que facturaba 200 millones al año ya no existía.</p>
-            <p style="font-weight: 300; margin-bottom: 0; color: #444444;">La investigación detonó una reacción en cadena que ninguno de los dos anticipó. El escenario completo había quedado fuera de la lectura. La decisión fue correcta. El marco desde el que se tomó era incompleto.</p>
+            <p style="color: #444444;">La investigación detonó una reacción en cadena que ninguno de los dos anticipó. El escenario completo había quedado fuera de la lectura. La decisión fue correcta. El marco desde el que se tomó era incompleto.</p>
         </div>
 
         <hr />
@@ -366,7 +386,7 @@
             <p style="font-size: 1.2rem; font-weight: 500; margin-bottom: 0.5rem;">El siguiente paso</p>
             <p style="font-weight: 300; color: #555555; margin-bottom: 2rem; max-width: 450px; margin-left: auto; margin-right: auto;">Una conversación de 30 minutos para determinar si su equipo es el grupo correcto para esta experiencia.</p>
             <a href="#" class="btn">Solicitar Admisión</a>
-            <p style="margin-top: 1.5rem; font-size: 0.8rem; color: #aaaaaa;">Sin compromiso · Cupo limitado</p>
+            <p style="margin-top: 1.5rem; font-size: 0.8rem; color: #bbbbbb;">Sin compromiso · Cupo limitado</p>
         </div>
 
     </div>
