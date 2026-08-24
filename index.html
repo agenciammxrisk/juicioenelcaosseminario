@@ -1,260 +1,302 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Juicio en el Caos — Construir  escenarios antes de decidir</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
-    <meta name="google-site-verification" content="f5de12ad35e4c978" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Juicio en el Caos</title>
+    <style>
+        /* ========== RESET Y BASE ========== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #ffffff;
+            color: #1a1a1a;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            padding: 0 20px;
+        }
+
+        .container {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 60px 0 80px;
+        }
+
+        /* ========== TIPOGRAFÍA ========== */
+        h1 {
+            font-size: 2.8rem;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            line-height: 1.1;
+            margin-bottom: 0.5rem;
+        }
+
+        .subtitle {
+            font-size: 1.4rem;
+            font-weight: 400;
+            color: #333333;
+            margin-bottom: 2.5rem;
+            line-height: 1.3;
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            font-weight: 600;
+            letter-spacing: -0.01em;
+            margin-top: 3rem;
+            margin-bottom: 1.2rem;
+            line-height: 1.2;
+        }
+
+        h3 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-top: 1.8rem;
+            margin-bottom: 0.6rem;
+        }
+
+        p {
+            font-size: 1.05rem;
+            color: #2a2a2a;
+            margin-bottom: 1.2rem;
+        }
+
+        .text-muted {
+            color: #555555;
+            font-size: 0.95rem;
+        }
+
+        /* ========== COMPONENTES ========== */
+        .case-block {
+            background-color: #f7f7f7;
+            border-left: 4px solid #1a1a1a;
+            padding: 1.8rem 2rem;
+            margin: 2rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .case-block .impact {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin: 0.8rem 0;
+        }
+
+        .qualities-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.2rem;
+            margin: 1.5rem 0 2rem;
+        }
+
+        .quality-item {
+            display: flex;
+            gap: 1rem;
+            align-items: flex-start;
+            padding: 0.8rem 0;
+            border-bottom: 1px solid #eeeeee;
+        }
+
+        .quality-item .num {
+            font-weight: 600;
+            color: #888888;
+            min-width: 2rem;
+            font-size: 0.95rem;
+        }
+
+        .quality-item strong {
+            display: block;
+            font-weight: 600;
+            font-size: 1rem;
+        }
+
+        .quality-item span {
+            font-size: 0.95rem;
+            color: #444444;
+        }
+
+        .format-block {
+            background-color: #f7f7f7;
+            padding: 1.8rem 2rem;
+            border-radius: 8px;
+            margin: 2rem 0;
+        }
+
+        .format-block p {
+            margin-bottom: 0.4rem;
+        }
+
+        .cta-block {
+            text-align: center;
+            padding: 2.5rem 0 1rem;
+            border-top: 1px solid #e0e0e0;
+            margin-top: 3rem;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: #1a1a1a;
+            color: #ffffff;
+            padding: 1rem 2.8rem;
+            font-size: 1.1rem;
+            font-weight: 500;
+            text-decoration: none;
+            border-radius: 40px;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+
+        .btn:hover {
+            background-color: #333333;
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            color: #1a1a1a;
+            border: 1px solid #1a1a1a;
+        }
+
+        .btn-outline:hover {
+            background-color: #1a1a1a;
+            color: #ffffff;
+        }
+
+        .list-check {
+            list-style: none;
+            padding: 0;
+            margin: 1rem 0 1.5rem;
+        }
+
+        .list-check li {
+            padding: 0.4rem 0 0.4rem 1.8rem;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="%231a1a1a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>') left center no-repeat;
+            background-size: 1.2rem;
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid #e0e0e0;
+            margin: 2.5rem 0;
+        }
+
+        /* ========== RESPONSIVE ========== */
+        @media (min-width: 600px) {
+            .qualities-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 2rem;
+            }
+            .subtitle {
+                font-size: 1.1rem;
+            }
+            .case-block .impact {
+                font-size: 1.1rem;
+            }
+            .container {
+                padding: 30px 0 60px;
+            }
+        }
+    </style>
 </head>
 <body>
-    <nav class="navbar">
-        <div class="container">
-            <a href="index.html" class="logo">Juicio en el Caos</a>
-            <ul class="nav-menu">
-                <li><a href="index.html#inicio">Inicio</a></li>
-                <li><a href="index.html#fenomeno">El Fenómeno</a></li>
-                <li><a href="arquitectura.html">Seminario</a></li>
-                <li><a href="libro.html">Libro</a></li>
-                <li><a href="simulador.html">Simulador</a></li>
-                <li><a href="index.html#contacto">Contacto</a></li>
-            </ul>
+
+    <div class="container">
+
+        <!-- ===== HERO ===== -->
+        <h1>Juicio en el Caos</h1>
+        <p class="subtitle">La diferencia entre una empresa que llega a 100 millones y una que se detiene ahí está en cuántas decisiones importantes siguen dependiendo de una sola persona.</p>
+
+        <!-- ===== CASO REAL ===== -->
+        <div class="case-block">
+            <p style="font-weight: 500; margin-bottom: 0.4rem;">Un caso real</p>
+            <p>Un empresario descubrió que su socio le estaba extrayendo valor de forma sistemática. La decisión de investigar era correcta. El fraude era real. La investigación lo confirmó con evidencia suficiente para actuar.</p>
+            <p class="impact">Al siguiente lunes, la empresa que facturaba 200 millones al año ya no existía.</p>
+            <p style="margin-bottom: 0;">La investigación detonó una reacción en cadena que ninguno de los dos anticipó. El escenario completo había quedado fuera de la lectura.</p>
         </div>
-    </nav>
 
-    <!-- HERO -->
-    <section class="hero" id="inicio">
-        <div class="container">
-            <h1>Una capacidad organizacional que la mayoría de las empresas no sabe que necesita</h1>
-            <p class="hero-subtitle"><strong>Construir escenarios antes de decidir.</strong></p>
-            <p style="max-width: 750px; margin: 1.5rem auto;">
-                Cuando una organización desarrolla esta capacidad, sus principales decisores dejan de interpretar la realidad desde perspectivas aisladas y comienzan a construir una comprensión común antes de actuar.
-            </p>
-            <p style="max-width: 750px; margin: 0 auto 2rem auto;">
-                Es una capacidad que incrementa el rendimiento de la información, la experiencia, el talento y los procesos que la empresa ya posee.
-            </p>
-            <a href="arquitectura.html" class="btn btn-primary">Conocer el seminario</a>
+        <!-- ===== EL PROBLEMA ===== -->
+        <h2>El problema</h2>
+        <p>Hay situaciones que se vuelven cotidianas cuando una persona ocupa una posición en la que sus decisiones tienen consecuencias directas:</p>
+        <ul class="list-check">
+            <li>Reuniones que consumen tiempo sin llegar a una resolución definitiva.</li>
+            <li>Decisiones que parecían correctas hasta que aparece una variable que nadie consideró.</li>
+            <li>Interpretaciones radicalmente distintas sobre un mismo problema dentro del mismo equipo directivo.</li>
+            <li>Explicaciones que se construyen después de conocer el resultado.</li>
+            <li>Experiencia acumulada durante años que resulta difícil de transferir cuando el escenario cambia.</li>
+        </ul>
+        <p class="text-muted">El costo real no siempre es un error evidente. A veces es una decisión que llegó demasiado tarde, una oportunidad no reconocida, o una posibilidad descartada antes de ser comprendida.</p>
+
+        <hr />
+
+        <!-- ===== 7 CUALIDADES ===== -->
+        <h2>Lo que desarrolla: Las 7 Cualidades del Juicio</h2>
+        <p style="margin-bottom: 1.5rem;">Juicio en el Caos no busca enseñar qué decisión tomar. Busca desarrollar la arquitectura de criterio necesaria para construir y cuestionar el escenario desde el cual se decide.</p>
+
+        <div class="qualities-grid">
+            <div class="quality-item"><div class="num">1</div><div><strong>Tolerancia a la ambigüedad</strong><span>Mantenerse productivo y claro frente a información contradictoria.</span></div></div>
+            <div class="quality-item"><div class="num">2</div><div><strong>Decisión con información incompleta</strong><span>Tomar determinaciones firmes sin certeza absoluta.</span></div></div>
+            <div class="quality-item"><div class="num">3</div><div><strong>Claridad estratégica bajo presión</strong><span>Crear foco cuando el entorno genera confusión.</span></div></div>
+            <div class="quality-item"><div class="num">4</div><div><strong>Autorregulación operativa</strong><span>Gestionar el estrés antes de que interfiera en el juicio.</span></div></div>
+            <div class="quality-item"><div class="num">5</div><div><strong>Construcción de escenarios compartidos</strong><span>Coordinar criterio entre múltiples decisores.</span></div></div>
+            <div class="quality-item"><div class="num">6</div><div><strong>Justificación de decisiones (MDT)</strong><span>Explicar la lógica del juicio sin burocracia.</span></div></div>
+            <div class="quality-item"><div class="num">7</div><div><strong>Soledad del criterio</strong><span>Asumir la responsabilidad final, sin delegarla.</span></div></div>
         </div>
-    </section>
 
-    <!-- EL FENÓMENO  -->
-    <section id="fenomeno" class="section about-section">
-        <div class="container">
-            <div class="section-meta">
-                <span class="section-num">01</span>
-                <div class="section-rule"></div>
-                <span class="section-tag">Diagnóstico</span>
-            </div>
-            <h2>EL FENÓMENO</h2>
-            <p>La mayoría de las organizaciones no identifica este problema porque nunca aprendió a observarlo. Algunas señales aparecen mucho antes de que exista una crisis:</p>
-            <div class="about-features" style="margin-top: 2rem;">
-                <div class="learning-items">
-                    <div class="feature-card">
-                        <p>Las reuniones que antes terminaban en decisiones ahora terminan en nuevas reuniones.</p>
-                    </div>
-                    <div class="feature-card">
-                        <p>Dos directores observan el mismo problema y llegan a conclusiones completamente distintas.</p>
-                    </div>
-                    <div class="feature-card">
-                        <p>La información aumenta sin que aumente la claridad.</p>
-                    </div>
-                    <div class="feature-card">
-                        <p>Las decisiones estratégicas regresan constantemente al Director General.</p>
-                    </div>
-                    <div class="feature-card">
-                        <p>Las oportunidades aparecen cuando ya son evidentes para todos.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="about-insight" style="margin-top: 2rem;">
-                <p><em>Ninguna de estas situaciones suele interpretarse como parte del mismo fenómeno. Sin embargo, todas tienen un origen común.</em></p>
-            </div>
+        <hr />
+
+        <!-- ===== APORTE A LA ORGANIZACIÓN ===== -->
+        <h2>Lo que aporta a una organización</h2>
+        <p>Cuando estas cualidades se consolidan en el equipo directivo, se convierten en una capacidad organizacional:</p>
+        <ul class="list-check">
+            <li><strong>Capacidad estratégica</strong> — Distinguir entre acontecimientos, escenarios y sistemas antes de comprometer recursos.</li>
+            <li><strong>Gobernanza</strong> — Decisiones con una lógica clara, consistente y defendible.</li>
+            <li><strong>Continuidad del liderazgo</strong> — Sostener decisiones de alta consecuencia sin depender de una sola persona.</li>
+            <li><strong>Generación de valor</strong> — Reconocer oportunidades y anticipar cambios.</li>
+            <li><strong>Continuidad del criterio</strong> — Convertir la experiencia en una capacidad transferible para la sucesión.</li>
+        </ul>
+
+        <!-- ===== DOBLE CONSECUENCIA ===== -->
+        <h3>Una doble consecuencia</h3>
+        <ul class="list-check">
+            <li><strong>Proteger valor</strong> — Reducir el costo de decisiones tardías y puntos ciegos.</li>
+            <li><strong>Capturar valor</strong> — Reconocer oportunidades antes de que sean evidentes para el mercado.</li>
+        </ul>
+
+        <hr />
+
+        <!-- ===== FORMATO ===== -->
+        <h2>El formato</h2>
+        <div class="format-block">
+            <p><strong>Viernes 6:00 pm — Domingo 5:00 pm</strong></p>
+            <p><strong>Máximo 12 participantes</strong></p>
+            <p><strong>Sin celulares</strong></p>
+            <p style="margin-top: 1rem; font-size: 0.95rem; color: #555;">El criterio no se desarrolla en condiciones cómodas. Se desarrolla bajo presión real, con información incompleta y consecuencias visibles.</p>
         </div>
-    </section>
 
-    <!-- EL ORIGEN -->
-    <section id="origen" class="section">
-        <div class="container">
-            <div class="section-meta">
-                <span class="section-num">02</span>
-                <div class="section-rule"></div>
-                <span class="section-tag">Análisis</span>
-            </div>
-            <h2>EL ORIGEN</h2>
-            <p style="font-size: 1.25rem; font-weight: 600; margin-bottom: 1.5rem;">
-                Cada directivo está interpretando una realidad distinta. No por falta de experiencia. No por falta de capacidad.
-            </p>
-            <p>Cada uno observa la organización desde la lógica de su función:</p>
-            <div class="learning-items" style="margin: 2rem 0;">
-                <div class="learning-item">
-                    <h4>Operaciones</h4>
-                    <p>Observa una realidad.</p>
-                </div>
-                <div class="learning-item">
-                    <h4>Finanzas</h4>
-                    <p>Observa otra.</p>
-                </div>
-                <div class="learning-item">
-                    <h4>Comercial</h4>
-                    <p>Observa otra.</p>
-                </div>
-                <div class="learning-item">
-                    <h4>Jurídico</h4>
-                    <p>Observa otra.</p>
-                </div>
-            </div>
-            <p style="font-size: 1.1rem; font-style: italic;">Todas son reales. Pero la organización necesita una realidad compartida antes de decidir.</p>
+        <!-- ===== PRINCIPIO METODOLÓGICO ===== -->
+        <h3>Vivir antes de explicar</h3>
+        <p>Juicio en el Caos no parte de contenidos teóricos. Parte de situaciones que el participante debe resolver. Solo después de resolverlas, el concepto se nombra. La transformación ocurre a través de la experiencia, no de la teoría.</p>
+
+        <hr />
+
+        <!-- ===== CIERRE Y CTA ===== -->
+        <div class="cta-block">
+            <p style="font-size: 1.2rem; font-weight: 500; margin-bottom: 0.8rem;">El siguiente paso</p>
+            <p style="margin-bottom: 1.8rem; max-width: 500px; margin-left: auto; margin-right: auto;">Una conversación de 30 minutos para determinar si su equipo es el grupo correcto para esta experiencia.</p>
+            <a href="#" class="btn">Solicitar Admisión</a>
+            <p style="margin-top: 1.5rem; font-size: 0.85rem; color: #888;">Sin compromiso · Cupo limitado</p>
         </div>
-    </section>
 
-    <!-- LA CAPACIDAD -->
-    <section id="capacidad" class="section about-section">
-        <div class="container">
-            <div class="section-meta">
-                <span class="section-num">03</span>
-                <div class="section-rule"></div>
-                <span class="section-tag">Solución</span>
-            </div>
-            <h2>LA CAPACIDAD</h2>
-            <p><strong>Juicio en el Caos desarrolla esa capacidad.</strong> Durante dos días los participantes desarrollan una arquitectura común para:</p>
-            <ul style="margin: 1.5rem 0; padding-left: 1.5rem; line-height: 2;">
-                <li>Construir escenarios.</li>
-                <li>Interpretar situaciones complejas.</li>
-                <li>Coordinar criterio.</li>
-                <li>Justificar decisiones.</li>
-                <li>Actuar bajo incertidumbre.</li>
-            </ul>
-            <p>El resultado no es que todos piensen igual. El resultado es que todos comienzan a construir el mismo escenario antes de defender posiciones.</p>
-        </div>
-    </section>
+    </div>
 
-    <!-- LO QUE INCORPORA LA ORGANIZACIÓN -->
-    <section id="incorporacion" class="section">
-        <div class="container">
-            <div class="section-meta">
-                <span class="section-num">04</span>
-                <div class="section-rule"></div>
-                <span class="section-tag">Impacto</span>
-            </div>
-            <h2>LO QUE INCORPORA LA ORGANIZACIÓN</h2>
-            <p>Después del seminario la organización incorpora una nueva capacidad estratégica:</p>
-            <ul style="list-style: none; padding: 0; margin-top: 1.5rem;">
-                <li style="margin-bottom: 0.8rem;">✔ Mayor capacidad para interpretar cambios antes que otros.</li>
-                <li style="margin-bottom: 0.8rem;">✔ Mayor capacidad para descubrir oportunidades antes de que sean evidentes.</li>
-                <li style="margin-bottom: 0.8rem;">✔ Mayor velocidad para construir decisiones compartidas.</li>
-                <li style="margin-bottom: 0.8rem;">✔ Mayor precisión para asignar tiempo, talento y capital.</li>
-                <li style="margin-bottom: 0.8rem;">✔ Mayor continuidad del criterio entre los principales decisores.</li>
-                <li style="margin-bottom: 0.8rem;">✔ Mayor capacidad para sostener decisiones de alta consecuencia.</li>
-                <li style="margin-bottom: 0.8rem;">✔ Un lenguaje común para discutir escenarios complejos.</li>
-                <li style="margin-bottom: 0.8rem;">✔ Una arquitectura de decisión que permanece en la organización.</li>
-            </ul>
-        </div>
-    </section>
-
-    <!-- LO QUE COMIENZA A OBSERVARSE -->
-    <section id="observaciones" class="section about-section">
-        <div class="container">
-            <div class="section-meta">
-                <span class="section-num">05</span>
-                <div class="section-rule"></div>
-                <span class="section-tag">Resultados</span>
-            </div>
-            <h2>LO QUE COMIENZA A OBSERVARSE</h2>
-            <p style="margin-bottom: 1.5rem;">Los cambios aparecen rápidamente:</p>
-            <div class="about-features">
-                <div class="learning-items">
-                    <div class="feature-card"><p>Las reuniones recuperan su capacidad para terminar en decisiones.</p></div>
-                    <div class="feature-card"><p>Los desacuerdos generan comprensión antes que confrontación.</p></div>
-                    <div class="feature-card"><p>Los recursos comienzan a concentrarse donde generan mayor valor.</p></div>
-                    <div class="feature-card"><p>Las oportunidades aparecen antes.</p></div>
-                    <div class="feature-card"><p>Las amenazas dejan de sorprender.</p></div>
-                    <div class="feature-card"><p>La organización desarrolla una lectura estratégica compartida.</p></div>
-                    <div class="feature-card"><p>El criterio deja de depender exclusivamente del Director General.</p></div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- EL SEMINARIO -->
-    <section id="seminario" class="section">
-        <div class="container">
-            <div class="section-meta">
-                <span class="section-num">06</span>
-                <div class="section-rule"></div>
-                <span class="section-tag">Programa</span>
-            </div>
-            <h2>EL SEMINARIO</h2>
-            <h3>Juicio en el Caos</h3>
-            <p style="margin-bottom: 1.5rem;">Una inmersión ejecutiva para desarrollar la capacidad organizacional de construir escenarios antes de decidir.</p>
-            <p><strong>Dirigido a:</strong></p>
-            <ul style="margin-top: 0.5rem; line-height: 1.8;">
-                <li>Consejos de Administración.</li>
-                <li>Directores Generales.</li>
-                <li>Empresas familiares.</li>
-                <li>Equipos directivos.</li>
-                <li>Organizaciones en procesos de crecimiento.</li>
-            </ul>
-        </div>
-    </section>
-
-    <!-- EL LIBRO Y SIMULADOR -->
-    <section id="recursos" class="section about-section">
-        <div class="container">
-            <div class="about-features">
-                <div class="learning-items">
-                    <!-- LIBRO -->
-                    <div class="feature-card">
-                        <h3>EL LIBRO</h3>
-                        <p>El seminario se encuentra respaldado por la obra:</p>
-                        <h4 style="margin: 0.5rem 0;">Juicio en el Caos</h4>
-                        <p style="font-size: 0.9rem; margin-bottom: 1.5rem;">Una investigación sobre juicio operativo, decisiones bajo incertidumbre y Trazabilidad Mínima Defendible.</p>
-                        <a href="libro.html" class="btn btn-primary">Conocer la obra</a>
-                    </div>
-                    <!-- SIMULADOR -->
-                    <div class="feature-card">
-                        <h3>SIMULADOR</h3>
-                        <p>Descubra cómo interpreta escenarios su organización.</p>
-                        <p style="font-size: 0.9rem; margin-bottom: 1.5rem;">Experimente un ejercicio diseñado para observar cómo se construyen las decisiones antes de conocer el resultado.</p>
-                        <a href="simulador.html" class="btn btn-primary">Iniciar simulador</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CIERRE / CONTACTO -->
-    <section id="contacto" class="section contact">
-        <div class="container">
-            <div class="section-meta">
-                <span class="section-num">07</span>
-                <div class="section-rule"></div>
-                <span class="section-tag">Cierre</span>
-            </div>
-            <p style="font-size: 1.1rem; line-height: 1.6;">
-                Las organizaciones desarrollan capacidades para producir. Desarrollan capacidades para vender. Desarrollan capacidades para controlar.
-            </p>
-            <p style="font-size: 1.1rem; line-height: 1.6; margin: 1rem 0;">
-                Muy pocas desarrollan deliberadamente la capacidad desde la cual interpretan la realidad antes de decidir. Cuando esa capacidad aparece, cambia la forma en que todas las demás producen valor.
-            </p>
-            <h2 style="margin-top: 2rem;">Juicio en el Caos</h2>
-            <p style="font-size: 1.2rem; font-weight: 600; margin-bottom: 2rem;">Construir escenarios antes de decidir.</p>
-            <form action="https://formspree.io/f/xqerabgq" method="POST" class="contact-form">
-                <input type="text" name="name" placeholder="Tu nombre" required>
-                <input type="email" name="email" placeholder="Tu correo corporativo" required>
-                <textarea name="message" placeholder="¿Cuál es el principal dilema de incertidumbre que enfrenta actualmente su organización?" rows="5" required></textarea>
-                <button type="submit" class="btn btn-primary">Solicitar información</button>
-            </form>
-        </div>
-    </section>
-
-    <footer>
-        <p>&copy; 2026 Juicio en el Caos. Todos los derechos reservados.</p>
-        <p>Seminario Privado de Decisión Bajo Incertidumbre para Fundadores</p>
-    </footer>
-
-    <script src="js/script.js"></script>
 </body>
 </html>
