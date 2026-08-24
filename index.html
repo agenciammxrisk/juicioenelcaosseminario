@@ -6,373 +6,187 @@
     <title>Juicio en el Caos · Arquitectura de Decisión</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
     <style>
-        /* ===== RESET Y BASE ===== */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+        /* Global reset */
+        *{box-sizing:border-box;margin:0;padding:0}
+        html,body{height:100%}
+        body{
+            font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+            background: #f6f6f5;
+            color:#111217;
+            -webkit-font-smoothing:antialiased;
+            -moz-osx-font-smoothing:grayscale;
+            line-height:1.6;
+            padding:24px;
         }
 
-        body {
-            background-color: #0d0d0d;
-            color: #e8e8e8;
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            font-weight: 300;
-            line-height: 1.7;
-            padding: 0 20px;
-            -webkit-font-smoothing: antialiased;
+        /* Layout */
+        .wrap{
+            max-width:900px;
+            margin:32px auto;
+            padding:48px 56px;
+            background:linear-gradient(180deg,#ffffff 0%, #fbfbfb 100%);
+            border-radius:14px;
+            box-shadow: 0 10px 30px rgba(16,18,20,0.06);
+            border:1px solid rgba(17,18,23,0.04);
         }
 
-        .container {
-            max-width: 680px;
-            margin: 0 auto;
-            padding: 80px 0 100px;
+        header{margin-bottom:28px}
+        .kicker{font-size:0.8rem;color:#8b8b8b;letter-spacing:1.6px;text-transform:uppercase;margin-bottom:8px}
+        h1{
+            font-family:'Playfair Display', serif;
+            font-weight:700;
+            font-size:2.6rem;
+            color:#0b0b0b;
+            line-height:1.05;
+            margin-bottom:8px;
+        }
+        .subtitle{
+            color:#6f6f6f;
+            font-size:1.05rem;
+            max-width:72ch;
         }
 
-        /* ===== TIPOGRAFÍA ===== */
-        h1 {
-            font-size: 3.2rem;
-            font-weight: 500;
-            letter-spacing: -0.03em;
-            line-height: 1.1;
-            margin-bottom: 0.5rem;
-            color: #ffffff;
+        hr.sep{border:none;border-top:1px solid rgba(16,18,20,0.06);margin:36px 0}
+
+        /* Sections as cards */
+        .card{
+            background:transparent;
+            padding:0;
+            margin:20px 0;
+        }
+        .panel{
+            background:#ffffff;
+            border-radius:10px;
+            padding:22px 24px;
+            box-shadow:0 6px 18px rgba(16,18,20,0.04);
+            border:1px solid rgba(16,18,20,0.03);
         }
 
-        .subtitle {
-            font-size: 1.4rem;
-            font-weight: 300;
-            color: #aaaaaa;
-            margin-bottom: 3rem;
-            line-height: 1.4;
+        .tag{display:inline-block;padding:6px 10px;border-radius:999px;font-size:0.72rem;color:#9b9b9b;background:rgba(16,18,20,0.03);text-transform:uppercase;letter-spacing:1.6px}
+
+        h2{font-size:1.4rem;margin:8px 0 12px;color:#0b0b0b}
+        h3{font-size:1rem;margin:10px 0;color:#111}
+        p{color:#444; font-size:1rem;margin-bottom:12px}
+        .muted{color:#7a7a7a}
+
+        /* Qualities grid */
+        .qualities-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:14px}
+        .quality{
+            background:linear-gradient(180deg, rgba(250,250,250,0.9), #ffffff);
+            padding:14px;border-radius:8px;border:1px solid rgba(15,15,15,0.03);
+            display:flex;gap:12px;align-items:flex-start
+        }
+        .num{font-weight:600;color:#bdbdbd;font-size:0.85rem;min-width:36px}
+        .quality strong{display:block;color:#0b0b0b;font-weight:600}
+        .quality span{display:block;color:#6b6b6b;font-weight:300;margin-top:4px}
+
+        /* Format block */
+        .format-list{display:flex;gap:18px;flex-wrap:wrap;margin-top:12px}
+        .format-item{background:#fff;padding:10px 14px;border-radius:8px;border:1px dashed rgba(100,100,100,0.06);font-size:0.95rem;color:#444}
+
+        /* Case block */
+        .case-block{margin-top:12px}
+        .impact{font-family:'Playfair Display',serif;font-size:1.5rem;color:#111;margin:10px 0}
+
+        /* CTA */
+        .cta{display:flex;flex-direction:column;align-items:center;gap:12px;padding-top:20px}
+        .btn{
+            display:inline-block;background:#ef9f48;color:#fff;padding:12px 28px;border-radius:999px;text-decoration:none;font-weight:600;box-shadow:0 8px 20px rgba(239,159,72,0.16);border:none;cursor:pointer
+        }
+        .btn.secondary{background:transparent;color:#ef9f48;border:1px solid rgba(239,159,72,0.18)}
+        .note{font-size:0.85rem;color:#8d8d8d}
+
+        /* Synthesis */
+        .synthesis{margin-top:18px}
+        .big{font-family:'Playfair Display',serif;font-size:1.6rem;color:#0b0b0b;margin-bottom:8px}
+
+        /* Responsive */
+        @media(max-width:800px){
+            .wrap{padding:28px}
+            .qualities-grid{grid-template-columns:1fr}
+            h1{font-size:1.9rem}
+            .impact{font-size:1.15rem}
         }
 
-        h2 {
-            font-size: 1.8rem;
-            font-weight: 400;
-            letter-spacing: -0.01em;
-            margin-top: 3.5rem;
-            margin-bottom: 1rem;
-            line-height: 1.2;
-            color: #ffffff;
-        }
-
-        h3 {
-            font-size: 1.2rem;
-            font-weight: 400;
-            margin-top: 2rem;
-            margin-bottom: 0.5rem;
-            color: #ffffff;
-        }
-
-        p {
-            font-size: 1.05rem;
-            color: #cccccc;
-            margin-bottom: 1.2rem;
-            font-weight: 300;
-        }
-
-        .text-muted {
-            color: #888888;
-            font-size: 0.95rem;
-        }
-
-        .text-small {
-            font-size: 0.85rem;
-            color: #666666;
-        }
-
-        /* ===== COMPONENTES ===== */
-        .doctrine-block {
-            background-color: #1a1a1a;
-            padding: 2rem 2.5rem;
-            border-radius: 12px;
-            margin: 2rem 0 2.5rem;
-            border-left: 3px solid #ffffff;
-        }
-
-        .doctrine-block .label {
-            font-weight: 400;
-            font-size: 0.7rem;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            color: #666666;
-            margin-bottom: 0.5rem;
-            display: block;
-        }
-
-        .doctrine-block p {
-            color: #cccccc;
-        }
-
-        .doctrine-block p:last-child {
-            margin-bottom: 0;
-        }
-
-        .case-block {
-            background-color: #1a1a1a;
-            padding: 2rem 2.5rem;
-            border-radius: 12px;
-            margin: 2.5rem 0;
-            border-left: 3px solid #ffffff;
-        }
-
-        .case-block .impact {
-            font-size: 1.5rem;
-            font-weight: 400;
-            color: #ffffff;
-            margin: 0.8rem 0;
-            letter-spacing: -0.01em;
-        }
-
-        .case-block p {
-            color: #cccccc;
-        }
-
-        .case-block p:last-child {
-            margin-bottom: 0;
-        }
-
-        .qualities-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 0.2rem;
-            margin: 2rem 0 2.5rem;
-        }
-
-        .quality-item {
-            display: flex;
-            gap: 1.25rem;
-            align-items: flex-start;
-            padding: 0.9rem 0;
-            border-bottom: 1px solid #2a2a2a;
-        }
-
-        .quality-item:last-child {
-            border-bottom: none;
-        }
-
-        .quality-item .num {
-            font-weight: 400;
-            color: #444444;
-            min-width: 2.2rem;
-            font-size: 0.85rem;
-            padding-top: 0.1rem;
-        }
-
-        .quality-item strong {
-            display: block;
-            font-weight: 400;
-            font-size: 1rem;
-            margin-bottom: 0.05rem;
-            color: #ffffff;
-        }
-
-        .quality-item span {
-            font-size: 0.95rem;
-            color: #888888;
-            font-weight: 300;
-        }
-
-        .format-block {
-            background-color: #1a1a1a;
-            padding: 1.8rem 2.5rem;
-            border-radius: 12px;
-            margin: 2rem 0;
-        }
-
-        .format-block p {
-            margin-bottom: 0.4rem;
-            font-weight: 300;
-            color: #cccccc;
-        }
-
-        .format-block strong {
-            font-weight: 400;
-            color: #ffffff;
-        }
-
-        .format-block p:last-child {
-            margin-bottom: 0;
-        }
-
-        .cta-block {
-            text-align: center;
-            padding: 3rem 0 1rem;
-            border-top: 1px solid #2a2a2a;
-            margin-top: 3rem;
-        }
-
-        .btn {
-            display: inline-block;
-            background-color: #ffffff;
-            color: #0d0d0d;
-            padding: 0.9rem 3rem;
-            font-size: 1rem;
-            font-weight: 400;
-            text-decoration: none;
-            border-radius: 40px;
-            border: none;
-            cursor: pointer;
-            transition: background-color 0.3s ease, transform 0.1s ease;
-            letter-spacing: 0.5px;
-        }
-
-        .btn:hover {
-            background-color: #cccccc;
-            transform: scale(1.01);
-        }
-
-        hr {
-            border: none;
-            border-top: 1px solid #2a2a2a;
-            margin: 3.5rem 0;
-        }
-
-        .tag {
-            display: inline-block;
-            font-size: 0.7rem;
-            font-weight: 400;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            color: #666666;
-            margin-bottom: 0.3rem;
-        }
-
-        /* ===== SÍNTESIS DE CIERRE ===== */
-        .synthesis-block {
-            padding: 2rem 0 1.5rem;
-            margin-top: 2.5rem;
-        }
-
-        .synthesis-block .big-statement {
-            font-size: 2rem;
-            font-weight: 400;
-            letter-spacing: -0.02em;
-            line-height: 1.2;
-            margin-bottom: 1rem;
-            color: #ffffff;
-        }
-
-        .synthesis-block p {
-            color: #aaaaaa;
-            font-size: 1.05rem;
-        }
-
-        /* ===== RESPONSIVE ===== */
-        @media (min-width: 600px) {
-            .qualities-grid {
-                grid-template-columns: 1fr 1fr;
-                gap: 0.2rem 2rem;
-            }
-        }
-
-        @media (max-width: 480px) {
-            h1 {
-                font-size: 2.2rem;
-            }
-            .subtitle {
-                font-size: 1.1rem;
-            }
-            .case-block .impact {
-                font-size: 1.1rem;
-            }
-            .synthesis-block .big-statement {
-                font-size: 1.4rem;
-            }
-            .container {
-                padding: 40px 0 60px;
-            }
-            .doctrine-block,
-            .case-block,
-            .format-block {
-                padding: 1.5rem;
-            }
-            .btn {
-                padding: 0.8rem 2rem;
-                font-size: 0.95rem;
-                width: 100%;
-                text-align: center;
-            }
-        }
     </style>
 </head>
 <body>
+    <div class="wrap">
+        <header>
+            <div class="kicker">Intervención · Arquitectura de Decisión</div>
+            <h1>Juicio en el Caos</h1>
+            <p class="subtitle">Intervención diseñada para desarrollar el criterio y potenciar las 7 cualidades más valoradas en el liderazgo ejecutivo.</p>
+        </header>
 
-    <div class="container">
+        <hr class="sep" />
 
-        <!-- ===== 1. HERO ===== -->
-        <h1>Juicio en el Caos</h1>
-        <p class="subtitle">Intervención diseñada para desarrollar el criterio y potenciar las 7 cualidades más valoradas en el liderazgo ejecutivo.</p>
+        <section class="card">
+            <div class="panel">
+                <span class="tag">Alta demanda en el mercado</span>
+                <h2 style="margin-top:8px">Las 7 cualidades más valoradas en los niveles directivos</h2>
+                <p class="muted">El mercado reconoce estas cualidades como críticas para el liderazgo y la toma de decisiones. Sin embargo, no existen programas que las desarrollen de forma conjunta, vivencial y aplicada en contextos reales.</p>
 
-        <hr />
+                <div class="qualities-grid">
+                    <div class="quality"><div class="num">01</div><div><strong>Tolerancia a la ambigüedad</strong><span>Mantenerse productivo frente a información contradictoria.</span></div></div>
+                    <div class="quality"><div class="num">02</div><div><strong>Decisión con información incompleta</strong><span>Tomar determinaciones firmes sin certeza absoluta.</span></div></div>
+                    <div class="quality"><div class="num">03</div><div><strong>Claridad estratégica bajo presión</strong><span>Crear foco cuando el entorno genera confusión.</span></div></div>
+                    <div class="quality"><div class="num">04</div><div><strong>Autorregulación operativa</strong><span>Gestionar el estrés antes de que interfiera en el juicio.</span></div></div>
+                    <div class="quality"><div class="num">05</div><div><strong>Construcción de escenarios compartidos</strong><span>Coordinar criterio entre múltiples decisores.</span></div></div>
+                    <div class="quality"><div class="num">06</div><div><strong>Justificación de decisiones (MDT)</strong><span>Explicar la lógica del juicio sin burocracia.</span></div></div>
+                    <div class="quality"><div class="num">07</div><div><strong>Soledad del criterio</strong><span>Asumir la responsabilidad final, sin delegarla.</span></div></div>
+                </div>
+            </div>
+        </section>
 
-        <!-- ===== 2. DIAGNÓSTICO ===== -->
-        <span class="tag">Alta demanda en el mercado</span>
-        <h2 style="margin-top: 0.2rem;">Las 7 cualidades más valoradas en los niveles directivos</h2>
-        <p style="color: #aaaaaa;">El mercado reconoce estas cualidades como críticas para el liderazgo y la toma de decisiones. Sin embargo, no existen programas que las desarrollen de forma conjunta, vivencial y acelerada.</p>
+        <hr class="sep" />
 
-        <div class="qualities-grid">
-            <div class="quality-item"><div class="num">01</div><div><strong>Tolerancia a la ambigüedad</strong><span>Mantenerse productivo frente a información contradictoria.</span></div></div>
-            <div class="quality-item"><div class="num">02</div><div><strong>Decisión con información incompleta</strong><span>Tomar determinaciones firmes sin certeza absoluta.</span></div></div>
-            <div class="quality-item"><div class="num">03</div><div><strong>Claridad estratégica bajo presión</strong><span>Crear foco cuando el entorno genera confusión.</span></div></div>
-            <div class="quality-item"><div class="num">04</div><div><strong>Autorregulación operativa</strong><span>Gestionar el estrés antes de que interfiera en el juicio.</span></div></div>
-            <div class="quality-item"><div class="num">05</div><div><strong>Construcción de escenarios compartidos</strong><span>Coordinar criterio entre múltiples decisores.</span></div></div>
-            <div class="quality-item"><div class="num">06</div><div><strong>Justificación de decisiones (MDT)</strong><span>Explicar la lógica del juicio sin burocracia.</span></div></div>
-            <div class="quality-item"><div class="num">07</div><div><strong>Soledad del criterio</strong><span>Asumir la responsabilidad final, sin delegarla.</span></div></div>
-        </div>
+        <section class="card">
+            <div class="panel">
+                <h2>La brecha y la solución</h2>
+                <p style="font-size:1.02rem;color:#222;">Actualmente no existe un programa que desarrolle estas 7 habilidades de forma conjunta, vivencial y aplicada. Los enfoques tradicionales las trabajan por separado o con metodologías que no generan transferencia al entorno real.</p>
 
-        <hr />
+                <h3 style="margin-top:12px">Formato</h3>
+                <div class="format-list">
+                    <div class="format-item"><strong>Viernes</strong> 18:00</div>
+                    <div class="format-item"><strong>Domingo</strong> 17:00</div>
+                    <div class="format-item"><strong>Cupo</strong> Máximo 12 participantes</div>
+                    <div class="format-item"><strong>Condición</strong> Sin celulares</div>
+                </div>
 
-        <!-- ===== 3. BRECHA Y SOLUCIÓN ===== -->
-        <div class="doctrine-block">
-            <span class="label" style="color: #666666;">La brecha</span>
-            <p style="font-size: 1.1rem; font-weight: 400; color: #ffffff; margin-bottom: 0.5rem;">Actualmente no existe un programa que desarrolle estas 7 habilidades de forma conjunta, vivencial y acelerada.</p>
-            <p style="color: #888888; font-size: 0.95rem;">Los programas de liderazgo tradicionales las abordan de manera aislada, con enfoques teóricos o experiencias que no logran integrarlas. El resultado es que los directivos desarrollan competencias sueltas, pero no un criterio de decisión coherente y sostenible bajo presión.</p>
-        </div>
+            </div>
+        </section>
 
-        <h2 style="margin-top: 2.5rem;">Juicio en el Caos desarrolla, en el transcurso de un fin de semana, 12 transformaciones diseñadas para potenciar estas 7 habilidades</h2>
-        <p style="color: #aaaaaa;">No es un curso teórico. Es una experiencia de inmersión total que expone al participante a escenarios de presión real, con información incompleta y consecuencias visibles. Cada transformación está diseñada para ejercitar una o varias de las 7 cualidades, de forma integrada y progresiva.</p>
+        <hr class="sep" />
 
-        <div class="format-block">
-            <p><strong>Formato:</strong> Viernes 6:00 pm — Domingo 5:00 pm</p>
-            <p><strong>Cupo:</strong> Máximo 12 participantes</p>
-            <p><strong>Condición:</strong> Sin celulares</p>
-            <p style="margin-top: 1rem; font-size: 0.95rem; color: #888888; font-weight: 300;">El criterio no se desarrolla en condiciones cómodas. Se desarrolla bajo presión real, con información incompleta y consecuencias visibles.</p>
-        </div>
+        <section class="card case-block">
+            <div class="panel">
+                <span class="tag">Evidencia</span>
+                <h2 style="margin-top:8px">Un caso real</h2>
+                <p class="muted">Un empresario descubrió que su socio le estaba extrayendo valor de forma sistemática. La decisión de investigar era correcta. El fraude era real. La investigación obligó a decisiones rápidas en un entorno con información parcial.</p>
+                <p class="impact">Al siguiente lunes, la empresa que facturaba 200 millones al año ya no existía.</p>
+                <p class="muted">La investigación detonó una reacción en cadena que ninguno de los dos anticipó. El escenario completo había quedado fuera de la lectura inicial.</p>
+            </div>
+        </section>
 
-        <hr />
+        <section class="synthesis">
+            <div class="panel" style="margin-top:18px">
+                <p class="big">La diferencia entre una empresa que llega a 100 millones y una que se detiene ahí</p>
+                <p style="font-size:1.05rem;color:#222;margin-bottom:8px">está en cuántas decisiones importantes siguen dependiendo de una sola persona.</p>
+                <p class="muted">El fundador no decide mal. El problema es que su criterio no escala con la empresa. Y cuando el equipo directivo no tiene el mismo marco de lectura, las decisiones se vuelven frágiles.</p>
+            </div>
+        </section>
 
-        <!-- ===== 4. EVIDENCIA ===== -->
-        <span class="tag">Evidencia</span>
-        <h2 style="margin-top: 0.2rem;">Un caso real</h2>
-
-        <div class="case-block">
-            <p style="color: #cccccc;">Un empresario descubrió que su socio le estaba extrayendo valor de forma sistemática. La decisión de investigar era correcta. El fraude era real. La investigación lo confirmó con evidencia suficiente para actuar.</p>
-            <p class="impact">Al siguiente lunes, la empresa que facturaba 200 millones al año ya no existía.</p>
-            <p style="color: #aaaaaa;">La investigación detonó una reacción en cadena que ninguno de los dos anticipó. El escenario completo había quedado fuera de la lectura. La decisión fue correcta. El marco desde el que se tomó era incompleto.</p>
-        </div>
-
-        <hr />
-
-        <!-- ===== 5. SÍNTESIS ===== -->
-        <div class="synthesis-block">
-            <p class="big-statement">La diferencia entre una empresa que llega a 100 millones y una que se detiene ahí</p>
-            <p style="font-size: 1.2rem; font-weight: 400; color: #ffffff; margin-bottom: 0.8rem;">está en cuántas decisiones importantes siguen dependiendo de una sola persona.</p>
-            <p style="color: #aaaaaa; font-size: 1rem;">El fundador no decide mal. El problema es que su criterio no escala con la empresa. Y cuando el equipo directivo no tiene el mismo marco de lectura que él, cada decisión importante regresa al centro, aunque nadie lo diga.</p>
-        </div>
-
-        <!-- ===== 6. CTA ===== -->
-        <div class="cta-block">
-            <p style="font-size: 1.2rem; font-weight: 400; margin-bottom: 0.5rem; color: #ffffff;">El siguiente paso</p>
-            <p style="font-weight: 300; color: #888888; margin-bottom: 2rem; max-width: 450px; margin-left: auto; margin-right: auto;">Una conversación de 30 minutos para determinar si su equipo es el grupo correcto para esta experiencia.</p>
-            <a href="#" class="btn">Solicitar Admisión</a>
-            <p style="margin-top: 1.5rem; font-size: 0.8rem; color: #555555;">Sin compromiso · Cupo limitado</p>
+        <div class="cta">
+            <div class="panel" style="text-align:center;max-width:640px">
+                <p style="font-size:1.15rem;color:#111;margin-bottom:6px">El siguiente paso</p>
+                <p class="muted" style="max-width:580px;margin:0 auto 18px">Una conversación de 30 minutos para determinar si su equipo es elegible y qué transformación podemos diseñar para su liderazgo.</p>
+                <a href="#" class="btn">Solicitar Admisión</a>
+                <p class="note">Sin compromiso · Cupo limitado</p>
+            </div>
         </div>
 
     </div>
-
 </body>
 </html>
