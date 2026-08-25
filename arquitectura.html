@@ -1,41 +1,111 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Arquitectura · Juicio en el Caos</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juicio en el Caos - Arquitectura del Seminario</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
     <style>
-        /* base styles */
-        *{box-sizing:border-box;margin:0;padding:0}html,body{height:100%}body{background:#0d0d0d;color:#e8e8e8;font-family:'Inter',system-ui;padding:24px}.wrap{max-width:880px;margin:36px auto;padding:44px 48px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border-radius:12px;border:1px solid rgba(255,255,255,0.03);box-shadow:0 10px 30px rgba(0,0,0,0.6)}header{margin-bottom:28px}.kicker{font-size:0.78rem;color:#9a9a9a;text-transform:uppercase;margin-bottom:10px}h1{font-family:'Playfair Display',serif;font-weight:700;font-size:2.6rem;color:#fff;margin-bottom:6px}.subtitle{color:#cfcfcf}.main-nav{display:flex;gap:10px;flex-wrap:wrap;margin:14px 0}.main-nav a{color:#dcdcdc;text-decoration:none;padding:8px 12px;border-radius:8px;border:1px solid rgba(255,255,255,0.03);background:transparent;font-weight:600}.main-nav a:hover{background:rgba(255,255,255,0.03)}.main-nav a.active{background:#fff;color:#0d0d0d}hr.sep{border:none;border-top:1px solid rgba(255,255,255,0.04);margin:36px 0}.panel{background: linear-gradient(180deg, #151515, #121212);padding:22px;border-radius:10px;border:1px solid rgba(255,255,255,0.03)}p{color:#d0d0d0}@media(max-width:800px){.wrap{padding:20px}h1{font-size:1.9rem}}
+        *{box-sizing:border-box;margin:0;padding:0}
+        html,body{height:100%}
+        body{background:#0d0d0d;color:#e8e8e8;font-family:'Inter',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;line-height:1.6;padding:24px}
+        .wrap{max-width:880px;margin:36px auto;padding:44px 48px;background:linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01));border-radius:12px;border:1px solid rgba(255,255,255,0.03);box-shadow:0 10px 30px rgba(0,0,0,0.6)}
+        nav.navbar{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px}
+        .logo{color:#fff;text-decoration:none;font-weight:700;font-family:'Playfair Display',serif;font-size:1.1rem}
+        .nav-menu{list-style:none;display:flex;gap:14px}
+        .nav-menu a{color:#cfcfcf;text-decoration:none;font-size:0.95rem}
+        .panel{background:linear-gradient(180deg,#151515,#121212);padding:22px;border-radius:10px;border:1px solid rgba(255,255,255,0.03)}
+        .kicker{font-size:0.78rem;color:#9a9a9a;letter-spacing:1.6px;text-transform:uppercase;margin-bottom:10px}
+        h1{font-family:'Playfair Display',serif;font-weight:700;font-size:2.2rem;color:#fff;margin-bottom:8px}
+        p{color:#d0d0d0;margin-bottom:12px}
+        .muted{color:#9a9a9a}
+        .section-meta{display:flex;align-items:center;gap:12px;margin:18px 0}
+        .format-card{background:transparent;padding:14px;border-radius:8px;border:1px solid rgba(255,255,255,0.02);margin-bottom:12px}
+        .case-card{background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.05);padding:20px;border-radius:6px}
+        .case-category{font-family:'DM Mono',monospace;font-size:0.78rem;text-transform:uppercase;letter-spacing:1.6px;color:#bfbfbf;display:inline-block;margin-bottom:8px}
+        .case-title{font-family:'Playfair Display',serif;font-size:1.4rem;color:#fff;margin-bottom:12px}
+        .btn{display:inline-block;background:#ffffff;color:#0d0d0d;padding:10px 20px;border-radius:999px;text-decoration:none;font-weight:700}
+        footer{margin-top:28px;color:#8f8f8f;font-size:0.95rem}
+        @media(max-width:800px){.wrap{padding:20px}.nav-menu{display:none}h1{font-size:1.6rem}}
     </style>
 </head>
 <body>
     <div class="wrap">
-        <header>
-            <div class="kicker">Diseño · Juicio en el Caos</div>
-            <h1>Arquitectura</h1>
-            <p class="subtitle">Visión general de la arquitectura pedagógica y operativa del seminario.</p>
+        <nav class="navbar">
+            <a href="index.html" class="logo">Juicio en el Caos</a>
+            <ul class="nav-menu">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="index.html#sobre">Sobre</a></li>
+                <li><a href="arquitectura.html">Seminario</a></li>
+                <li><a href="libro.html">Libro</a></li>
+                <li><a href="intervencionesdeentrenamiento.html">Intervenciones</a></li>
+                <li><a href="simulador.html">Simulador</a></li>
+                <li><a href="index.html#contacto">Contacto</a></li>
+            </ul>
+        </nav>
 
-            <nav class="main-nav" aria-label="Navegación principal">
-                <a href="index.html">Inicio</a>
-                <a href="libro.html">Libro</a>
-                <a href="intervenciones.html">Intervenciones</a>
-                <a href="entrenamiento.html">Entrenamiento</a>
-                <a href="simulador.html">Simulador</a>
-                <a href="arquitectura.html" class="active">Arquitectura</a>
-                <a href="assessment.html">Assessment</a>
-            </nav>
+        <header>
+            <div class="kicker">Arquitectura · Seminario</div>
+            <h1>Arquitectura del Seminario</h1>
+            <p>Un seminario sobre la construcción del criterio que necesitará cuando nadie pueda decidir por usted. Diseñado para Fundadores, Dueños de Negocio y Directores Generales.</p>
         </header>
 
-        <hr class="sep" />
+        <section class="panel" style="margin-top:18px">
+            <div class="section-meta">
+                <span class="section-num">01</span>
+                <div style="flex:1;height:1px;background:rgba(255,255,255,0.03)"></div>
+                <span class="section-tag muted">Formato</span>
+            </div>
 
-        <section class="panel">
-            <h2>Marco pedagógico</h2>
-            <p>Explicación de la arquitectura de decisión: fases, roles, herramientas y entregables.</p>
+            <h2 style="color:#fff">Un Fin de Semana de Inmersión Total</h2>
+            <p class="muted">Trabajamos sobre decisiones reales. Con presión real. En un entorno donde nadie puede decidir por usted.</p>
+
+            <div style="margin:18px 0;padding:18px;background:transparent;border-left:3px solid rgba(255,255,255,0.06);border-radius:8px">
+                <h4 style="font-family:'Playfair Display',serif;font-weight:600;font-size:1.1rem;margin-bottom:8px;color:#fff">Un Caso Real</h4>
+                <p>Hace algunos años, un empresario descubrió que su socio desviaba cerca de diez millones de pesos al año. La investigación técnica fue impecable y la evidencia concluyente.</p>
+                <p style="font-weight:600;color:#fff">¿Cómo decidir cuando la solución técnica destruye la viabilidad operativa? Este caso real es la base de nuestro entrenamiento: exponer al participante a la arquitectura emocional de la decisión real.</p>
+                <p class="muted" style="margin-top:10px;font-style:italic">Las decisiones que más valor destruyen rara vez nacen de la incompetencia. Con frecuencia nacen de escenarios invisibles o mal auditados.</p>
+            </div>
+
+            <div class="format-details" style="margin-top:18px">
+                <h3 style="color:#fff">Estructura del Fin de Semana</h3>
+                <div class="format-card">
+                    <h4>Duración</h4>
+                    <p>Viernes 6:00 pm — Domingo 2:00 pm</p>
+                    <p class="muted">Inmersión ininterrumpida: sin salir de la sede, sin regreso a la rutina, durante todo el fin de semana.</p>
+                </div>
+                <div class="format-card">
+                    <h4>Grupo Reducido</h4>
+                    <p>Entre 4 y 10 participantes</p>
+                    <p class="muted">Por encima de 10 se pierde la exposición individual real que el formato requiere.</p>
+                </div>
+                <div class="format-card">
+                    <h4>Sede Privada</h4>
+                    <p>Confirmada directamente con cada grupo antes de la edición</p>
+                    <p class="muted">Garantiza confidencialidad y profundidad en el análisis.</p>
+                </div>
+            </div>
+
+            <div style="margin-top:22px;border-top:1px solid rgba(255,255,255,0.03);padding-top:18px">
+                <h3 style="font-family:'Playfair Display',serif;color:#fff">¿Qué Cambiará?</h3>
+                <p class="muted">Cuando termine el seminario seguirá enfrentando incertidumbre. Seguirá tomando decisiones con información incompleta. Lo que cambia es que sabrá reconocer el punto donde ya tiene lo suficiente para actuar de forma justificable.</p>
+            </div>
+
         </section>
+
+        <section style="margin-top:22px">
+            <div class="panel">
+                <h3 style="color:#fff">Disponibilidad</h3>
+                <p class="muted">Cupo limitado por edición. La disponibilidad se confirma directamente al recibir su solicitud de contacto.</p>
+                <p style="margin-top:12px"><a href="index.html#contacto" class="btn">Consultar Disponibilidad</a></p>
+            </div>
+        </section>
+
+        <footer>
+            <p>&copy; 2026 Juicio en el Caos. Todos los derechos reservados.</p>
+        </footer>
 
     </div>
 </body>

@@ -1,42 +1,396 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Simulador · Juicio en el Caos</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juicio en el Caos — Simulador de Decisión bajo Presión</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
     <style>
-        /* base styles */
-        *{box-sizing:border-box;margin:0;padding:0}html,body{height:100%}body{background:#0d0d0d;color:#e8e8e8;font-family:'Inter',system-ui;padding:24px}.wrap{max-width:880px;margin:36px auto;padding:44px 48px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border-radius:12px;border:1px solid rgba(255,255,255,0.03);box-shadow:0 10px 30px rgba(0,0,0,0.6)}header{margin-bottom:28px}.kicker{font-size:0.78rem;color:#9a9a9a;text-transform:uppercase;margin-bottom:10px}h1{font-family:'Playfair Display',serif;font-weight:700;font-size:2.6rem;color:#fff;margin-bottom:6px}.subtitle{color:#cfcfcf}.main-nav{display:flex;gap:10px;flex-wrap:wrap;margin:14px 0}.main-nav a{color:#dcdcdc;text-decoration:none;padding:8px 12px;border-radius:8px;border:1px solid rgba(255,255,255,0.03);background:transparent;font-weight:600}.main-nav a:hover{background:rgba(255,255,255,0.03)}.main-nav a.active{background:#fff;color:#0d0d0d}hr.sep{border:none;border-top:1px solid rgba(255,255,255,0.04);margin:36px 0}.panel{background: linear-gradient(180deg, #151515, #121212);padding:22px;border-radius:10px;border:1px solid rgba(255,255,255,0.03)}p{color:#d0d0d0}@media(max-width:800px){.wrap{padding:20px}h1{font-size:1.9rem}}
+        body {
+            background-color: #0a0a0a;
+            color: #ffffff;
+            font-family: 'Cormorant Garamond', serif;
+            margin: 0;
+            padding: 40px 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            box-sizing: border-box;
+        }
+
+        .container {
+            max-width: 650px;
+            width: 100%;
+        }
+
+        .header {
+            font-family: 'DM Mono', monospace;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding-bottom: 15px;
+            margin-bottom: 40px;
+            color: #888888;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .step {
+            display: none;
+        }
+
+        .step.active {
+            display: block;
+        }
+
+        .situation-label {
+            font-family: 'DM Mono', monospace;
+            font-size: 11px;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+            letter-spacing: 2px;
+            color: #ff3e3e;
+        }
+
+        .situation-text {
+            font-size: 1.6rem;
+            line-height: 1.5;
+            margin-bottom: 40px;
+            color: #f3f3f3;
+        }
+
+        .options {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .option-btn {
+            background-color: rgba(255, 255, 255, 0.02);
+            color: #cccccc;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.15rem;
+            text-align: left;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            line-height: 1.4;
+            border-radius: 4px;
+        }
+
+        .option-btn:hover {
+            background-color: #ffffff;
+            color: #000000;
+            border-color: #ffffff;
+        }
+
+        .option-btn:focus {
+            outline: none;
+        }
+
+        .final-title {
+            font-size: 2.5rem;
+            line-height: 1.3;
+            font-weight: 300;
+            margin-bottom: 30px;
+            text-align: left;
+            color: #fff;
+        }
+
+        .seminar-info {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 40px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 30px;
+            color: #ccc;
+        }
+
+        .seminar-quote {
+            font-style: italic;
+            border-left: 2px solid #ff3e3e;
+            padding-left: 1.5rem;
+            margin-bottom: 2rem;
+            color: #e5e5e5;
+        }
+
+        .cta-btn {
+            display: inline-block;
+            background-color: #ffffff;
+            color: #000000;
+            border: 1px solid #ffffff;
+            padding: 15px 30px;
+            font-family: 'DM Mono', monospace;
+            font-size: 12px;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-align: center;
+            transition: all 0.3s ease;
+            width: 100%;
+            box-sizing: border-box;
+            border-radius: 4px;
+        }
+
+        .cta-btn:hover {
+            background-color: transparent;
+            color: #ffffff;
+        }
+
+        .back-link {
+            display: block;
+            margin-top: 30px;
+            color: #666;
+            font-family: 'DM Mono', monospace;
+            font-size: 11px;
+            text-decoration: none;
+            text-align: center;
+            letter-spacing: 1px;
+            transition: color 0.3s ease;
+        }
+        
+        .back-link:hover {
+            color: #fff;
+        }
+
+        .chaos-meter {
+            height: 2px;
+            background: rgba(255,255,255,0.05);
+            width: 100%;
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        .chaos-bar {
+            height: 100%;
+            background: #ff3e3e;
+            width: 0%;
+            transition: width 0.5s ease;
+        }
     </style>
 </head>
 <body>
-    <div class="wrap">
-        <header>
-            <div class="kicker">Herramientas · Juicio en el Caos</div>
-            <h1>Simulador</h1>
-            <p class="subtitle">Probar escenarios y ejercicios diseñados para evaluar juicio bajo presión.</p>
 
-            <nav class="main-nav" aria-label="Navegación principal">
-                <a href="index.html">Inicio</a>
-                <a href="libro.html">Libro</a>
-                <a href="intervenciones.html">Intervenciones</a>
-                <a href="entrenamiento.html">Entrenamiento</a>
-                <a href="simulador.html" class="active">Simulador</a>
-                <a href="arquitectura.html">Arquitectura</a>
-                <a href="assessment.html">Assessment</a>
-            </nav>
-        </header>
+    <div class="container">
+        <div class="header">
+            <span id="simulation-header">Simulador de Caos // Evaluación de Decisión</span>
+            <span id="progress-header">Fase 1/4</span>
+        </div>
 
-        <hr class="sep" />
+        <div class="chaos-meter">
+            <div class="chaos-bar" id="chaos-indicator"></div>
+        </div>
 
-        <section class="panel">
-            <h2>Probar ahora</h2>
-            <p>En esta sección incorporaremos el simulador interactivo. ¿Quieres que añada un prototipo básico en HTML/JS para probar una muestra de ejercicios?</p>
-        </section>
+        <div class="step active" id="question-container">
+            <div class="situation-label" id="time-label">Cargando situación...</div>
+            <div class="situation-text" id="situation-content">...</div>
+            <div class="options" id="options-container"></div>
+        </div>
 
+        <div class="step" id="step-final">
+            <div class="final-title">
+                ¿Y quién le dijo a usted que esto era una crisis?
+            </div>
+            <div class="seminar-info">
+                <div class="seminar-quote">
+                    "Las decisiones que más valor destruyen nacen de escenarios correctamente analizados... de manera incompleta."
+                </div>
+                <p>El seminario Juicio en el Caos no enseña a gestionar crisis. Enseña a auditar la arquitectura con la que usted construye sus escenarios antes de decidir.</p>
+                <p style="margin-top: 2rem; color: #fff; font-family: 'DM Mono', monospace; font-size: 0.95rem;">
+                    Si esta experiencia le resultó incómoda, probablemente está listo para el seminario.
+                </p>
+            </div>
+            <a href="index.html#contacto" class="cta-btn">Solicitar Admisión al Seminario</a>
+            <a href="index.html" class="back-link">← Volver al inicio</a>
+        </div>
     </div>
+
+    <script>
+        const escenarios = [
+            {
+                nombre: "CIBERSEGURIDAD",
+                preguntas: [
+                    {
+                        tiempo: "Lunes, 08:30 AM",
+                        texto: "Su director de TI le solicita una reunión de urgencia. Un grupo de ciberactivistas afirma tener acceso a la base de datos de sus clientes de los últimos tres años. Piden rescate. Tiene 2 horas antes de que publiquen la muestra.",
+                        respuestas: [
+                            { texto: "Ordenar el pago de inmediato con fondos de contingencia en absoluto secreto para evitar la filtración.", accion: "siguiente" },
+                            { texto: "Instruir al equipo técnico que verifique la brecha, aísle los servidores y contenga el acceso en silencio.", accion: "siguiente" },
+                            { texto: "Ignorar la amenaza hasta tener pruebas reales de que los datos robados son verídicos.", accion: "siguiente" }
+                        ]
+                    },
+                    {
+                        tiempo: "Lunes, 10:15 AM",
+                        texto: "El rumor se esparce. El jefe de soporte reporta un incremento inusual de llamadas de clientes alarmados. Un periodista local de finanzas acaba de publicar en redes sociales que investiga una posible brecha en su empresa.",
+                        respuestas: [
+                            { texto: "Publicar un comunicado oficial minimizando el incidente y asegurando que se trata de un mantenimiento rutinario.", accion: "siguiente" },
+                            { texto: "Cortar temporalmente los servidores externos de soporte y desconectar la plataforma web para proteger la integridad de los datos.", accion: "siguiente" },
+                            { texto: "ACTIVAR EL COMITÉ DE CRISIS DE MANERA INMEDIATA.", accion: "crisis" }
+                        ]
+                    },
+                    {
+                        tiempo: "Lunes, 11:45 AM",
+                        texto: "La presión escala. Su cliente corporativo más importante, responsable del 20% de su facturación anual, le llama directamente a su teléfono celular exigiendo explicaciones y amenazando con rescindir el contrato.",
+                        respuestas: [
+                            { texto: "Asumir el control directo de las llamadas, centralizar los canales de comunicación y negociar personalmente con el cliente VIP.", accion: "siguiente" },
+                            { texto: "Delegar la respuesta legal y las decisiones técnicas críticas a un bufete de consultores externos especializados con carácter de urgencia.", accion: "siguiente" },
+                            { texto: "ACTIVAR EL COMITÉ DE CRISIS DE MANERA INMEDIATA.", accion: "crisis" }
+                        ]
+                    },
+                    {
+                        tiempo: "Lunes, 12:05 PM",
+                        texto: "El abismo es total. La primera muestra de la base de datos de sus clientes ha sido filtrada en redes. El regulador estatal de protección de datos le acaba de enviar un requerimiento formal de investigación.",
+                        respuestas: [
+                            { texto: "ACTIVAR EL COMITÉ DE CRISIS DE MANERA INMEDIATA.", accion: "crisis" }
+                        ]
+                    }
+                ]
+            },
+            {
+                nombre: "SABOTAJE OPERATIVO",
+                preguntas: [
+                    {
+                        tiempo: "Martes, 07:00 AM",
+                        texto: "La planta de producción principal amanece completamente detenida. El software centralizado que controla la distribución muestra un error crítico. Su jefe de planta sospecha sabotaje de un ex-empleado resentido.",
+                        respuestas: [
+                            { texto: "Intentar restablecer manualmente los sistemas puenteando los protocolos de seguridad de la planta.", accion: "siguiente" },
+                            { texto: "Contratar de urgencia a una firma externa de auditoría informática para rastrear el código origen.", accion: "siguiente" },
+                            { texto: "Ponerse en contacto con el ex-empleado para negociar un acuerdo económico rápido a cambio de la clave de restauración.", accion: "siguiente" }
+                        ]
+                    },
+                    {
+                        tiempo: "Martes, 09:30 AM",
+                        texto: "La parálisis cuesta miles de dólares por hora. Sus competidores directos, enterados del parón, han comenzado a contactar a sus distribuidores ofreciendo despachos de emergencia.",
+                        respuestas: [
+                            { texto: "Ofrecer un descuento agresivo a sus distribuidores en futuros pedidos si deciden esperar a que se restablezca el servicio.", accion: "siguiente" },
+                            { texto: "Desviar la producción pendiente a una planta secundaria más pequeña, saturando su capacidad operativa al 200%.", accion: "siguiente" },
+                            { texto: "ACTIVAR EL COMITÉ DE CRISIS DE MANERA INMEDIATA.", accion: "crisis" }
+                        ]
+                    },
+                    {
+                        tiempo: "Martes, 11:00 AM",
+                        texto: "Su principal proveedor de materia prima le llama alarmado. Al no recibir los camiones de carga de su empresa, le advierte que revocarán el contrato de exclusividad si no reestablecen el flujo en 12 horas.",
+                        respuestas: [
+                            { texto: "Firmar un pagaré de emergencia con el proveedor asumiendo el costo por penalización de almacenamiento.", accion: "siguiente" },
+                            { texto: "Alquilar bodegas de terceros de forma exprés para desviar el material sobrante, asumiendo un costo logístico imprevisto.", accion: "siguiente" },
+                            { texto: "ACTIVAR EL COMITÉ DE CRISIS DE MANERA INMEDIATA.", accion: "crisis" }
+                        ]
+                    },
+                    {
+                        tiempo: "Martes, 12:15 PM",
+                        texto: "En un intento desesperado de su equipo de planta por arrancar los sistemas de forma manual, una de las calderas principales sufre una sobrecarga eléctrica severa. Hay lesionados. Se activa el protocolo de emergencia sanitaria.",
+                        respuestas: [
+                            { texto: "ACTIVAR EL COMITÉ DE CRISIS DE MANERA INMEDIATA.", accion: "crisis" }
+                        ]
+                    }
+                ]
+            },
+            {
+                nombre: "REPUTACIÓN DE MARCA",
+                preguntas: [
+                    {
+                        tiempo: "Miércoles, 09:00 AM",
+                        texto: "Un portal web anónimo publica un audio filtrado donde supuestamente se escucha a su Director de Finanzas bromeando en una cena privada sobre 'hacer ingeniería contable' para reducir la tributación.",
+                        respuestas: [
+                            { texto: "Desmentir el audio de inmediato alegando que es un montaje realizado con Inteligencia Artificial generativa.", accion: "siguiente" },
+                            { texto: "Suspender temporalmente de sus funciones al Director de Finanzas mientras se realiza una investigación interna.", accion: "siguiente" },
+                            { texto: "Ignorar la publicación, asumiendo que un portal de baja categoría no logrará tracción en medios serios.", accion: "siguiente" }
+                        ]
+                    },
+                    {
+                        tiempo: "Miércoles, 11:30 AM",
+                        texto: "El audio llega a LinkedIn y se vuelve viral bajo un hashtag destructivo impulsado por activistas ecológicos. El sindicato interno de su empresa emite un comunicado de preocupación por la integridad de la gestión.",
+                        respuestas: [
+                            { texto: "Lanzar un comunicado corporativo neutral, deslindando los valores de la empresa de las opiniones personales de sus ejecutivos.", accion: "siguiente" },
+                            { texto: "Programar una junta interna de emergencia con los líderes sindicales para calmar las tensiones.", accion: "siguiente" },
+                            { texto: "ACTIVAR EL COMITÉ DE CRISIS DE MANERA INMEDIATA.", accion: "crisis" }
+                        ]
+                    },
+                    {
+                        tiempo: "Miércoles, 01:00 PM",
+                        texto: "La crisis salta al sector financiero. Su inversionista mayoritario le llama furioso por el daño a la marca: amenaza con retirar el 35% de la inyección de capital si no actúa con decisión en las próximas 24 horas.",
+                        respuestas: [
+                            { texto: "Despedir al Director de Finanzas de inmediato para apaciguar al inversionista, asumiendo una inminente demanda.", accion: "siguiente" },
+                            { texto: "Solicitar una reunión de urgencia con el inversionista para presentarle los excelentes resultados reales de la gestión.", accion: "siguiente" },
+                            { texto: "ACTIVAR EL COMITÉ DE CRISIS DE MANERA INMEDIATA.", accion: "crisis" }
+                        ]
+                    },
+                    {
+                        tiempo: "Miércoles, 02:30 PM",
+                        texto: "Un equipo de televisión de cobertura nacional se acaba de apostar en la entrada principal de sus oficinas corporativas con cámaras encendidas, interceptando a cualquiera que entre o salga.",
+                        respuestas: [
+                            { texto: "ACTIVAR EL COMITÉ DE CRISIS DE MANERA INMEDIATA.", accion: "crisis" }
+                        ]
+                    }
+                ]
+            }
+        ];
+
+        let escenarioActivo = null;
+        let preguntaActualIdx = 0;
+
+        function iniciarSimulador() {
+            const randomIdx = Math.floor(Math.random() * escenarios.length);
+            escenarioActivo = escenarios[randomIdx];
+            preguntaActualIdx = 0;
+
+            document.getElementById("simulation-header").innerText = `Escenario: ${escenarioActivo.nombre}`;
+            mostrarPregunta();
+        }
+
+        function mostrarPregunta() {
+            const pregunta = escenarioActivo.preguntas[preguntaActualIdx];
+            const totalPreguntas = escenarioActivo.preguntas.length;
+            
+            document.getElementById("time-label").innerText = pregunta.tiempo;
+            document.getElementById("situation-content").innerText = pregunta.texto;
+            document.getElementById("progress-header").innerText = `Fase ${preguntaActualIdx + 1}/${totalPreguntas}`;
+            
+            const porcentajeCaos = ((preguntaActualIdx) / (totalPreguntas - 1)) * 100;
+            document.getElementById("chaos-indicator").style.width = `${porcentajeCaos}%`;
+
+            const optionsContainer = document.getElementById("options-container");
+            optionsContainer.innerHTML = ""; 
+
+            pregunta.respuestas.forEach((resp, idx) => {
+                const btn = document.createElement("button");
+                btn.className = "option-btn";
+                const letra = String.fromCharCode(65 + idx);
+                btn.innerText = `${letra}) ${resp.texto}`;
+                
+                if (resp.accion === "crisis") {
+                    btn.onclick = goToCrisis;
+                } else {
+                    btn.onclick = avanzarPregunta;
+                }
+                
+                optionsContainer.appendChild(btn);
+            });
+        }
+
+        function avanzarPregunta() {
+            preguntaActualIdx++;
+            if (preguntaActualIdx < escenarioActivo.preguntas.length) {
+                mostrarPregunta();
+            } else {
+                goToCrisis();
+            }
+        }
+
+        function goToCrisis() {
+            document.getElementById("chaos-indicator").style.width = "100%";
+            document.getElementById("question-container").classList.remove("active");
+            document.getElementById("step-final").classList.add("active");
+            document.getElementById("progress-header").innerText = "Fin del Simulacro";
+        }
+
+        window.onload = iniciarSimulador;
+    </script>
 </body>
 </html>
