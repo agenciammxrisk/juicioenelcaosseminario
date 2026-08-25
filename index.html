@@ -63,36 +63,52 @@
         p{color:#d0d0d0;font-size:1rem;margin-bottom:12px}
         .muted{color:#9a9a9a}
 
-        /* qualities grid */
-        .qualities-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:14px}
-        .quality{background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.015));padding:14px;border-radius:8px;border:1px solid rgba(255,255,255,0.02);display:flex;gap:12px;align-items:flex-start}
+        /* qualities grid & dimensions grid */
+        .qualities-grid, .dimensions-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:14px}
+        .dimensions-grid{grid-template-columns:repeat(3,1fr)}
+        .quality, .dimension-card{background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.015));padding:16px;border-radius:8px;border:1px solid rgba(255,255,255,0.02);display:flex;gap:12px;align-items:flex-start}
+        .dimension-card{flex-direction:column;gap:8px;justify-content:space-between}
         .num{font-weight:600;color:#9a9a9a;font-size:0.85rem;min-width:36px}
-        .quality strong{display:block;color:#fff;font-weight:600}
-        .quality span{display:block;color:#b3b3b3;font-weight:300;margin-top:4px}
+        .quality strong, .dimension-card strong{display:block;color:#fff;font-weight:600}
+        .quality span, .dimension-card p{display:block;color:#b3b3b3;font-weight:300;margin-top:4px;font-size:0.9rem}
+        .dim-tag{font-size:0.75rem;color:#9a9a9a;background:rgba(255,255,255,0.04);padding:4px 8px;border-radius:4px;margin-top:4px;display:inline-block}
 
         /* format block */
         .format-list{display:flex;gap:18px;flex-wrap:wrap;margin-top:12px}
         .format-item{background:transparent;padding:10px 14px;border-radius:8px;border:1px dashed rgba(255,255,255,0.02);font-size:0.95rem;color:#d0d0d0}
 
         /* doctrine & case blocks keep left accent */
-        .doctrine-block, .case-block, .format-block{background:transparent;padding:18px;border-radius:10px;border-left:3px solid rgba(255,255,255,0.06);margin:18px 0}
-        .doctrine-block .label{font-size:0.72rem;color:#9a9a9a;text-transform:uppercase;letter-spacing:1.6px;margin-bottom:8px;display:block}
+        .doctrine-block, .case-block, .format-block, .bio-panel{background:transparent;padding:18px;border-radius:10px;border-left:3px solid rgba(255,255,255,0.06);margin:18px 0}
+        .doctrine-block .label, .bio-panel .label{font-size:0.72rem;color:#9a9a9a;text-transform:uppercase;letter-spacing:1.6px;margin-bottom:8px;display:block}
         .case-block .impact{font-family:'Playfair Display',serif;font-size:1.5rem;color:#ffffff;margin:10px 0}
+
+        /* Bio Split Layout */
+        .bio-grid{display:grid;grid-template-columns:220px 1fr;gap:24px;align-items:start;margin-top:12px}
+        .bio-img{width:100%;border-radius:8px;border:1px solid rgba(255,255,255,0.08);object-fit:cover}
+        .bio-list{list-style:none;margin:8px 0 16px 0}
+        .bio-list li{color:#b3b3b3;font-size:0.9rem;margin-bottom:6px;position:relative;padding-left:14px}
+        .bio-list li::before{content:"·";position:absolute;left:0;color:#fff;font-weight:bold}
 
         /* synthesis */
         .synthesis .big{font-family:'Playfair Display',serif;font-size:1.8rem;color:#ffffff;margin-bottom:8px}
         .synthesis p{color:#d2d2d2}
 
-        /* CTA */
+        /* CTA & Form */
         .cta{display:flex;flex-direction:column;align-items:center;gap:12px;padding-top:18px}
-        .btn{display:inline-block;background:#ffffff;color:#0d0d0d;padding:12px 28px;border-radius:999px;text-decoration:none;font-weight:700;box-shadow:0 8px 20px rgba(0,0,0,0.6);border:none;cursor:pointer}
+        .contact-form{display:flex;flex-direction:column;gap:12px;width:100%;max-width:480px;margin:18px auto 8px;text-align:left}
+        .form-group{display:flex;flex-direction:column;gap:4px}
+        .form-group label{font-size:0.85rem;color:#cfcfcf}
+        .form-group input{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);padding:10px 14px;border-radius:8px;color:#fff;font-family:inherit;font-size:0.95rem;outline:none}
+        .form-group input:focus{border-color:rgba(255,255,255,0.3)}
+        .btn{display:inline-block;background:#ffffff;color:#0d0d0d;padding:12px 28px;border-radius:999px;text-decoration:none;font-weight:700;box-shadow:0 8px 20px rgba(0,0,0,0.6);border:none;cursor:pointer;margin-top:8px}
         .btn.ghost{background:transparent;color:#fff;border:1px solid rgba(255,255,255,0.06)}
         .note{font-size:0.85rem;color:#9a9a9a}
 
         /* responsive */
         @media(max-width:800px){
             .wrap{padding:20px}
-            .qualities-grid{grid-template-columns:1fr}
+            .qualities-grid, .dimensions-grid, .bio-grid{grid-template-columns:1fr}
+            .bio-img{max-width:200px;margin:0 auto}
             h1{font-size:1.9rem}
             .case-block .impact{font-size:1.15rem}
             .main-nav{gap:8px}
@@ -138,6 +154,44 @@
 
         <hr class="sep" />
 
+        <!-- SECCIÓN: LAS 3 DIMENSIONES DEL SEMINARIO -->
+        <section class="panel">
+            <span class="tag">Formatos de Intervención</span>
+            <h2 style="margin-top:8px">Dimensiones del Seminario</h2>
+            <p class="muted">Seminarios residenciales exclusivos de 48 horas orientados al desarrollo de capacidades específicas según el nivel de responsabilidad directiva.</p>
+
+            <div class="dimensions-grid">
+                <div class="dimension-card">
+                    <div>
+                        <strong>Dimensión Organizacional</strong>
+                        <p>Desarrolla una capacidad compartida en miembros de un mismo equipo: construir escenarios antes de decidir.</p>
+                        <span class="dim-tag">Para: Consejos, equipos directivos, empresas familiares.</span>
+                    </div>
+                    <p style="font-size:0.85rem;color:#9a9a9a;margin-top:8px;"><em>Resultado:</em> Las reuniones terminan en decisiones y se genera un lenguaje común que permanece.</p>
+                </div>
+
+                <div class="dimension-card">
+                    <div>
+                        <strong>Dimensión Individual</strong>
+                        <p>Para ejecutivos que desarrollan criterio propio para decidir bajo alta incertidumbre.</p>
+                        <span class="dim-tag">Para: Directores de área, gerentes senior, líderes clave.</span>
+                    </div>
+                    <p style="font-size:0.85rem;color:#9a9a9a;margin-top:8px;"><em>Resultado:</em> Construir escenarios antes de decidir y ganar confianza para sostener decisiones de alta consecuencia.</p>
+                </div>
+
+                <div class="dimension-card">
+                    <div>
+                        <strong>Dimensión CEO / Fundador / Sucesor</strong>
+                        <p>Diseñado para quienes enfrentan la soledad del criterio en decisiones de máxima consecuencia.</p>
+                        <span class="dim-tag">Para: CEOs, Directores Generales, Presidentes, Fundadores.</span>
+                    </div>
+                    <p style="font-size:0.85rem;color:#9a9a9a;margin-top:8px;"><em>Nota:</em> Grupo cerrado. El CEO asiste en una edición distinta a la de su equipo directivo.</p>
+                </div>
+            </div>
+        </section>
+
+        <hr class="sep" />
+
         <section class="doctrine-block">
             <span class="label">La brecha</span>
             <p style="font-size:1.02rem;color:#ffffff;font-weight:400;margin-bottom:0.6rem;">Actualmente no existe un programa que desarrolle estas 7 habilidades de forma conjunta, vivencial y aplicada.</p>
@@ -155,6 +209,41 @@
                 <p style="margin-top:8px;color:#9a9a9a;font-size:0.95rem">El criterio no se desarrolla en condiciones cómodas. Se desarrolla bajo presión real, con información parcial y consecuencias reales.</p>
             </div>
         </div>
+
+        <hr class="sep" />
+
+        <!-- SECCIÓN: BIOGRAFÍA DEL FACILITADOR -->
+        <section class="bio-panel">
+            <span class="label">Quién lo facilita</span>
+            
+            <div class="bio-grid">
+                <div>
+                    <img src="WhatsApp Image 2026-02-07 at 10.34.53 AM.jpeg" alt="José Eduardo Macías Almanza" class="bio-img" />
+                </div>
+                <div>
+                    <h2 style="color:#fff;margin-bottom:2px">José Eduardo Macías Almanza</h2>
+                    <p style="color:#9a9a9a;font-size:0.95rem;margin-bottom:14px">Autor de Juicio en el Caos · Consultor en Gestión de Riesgo Patrimonial e Inteligencia Corporativa</p>
+
+                    <p>Más de veinte años liderando operaciones de alta exigencia en México — primero como investigador en el sector público, y posteriormente en consultoría privada de inteligencia estratégica para el sector corporativo.</p>
+                    <p>Su trayectoria incluye el diseño de arquitecturas procedimentales para protección de activos, desarticulación de redes de extracción interna y recuperación de recursos en entornos de alta complejidad operativa y legal.</p>
+
+                    <h3 style="color:#fff;margin-top:16px;font-size:0.95rem">Resultados documentados</h3>
+                    <ul class="bio-list">
+                        <li>Reducción del 86% en robo de vehículos pesados (1,300 a 176 casos anuales, sostenida 5 años).</li>
+                        <li>Rediseño de tiempos de respuesta en emergencias de 8 minutos a 1:22 sin nuevos recursos.</li>
+                        <li>Desarticulación de redes de extracción y fraude interno con impacto multimillonario.</li>
+                        <li>Recuperación coordinada de más de 250 millones de pesos en activos logísticos e industriales.</li>
+                    </ul>
+
+                    <h3 style="color:#fff;margin-top:16px;font-size:0.95rem">Publicaciones</h3>
+                    <ul class="bio-list">
+                        <li><strong>Juicio en el Caos (2026)</strong> — Doctrina sobre trazabilidad defendible y juicio bajo incertidumbre. Disponible en Amazon, ediciones en inglés y español.</li>
+                        <li><strong>The Irreducible Point (2026)</strong> — Working paper en SSRN Criminal Justice.</li>
+                        <li><strong>Podcast Juicio en el Caos</strong> — Disponible en plataformas de audio principales.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
 
         <hr class="sep" />
 
@@ -176,12 +265,25 @@
             </div>
         </section>
 
+        <!-- SECCIÓN: CTA FORMULARIO CONTACTO -->
         <div class="cta">
-            <div class="panel" style="text-align:center;max-width:700px">
+            <div class="panel" style="text-align:center;max-width:700px;width:100%">
                 <p style="font-size:1.15rem;color:#fff;margin-bottom:6px">El siguiente paso</p>
-                <p class="muted" style="max-width:640px;margin:0 auto 18px">Una conversación de 30 minutos para determinar si su equipo es elegible y qué transformación podemos diseñar para su contexto.</p>
-                <a href="#" class="btn">Solicitar Admisión</a>
-                <p class="note">Sin compromiso · Cupo limitado</p>
+                <p class="muted" style="max-width:640px;margin:0 auto 14px">Una conversación de 30 minutos para determinar si su equipo es elegible y qué transformación podemos diseñar para su contexto.</p>
+
+                <form class="contact-form" action="mailto:contacto@juicioenelcaos.com" method="post" enctype="text/plain">
+                    <div class="form-group">
+                        <label for="email">Correo Electrónico de Contacto</label>
+                        <input type="email" id="email" name="Correo" placeholder="ejemplo@empresa.com" required />
+                    </div>
+                    <div class="form-group">
+                        <label for="whatsapp">Número de WhatsApp</label>
+                        <input type="tel" id="whatsapp" name="WhatsApp" placeholder="+52 55 0000 0000" required />
+                    </div>
+                    <button type="submit" class="btn">Solicitar Admisión</button>
+                </form>
+
+                <p class="note" style="margin-top:12px">Sin compromiso · Cupo limitado</p>
             </div>
         </div>
 
