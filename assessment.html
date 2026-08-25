@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Assessment de Criterio · Juicio en el Caos</title>
+    <title>Juicio en el Caos · Assessment</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
@@ -44,7 +44,7 @@
         }
         .subtitle{color:#cfcfcf;font-size:1.05rem;max-width:72ch;font-weight:300}
 
-        /* ===== NAV ===== */
+        /* NAVEGACIÓN */
         .main-nav{display:flex;gap:10px;flex-wrap:wrap;margin:14px 0}
         .main-nav a{color:#dcdcdc;text-decoration:none;padding:8px 12px;border-radius:8px;border:1px solid rgba(255,255,255,0.03);background:transparent;font-weight:600;font-size:0.95rem}
         .main-nav a:hover{background:rgba(255,255,255,0.03)}
@@ -52,7 +52,7 @@
 
         hr.sep{border:none;border-top:1px solid rgba(255,255,255,0.04);margin:36px 0}
 
-        /* ===== PANELES ===== */
+        /* CARDS & PANELS */
         .panel{background: linear-gradient(180deg, #151515, #121212);padding:22px;border-radius:10px;border:1px solid rgba(255,255,255,0.03)}
         .tag{display:inline-block;padding:6px 10px;border-radius:999px;font-size:0.72rem;color:#bdbdbd;background:rgba(255,255,255,0.02);text-transform:uppercase;letter-spacing:1.6px}
 
@@ -60,27 +60,33 @@
         h3{font-size:1rem;margin:10px 0;color:#eaeaea}
         p{color:#d0d0d0;font-size:1rem;margin-bottom:12px}
         .muted{color:#9a9a9a}
-        .white{color:#ffffff}
 
-        /* ===== CARDS ===== */
-        .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:14px}
+        /* GRID */
+        .grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:14px}
         .card{background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.015));padding:16px;border-radius:8px;border:1px solid rgba(255,255,255,0.02)}
-        .card h4{color:#ffffff;font-weight:600;font-size:0.95rem;margin-bottom:6px}
-        .card p{font-size:0.9rem;color:#b3b3b3;margin-bottom:0}
+        .card strong{display:block;color:#fff;font-weight:600;margin-bottom:4px}
+        .card span{display:block;color:#b3b3b3;font-weight:300;font-size:0.9rem}
 
-        .btn{display:inline-block;background:#ffffff;color:#0d0d0d;padding:12px 28px;border-radius:999px;text-decoration:none;font-weight:700;box-shadow:0 8px 20px rgba(0,0,0,0.6);border:none;cursor:pointer}
-        .btn.ghost{background:transparent;color:#fff;border:1px solid rgba(255,255,255,0.06)}
-        .btn-group{display:flex;gap:12px;flex-wrap:wrap;margin-top:12px}
+        /* BLOCKS */
+        .accent-block{background:transparent;padding:18px;border-radius:10px;border-left:3px solid rgba(255,255,255,0.06);margin:18px 0}
+        .accent-block .label{font-size:0.72rem;color:#9a9a9a;text-transform:uppercase;letter-spacing:1.6px;margin-bottom:8px;display:block}
 
+        /* LISTS */
+        .doc-list{list-style:none;margin:12px 0}
+        .doc-list li{color:#b3b3b3;font-size:0.95rem;margin-bottom:8px;position:relative;padding-left:16px}
+        .doc-list li::before{content:"·";position:absolute;left:0;color:#fff;font-weight:bold}
+
+        /* CTA & FORM */
+        .cta{display:flex;flex-direction:column;align-items:center;gap:12px;padding-top:18px}
+        .contact-form{display:flex;flex-direction:column;gap:12px;width:100%;max-width:480px;margin:18px auto 8px;text-align:left}
+        .form-group{display:flex;flex-direction:column;gap:4px}
+        .form-group label{font-size:0.85rem;color:#cfcfcf}
+        .form-group input{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);padding:10px 14px;border-radius:8px;color:#fff;font-family:inherit;font-size:0.95rem;outline:none}
+        .form-group input:focus{border-color:rgba(255,255,255,0.3)}
+        .btn{display:inline-block;background:#ffffff;color:#0d0d0d;padding:12px 28px;border-radius:999px;text-decoration:none;font-weight:700;box-shadow:0 8px 20px rgba(0,0,0,0.6);border:none;cursor:pointer;margin-top:8px}
         .note{font-size:0.85rem;color:#9a9a9a}
 
-        .cta{display:flex;flex-direction:column;align-items:center;gap:12px;padding-top:18px}
-
-        /* ===== LISTAS ===== */
-        ul{color:#d0d0d0;padding-left:20px;margin-bottom:12px}
-        ul li{margin-bottom:4px}
-
-        /* ===== RESPONSIVE ===== */
+        /* RESPONSIVE */
         @media(max-width:800px){
             .wrap{padding:20px}
             .grid-2{grid-template-columns:1fr}
@@ -92,13 +98,13 @@
 </head>
 <body>
     <div class="wrap">
-
-        <!-- ===== HEADER ===== -->
+        <!-- HEADER -->
         <header>
-            <div class="kicker">Producto para headhunters · Evaluación de Criterio</div>
-            <h1>Assessment de Criterio</h1>
-            <p class="subtitle">Diagnóstico de juicio bajo presión para candidatos finalistas — un producto independiente diseñado para firmas de selección y headhunting.</p>
+            <div class="kicker">Producto para headhunters · Observación de juicio ejecutivo</div>
+            <h1>Juicio en el Caos · Assessment</h1>
+            <p class="subtitle">Observación estructurada de cómo un ejecutivo construye y sostiene decisiones bajo presión.</p>
 
+            <!-- NAVEGACIÓN -->
             <nav class="main-nav" aria-label="Navegación principal">
                 <a href="index.html">Inicio</a>
                 <a href="libro.html">Libro</a>
@@ -112,114 +118,88 @@
 
         <hr class="sep" />
 
-        <!-- ===== PROBLEMA ===== -->
+        <!-- SECCIÓN 1: EL PRODUCTO -->
         <section class="panel">
-            <span class="tag">El problema</span>
-            <h2 style="margin-top:8px">Lo que una entrevista no puede evaluar</h2>
-            <p class="muted">Una firma de headhunting coloca a un directivo con el CV perfecto. Tiene experiencia, contactos, formación. Pero hay una variable que ninguna entrevista puede revelar:</p>
-            <p style="color:#ffffff;font-weight:400;font-size:1.05rem;">"¿Cómo va a decidir esta persona cuando esté sola, con información incompleta, bajo presión, y sin red de seguridad?"</p>
-            <p class="muted">Esa variable es la que determina si el directivo que acaban de colocar va a fracasar en los primeros 18 meses — o si va a sostenerse y generar valor.</p>
+            <span class="tag">Observación de Criterio</span>
+            <h2 style="margin-top:8px">El Producto</h2>
+            <p>Un servicio de observación estructurada diseñado para firmas de selección ejecutiva y headhunting que necesitan validar el comportamiento decisivo de candidatos en ternas finalistas.</p>
+            <p class="muted">A diferencia de los exámenes psicométricos tradicionales o las entrevistas por competencias, el assessment no pretende medir ni emitir una calificación sobre el participante. Se enfoca en exponer al ejecutivo a un entorno controlado de simulación interactiva para observar y documentar cómo construye su arquitectura de decisión en tiempo real.</p>
         </section>
 
         <hr class="sep" />
 
-        <!-- ===== QUÉ ES ===== -->
+        <!-- SECCIÓN 2: CUATRO DIMENSIONES OBSERVADAS -->
         <section class="panel">
-            <span class="tag">El producto</span>
-            <h2 style="margin-top:8px">El Assessment de Criterio</h2>
-            <p class="muted">Un producto diseñado específicamente para que firmas de headhunting y selección de personal puedan ofrecer a sus clientes un diagnóstico de juicio bajo presión de los candidatos finalistas.</p>
+            <span class="tag">Marco de Análisis</span>
+            <h2 style="margin-top:8px">Cuatro dimensiones observadas</h2>
+            <p class="muted">Durante la sesión de simulación se observa el desempeño del candidato a través de cuatro ejes fundamentales:</p>
 
             <div class="grid-2">
                 <div class="card">
-                    <h4>Duración</h4>
-                    <p>De 1.5 a 3 horas por candidato, dependiendo del nivel del puesto y la complejidad del escenario.</p>
+                    <strong>1. Tolerancia a la Ambigüedad</strong>
+                    <span>Observación de la capacidad para actuar con información incompleta, contradictoria o en constante cambio sin parálisis operativa.</span>
                 </div>
                 <div class="card">
-                    <h4>Formato</h4>
-                    <p>Presencial o remoto, individual o con grupos reducidos de candidatos finalistas.</p>
+                    <strong>2. Justificación de Criterio (MDT)</strong>
+                    <span>Registro del marco conceptual que utiliza para fundamentar decisiones difíciles y la defensa lógica de su postura.</span>
                 </div>
                 <div class="card">
-                    <h4>Diseño a medida</h4>
-                    <p>Las pruebas son diseñadas específicamente para el contexto del puesto que el candidato va a ocupar, incluyendo variables del sector, la organización y el rol.</p>
+                    <strong>3. Autorregulación bajo Presión</strong>
+                    <span>Monitoreo de la estabilidad del juicio ante escenarios hostiles y restricciones severas de tiempo.</span>
                 </div>
                 <div class="card">
-                    <h4>Valor para tu firma</h4>
-                    <p style="font-size:0.95rem;color:#ffffff;font-weight:400;margin-top:6px;">"No solo encontramos al candidato con el perfil; lo sometimos a una prueba de juicio real y podemos demostrar cómo piensa bajo presión."</p>
-                    <p class="muted" style="margin-top:6px;font-size:0.9rem;">Ese es el argumento de venta que ninguna otra firma de headhunting puede ofrecer.</p>
+                    <strong>4. Construcción de Escenarios</strong>
+                    <span>Observación de la habilidad para anticipar consecuencias de segundo y tercer orden antes de emitir una determinación.</span>
                 </div>
             </div>
         </section>
 
         <hr class="sep" />
 
-        <!-- ===== QUÉ EVALÚA ===== -->
-        <section class="panel">
-            <span class="tag">Lo que mide</span>
-            <h2 style="margin-top:8px">Cuatro dimensiones del juicio</h2>
-            <p class="muted">El Assessment observa cómo el candidato construye y sostiene una decisión bajo presión, no qué decisión toma.</p>
-
-            <div class="grid-2">
-                <div class="card">
-                    <h4>1. Lectura del escenario</h4>
-                    <p>¿Cómo clasifica el candidato la situación? ¿Ve el problema completo o solo una parte?</p>
-                </div>
-                <div class="card">
-                    <h4>2. Identificación de variables ausentes</h4>
-                    <p>¿Qué información busca? ¿Qué supuestos hace? ¿Qué deja fuera?</p>
-                </div>
-                <div class="card">
-                    <h4>3. Gestión de la incertidumbre</h4>
-                    <p>¿Cómo decide cuando la información es incompleta? ¿Se paraliza, improvisa o construye un criterio?</p>
-                </div>
-                <div class="card">
-                    <h4>4. Sostenibilidad del criterio</h4>
-                    <p>¿Cómo explica su decisión? ¿Justifica el resultado o reconstruye el proceso?</p>
-                </div>
-            </div>
-        </section>
-
-        <hr class="sep" />
-
-        <!-- ===== ENTREGABLE ===== -->
-        <section class="panel">
-            <span class="tag">El entregable</span>
-            <h2 style="margin-top:8px">Un informe que fundamenta la recomendación</h2>
-            <p class="muted">Por cada candidato evaluado, la firma de headhunting recibe:</p>
-            <ul>
-                <li>Un análisis estructurado en las cuatro dimensiones de juicio.</li>
-                <li>Una comparativa anonimizada entre los finalistas.</li>
-                <li>Una recomendación basada en la calidad del juicio, no solo en el perfil técnico.</li>
+        <!-- SECCIÓN 3: UN INFORME QUE DOCUMENTA LA OBSERVACIÓN -->
+        <section class="accent-block">
+            <span class="label">Entregable Táctico</span>
+            <p style="font-size:1.02rem;color:#ffffff;font-weight:400;margin-bottom:0.6rem;">Un informe que documenta la observación sin calificaciones ni juicios de valor.</p>
+            <p class="muted">La firma receptora recibe un registro estructurado y descriptivo del proceso de razonamiento del candidato. Este informe permite contrastar el perfil declarativo de la entrevista con la evidencia directa de su comportamiento en el simulador.</p>
+            
+            <ul class="doc-list">
+                <li>Registro descriptivo de patrones de toma de decisiones.</li>
+                <li>Mapeo de riesgos de juicio identificados durante la simulación.</li>
+                <li>Trazabilidad del razonamiento en momentos críticos de la sesión.</li>
             </ul>
-            <p class="muted">Este informe puede adjuntarse a la propuesta de la firma de headhunting, o presentarse directamente al cliente como un servicio de valor agregado.</p>
         </section>
 
         <hr class="sep" />
 
-        <!-- ===== PARA QUIÉN ===== -->
+        <!-- SECCIÓN 4: PARA FIRMAS QUE QUIEREN DIFERENCIARSE -->
         <section class="panel">
-            <span class="tag">Público objetivo</span>
+            <span class="tag">Valor para Headhunters</span>
             <h2 style="margin-top:8px">Para firmas que quieren diferenciarse</h2>
-            <p class="muted">Este producto está diseñado para:</p>
-            <ul>
-                <li><strong style="color:#ffffff;">Firmas boutique de alta dirección</strong> que buscan un servicio que ninguna competencia puede ofrecer.</li>
-                <li><strong style="color:#ffffff;">Headhunters especializados</strong> en empresas familiares, donde la sucesión y la continuidad son críticas.</li>
-                <li><strong style="color:#ffffff;">Consultoras de talento</strong> que quieren añadir una capa de evaluación de criterio a sus servicios de selección.</li>
-            </ul>
-            <p class="muted">Es el producto de entrada que convierte al seminario en un ecosistema completo de servicios de evaluación y desarrollo de criterio.</p>
+            <p class="muted">Ofrecer este proceso a sus clientes corporativos agrega un nivel de rigor inédito en el mercado directivo. El cliente final no solo recibe un currículum y referencias, sino una documentación clara de la solidez y los límites del juicio del candidato antes de su contratación.</p>
+            <p style="color:#ffffff;margin-top:8px">Transforme la selección final en un proceso respaldado por la observación de juicio bajo presión real.</p>
         </section>
 
         <hr class="sep" />
 
-        <!-- ===== CTA ===== -->
+        <!-- SECCIÓN 5: CTA FINAL -->
         <div class="cta">
-            <div class="panel" style="text-align:center;max-width:700px">
-                <p style="font-size:1.15rem;color:#fff;margin-bottom:6px">El siguiente paso</p>
-                <p class="muted" style="max-width:640px;margin:0 auto 18px">Una conversación para entender cómo el Assessment de Criterio puede integrarse en su proceso de selección y convertirse en un diferenciador competitivo para su firma.</p>
-                <div class="btn-group" style="justify-content:center">
-                    <a href="#" class="btn">Solicitar Información</a>
-                    <a href="simulador.html" class="btn ghost">Probar el Simulador</a>
-                </div>
-                <p class="note">Sin compromiso · Desarrollo validado en piloto</p>
+            <div class="panel" style="text-align:center;max-width:700px;width:100%">
+                <p style="font-size:1.15rem;color:#fff;margin-bottom:6px">Solicitar propuesta para firmas</p>
+                <p class="muted" style="max-width:640px;margin:0 auto 14px">Sin calificaciones, solo observación estructurada. Conversemos sobre cómo integrar este entregable en sus procesos de búsqueda ejecutiva.</p>
+
+                <form class="contact-form" action="mailto:contacto@juicioenelcaos.com" method="post" enctype="text/plain">
+                    <div class="form-group">
+                        <label for="email">Correo Electrónico de Contacto</label>
+                        <input type="email" id="email" name="Correo" placeholder="ejemplo@firmadeheadhunting.com" required />
+                    </div>
+                    <div class="form-group">
+                        <label for="whatsapp">Número de WhatsApp</label>
+                        <input type="tel" id="whatsapp" name="WhatsApp" placeholder="+52 55 0000 0000" required />
+                    </div>
+                    <button type="submit" class="btn">Solicitar Información</button>
+                </form>
+
+                <p class="note" style="margin-top:12px">Atención exclusiva para firmas de selección y consultoría directiva.</p>
             </div>
         </div>
 
