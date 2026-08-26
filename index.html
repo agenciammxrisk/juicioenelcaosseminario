@@ -96,6 +96,16 @@
         .quality span, .dimension-card p{display:block;color:#b3b3b3;font-weight:300;margin-top:4px;font-size:0.9rem}
         .dim-tag{font-size:0.75rem;color:#9a9a9a;background:rgba(255,255,255,0.04);padding:4px 8px;border-radius:4px;margin-top:4px;display:inline-block}
 
+        /* lists inside dimension cards & take-aways */
+        .takeaway-list{list-style:none;margin-top:6px}
+        .takeaway-list li{color:#b3b3b3;font-size:0.85rem;margin-bottom:6px;position:relative;padding-left:14px;font-weight:300}
+        .takeaway-list li::before{content:"·";position:absolute;left:0;color:#fff;font-weight:bold}
+
+        .main-takeaway-list{list-style:none;margin:16px 0 8px 0}
+        .main-takeaway-list li{color:#d0d0d0;font-size:0.95rem;margin-bottom:12px;position:relative;padding-left:18px;font-weight:300}
+        .main-takeaway-list li::before{content:"·";position:absolute;left:0;color:#fff;font-weight:bold}
+        .main-takeaway-list li strong{color:#ffffff;font-weight:600}
+
         /* format block */
         .format-list{display:flex;gap:18px;flex-wrap:wrap;margin-top:12px}
         .format-item{background:transparent;padding:10px 14px;border-radius:8px;border:1px dashed rgba(255,255,255,0.02);font-size:0.95rem;color:#d0d0d0}
@@ -154,7 +164,6 @@
                 <a href="entrenamiento.html">Entrenamiento</a>
                 <a href="simulador.html">Simulador</a>
                 <a href="arquitectura.html">Arquitectura</a>
-                
                 <a href="blog.html">Blog</a>
                 <a href="assessment.html">Assessment</a>
             </nav>
@@ -188,8 +197,8 @@
             <p class="muted">Los programas de liderazgo tradicionales las abordan de manera aislada, con enfoques teóricos o experiencias que no logran integrarlas. El resultado es un criterio que sigue siendo vulnerable ante la presión.</p>
         </section>
 
-        <h2 style="margin-top:18px;color:#ffffff">Juicio en el Caos desarrolla, en el transcurso de un fin de semana, 12 transformaciones diseñadas para potenciar estas 7 habilidades</h2>
-        <p class="muted">No es un curso teórico. Es una experiencia de inmersión total que expone al participante a escenarios de presión real, con información incompleta y consecuencias simuladas.</p>
+        <h2 style="margin-top:18px;color:#ffffff">Juicio en el Caos desarrolla, en el transcurso de un fin de semana, un proceso vivencial diseñado para potenciar estas 7 habilidades</h2>
+        <p class="muted">No es un curso teórico. Es una experiencia de inmersión total que expone al participante a escenarios de presión real, con información incompleta y consecuencias reales en un ambiante controlado.</p>
 
         <div class="format-block">
             <div class="panel" style="margin-top:12px">
@@ -219,6 +228,13 @@
                     <div style="border-top:1px solid rgba(255,255,255,0.04);padding-top:8px;margin-top:8px;">
                         <span style="font-size:0.85rem;color:#ffffff;font-weight:600;">Resultado:</span>
                         <p style="font-size:0.85rem;color:#b3b3b3;margin-top:2px;">Las reuniones que terminaban en nuevas reuniones, ahora terminan en decisiones. La organización desarrolla un lenguaje común para discutir escenarios complejos y una arquitectura de decisión que permanece.</p>
+                        <span style="font-size:0.85rem;color:#ffffff;font-weight:600;display:block;margin-top:10px;">Lo que te llevas:</span>
+                        <ul class="takeaway-list">
+                            <li>Un lenguaje común con tu equipo para discutir escenarios complejos.</li>
+                            <li>Una arquitectura de decisión que permanece en la organización.</li>
+                            <li>La capacidad de construir escenarios antes de decidir, de forma compartida.</li>
+                            <li>La experiencia de haber enfrentado, junto a tu equipo, las mismas condiciones que enfrentan en la organización.</li>
+                        </ul>
                     </div>
                 </div>
 
@@ -232,6 +248,13 @@
                     <div style="border-top:1px solid rgba(255,255,255,0.04);padding-top:8px;margin-top:8px;">
                         <span style="font-size:0.85rem;color:#ffffff;font-weight:600;">Resultado:</span>
                         <p style="font-size:0.85rem;color:#b3b3b3;margin-top:2px;">Construir escenarios antes de decidir. Ganar confianza para sostener decisiones de alta consecuencia.</p>
+                        <span style="font-size:0.85rem;color:#ffffff;font-weight:600;display:block;margin-top:10px;">Lo que te llevas:</span>
+                        <ul class="takeaway-list">
+                            <li>Criterio propio para decidir bajo incertidumbre.</li>
+                            <li>Confianza para sostener decisiones de alta consecuencia.</li>
+                            <li>Una arquitectura de decisión que puedes aplicar en cualquier dominio.</li>
+                            <li>La experiencia de haber enfrentado, con otros decisores, las mismas condiciones que enfrentas en tu organización.</li>
+                        </ul>
                     </div>
                 </div>
 
@@ -246,9 +269,33 @@
                     <div style="border-top:1px solid rgba(255,255,255,0.04);padding-top:8px;margin-top:8px;">
                         <span style="font-size:0.85rem;color:#ffffff;font-weight:600;">Resultado:</span>
                         <p style="font-size:0.85rem;color:#b3b3b3;margin-top:2px;">Cuando el marco que usaste para decidir ya no alcanza. Cuando la decisión es solo tuya. Cuando el tiempo es hostil. Salir con una capacidad instalada: construir escenarios antes de decidir.</p>
+                        <span style="font-size:0.85rem;color:#ffffff;font-weight:600;display:block;margin-top:10px;">Lo que te llevas:</span>
+                        <ul class="takeaway-list">
+                            <li>Una capacidad instalada para enfrentar la soledad del criterio.</li>
+                            <li>Criterio para decisiones de máxima consecuencia.</li>
+                            <li>La experiencia de haber enfrentado, con otros decisores, las mismas condiciones que enfrentas en tu organización.</li>
+                            <li>Una pregunta nueva. No la respuesta que te trajo. La pregunta que te va a mover hacia adelante.</li>
+                        </ul>
                     </div>
                 </div>
             </div>
+        </section>
+
+        <hr class="sep" />
+
+        <!-- NUEVA SECCIÓN: LO QUE TE LLEVAS -->
+        <section class="panel">
+            <span class="tag">Transformación y Retorno</span>
+            <h2 style="margin-top:8px">Lo que te llevas</h2>
+            <p class="muted">Al terminar Juicio en el Caos, te llevas:</p>
+
+            <ul class="main-takeaway-list">
+                <li><strong>Una capacidad instalada:</strong> Construir escenarios antes de decidir.</li>
+                <li><strong>Un lenguaje compartido:</strong> Para discutir escenarios complejos con otros decisores que vivieron lo mismo.</li>
+                <li><strong>Una arquitectura de decisión:</strong> Que puedes aplicar en cualquier dominio (no solo en tu organización).</li>
+                <li><strong>Una experiencia vivida:</strong> De haber enfrentado, en 48 horas, las mismas condiciones que enfrentas en tu organización.</li>
+                <li><strong>Un retorno que se mide en valor protegido y oportunidades capturadas:</strong> El valor que antes se extraía sin que lo vieras, ahora lo proteges. Las oportunidades que antes veías demasiado tarde, ahora las capturas antes que otros.</li>
+            </ul>
         </section>
 
         <hr class="sep" />
