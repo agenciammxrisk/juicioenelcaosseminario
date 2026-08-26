@@ -141,8 +141,8 @@
     <div class="wrap">
 
         <!-- BOTONES DE NAVEGACIÓN -->
-        <a href="index.html" class="back-btn">← Volver al Blog</a>
-        <a href="../index.html" class="back-btn" style="margin-left: 8px;">← Sitio Principal</a>
+        <a href="blog" class="back-btn">← Volver al Blog</a>
+        <a href="index.html" class="back-btn" style="margin-left: 8px;">← Sitio Principal</a>
 
         <!-- HEADER -->
         <header>
@@ -151,14 +151,14 @@
             <span class="post-meta">25 de Agosto, 2026 · Por José Eduardo Macías Almanza</span>
             
             <nav class="main-nav" aria-label="Navegación principal">
-                <a href="../index.html">Inicio</a>
-                <a href="../libro.html">Libro</a>
-                <a href="../intervenciones.html">Intervenciones</a>
-                <a href="../entrenamiento.html">Entrenamiento</a>
-                <a href="../simulador.html">Simulador</a>
-                <a href="../arquitectura.html">Arquitectura</a>
-                <a href="../assessment.html">Assessment</a>
-                <a href="index.html" class="active">Blog</a>
+                <a href="index.html">Inicio</a>
+                <a href="libro.html">Libro</a>
+                <a href="intervenciones.html">Intervenciones</a>
+                <a href="entrenamiento.html">Entrenamiento</a>
+                <a href="simulador.html">Simulador</a>
+                <a href="arquitectura.html">Arquitectura</a>
+                <a href="assessment.html">Assessment</a>
+                <a href="blog" class="active">Blog</a>
             </nav>
         </header>
 
@@ -245,7 +245,7 @@
         <div class="article-cta">
             <h3 style="color:#fff;font-family:'Playfair Display',serif;font-size:1.4rem;margin-bottom:8px">Desarrolla esta arquitectura en tu equipo</h3>
             <p style="color:#9a9a9a;font-size:0.95rem;max-width:600px;margin:0 auto 12px">Descubre cómo la intervención residencial de 48 horas de Juicio en el Caos prepara a decisores ejecutivos bajo presión real.</p>
-            <a href="../index.html" class="btn">Conocer las Intervenciones</a>
+            <a href="index.html" class="btn">Conocer las Intervenciones</a>
         </div>
 
     </div> 
