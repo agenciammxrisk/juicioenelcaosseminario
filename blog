@@ -112,7 +112,7 @@
     <div class="wrap">
 
         <!-- BOTÓN REGRESAR AL SITIO PRINCIPAL -->
-        <a href="../index.html" class="back-btn">← Volver al sitio principal</a>
+        <a href="index.html" class="back-btn">← Volver al sitio principal</a>
 
         <!-- HEADER & NAVEGACIÓN -->
         <header>
@@ -121,14 +121,14 @@
             <p class="subtitle">Análisis, doctrina sobre trazabilidad defendible y criterio ejecutivo bajo incertidumbre.</p>
 
             <nav class="main-nav" aria-label="Navegación principal">
-                <a href="../index.html">Inicio</a>
-                <a href="../libro.html">Libro</a>
-                <a href="../intervenciones.html">Intervenciones</a>
-                <a href="../entrenamiento.html">Entrenamiento</a>
-                <a href="../simulador.html">Simulador</a>
-                <a href="../arquitectura.html">Arquitectura</a>
-                <a href="../assessment.html">Assessment</a>
-                <a href="index.html" class="active">Blog</a>
+                <a href="index.html">Inicio</a>
+                <a href="libro.html">Libro</a>
+                <a href="intervenciones.html">Intervenciones</a>
+                <a href="entrenamiento.html">Entrenamiento</a>
+                <a href="simulador.html">Simulador</a>
+                <a href="arquitectura.html">Arquitectura</a>
+                <a href="assessment.html">Assessment</a>
+                <a href="blog" class="active">Blog</a>
             </nav>
         </header>
 
@@ -145,9 +145,9 @@
                 <!-- Artículo Principal -->
                 <article class="post-card">
                     <span class="post-meta">25 de Agosto, 2026 · Por José Eduardo Macías Almanza</span>
-                    <a href="quien-entrena-el-criterio.html" class="post-title">¿Quién entrena el criterio?</a>
+                    <a href="criterio" class="post-title">¿Quién entrena el criterio?</a>
                     <p class="muted">El conocimiento es información organizada; el procedimiento es una secuencia de pasos. Ninguno de los dos produce criterio automáticamente cuando las herramientas se agotan.</p>
-                    <a href="quien-entrena-el-criterio.html" class="read-more">Leer artículo completo →</a>
+                    <a href="criterio" class="read-more">Leer artículo completo →</a>
                 </article>
 
             </div>
