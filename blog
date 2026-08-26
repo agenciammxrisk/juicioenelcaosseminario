@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog | Juicio en el Caos</title>
+  <link rel="stylesheet" href="../styles.css"> <!-- Ajusta la ruta a tu archivo CSS si es diferente -->
+</head>
+<body>
+
+  <!-- Encabezado / Navegación principal -->
+  <header>
+    <nav>
+      <!-- Tu menú de navegación irá aquí -->
+    </nav>
+  </header>
+
+  <!-- Contenido principal del Blog -->
+  <main class="blog-container">
+    <section class="blog-header">
+      <h1>Blog</h1>
+      <p>Artículos, publicaciones y análisis.</p>
+    </section>
+
+    <!-- Listado de artículos -->
+    <section class="posts-grid">
+      
+      <!-- Artículo de muestra -->
+      <article class="post-card">
+        <h2><a href="articulo-ejemplo.html">Título del Primer Artículo</a></h2>
+        <span class="post-date">25 de Agosto, 2026</span>
+        <p>Resumen o extracto breve del artículo para captar el interés del lector...</p>
+        <a href="articulo-ejemplo.html" class="read-more">Leer más</a>
+      </article>
+
+    </section>
+  </main>
+
+  <!-- Pie de página -->
+  <footer>
+    <p>&copy; 2026 Juicio en el Caos. Todos los derechos reservados.</p>
+  </footer>
+
+</body>
+</html>
