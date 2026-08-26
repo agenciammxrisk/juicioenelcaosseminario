@@ -3,7 +3,20 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Juicio en el Caos · Blog y Publicaciones</title>
+    <title>Juicio en el Caos · Assessment</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Evaluación de perfil de juicio ejecutivo para la selección y adecuación de talento directivo. Herramienta especializada para firmas de headhunting." />
+    <meta name="keywords" content="Juicio en el Caos, Assessment, Headhunting, Selección de Personal, Criterio Ejecutivo, Evaluación Directiva" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://juicioenelcaos.com/assessment.html" />
+
+    <!-- Open Graph (Redes Sociales) -->
+    <meta property="og:title" content="Juicio en el Caos · Assessment" />
+    <meta property="og:description" content="Evaluación de perfil de juicio ejecutivo para la selección y adecuación de talento directivo." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://juicioenelcaos.com/assessment.html" />
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
@@ -57,32 +70,39 @@
         .tag{display:inline-block;padding:6px 10px;border-radius:999px;font-size:0.72rem;color:#bdbdbd;background:rgba(255,255,255,0.02);text-transform:uppercase;letter-spacing:1.6px}
 
         h2{font-size:1.5rem;margin:8px 0 12px;color:#ffffff}
+        h3{font-size:1rem;margin:10px 0;color:#eaeaea}
         p{color:#d0d0d0;font-size:1rem;margin-bottom:12px}
         .muted{color:#9a9a9a}
 
-        /* ARTÍCULOS */
-        .article-list{display:flex;flex-direction:column;gap:16px;margin-top:14px}
-        .article-card{
-            background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.015));
-            padding:20px;
-            border-radius:8px;
-            border:1px solid rgba(255,255,255,0.02);
-            transition: border 0.2s ease;
-        }
-        .article-card:hover{border-color:rgba(255,255,255,0.1)}
-        .article-meta{font-size:0.75rem;color:#9a9a9a;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:6px}
-        .article-title{font-family:'Playfair Display', serif;font-size:1.3rem;color:#fff;margin-bottom:8px;text-decoration:none;display:block}
-        .article-excerpt{color:#b3b3b3;font-size:0.95rem;margin-bottom:12px;font-weight:300}
-        .read-more{font-size:0.85rem;color:#ffffff;font-weight:600;text-decoration:none}
-        .read-more:hover{text-decoration:underline}
+        /* GRID */
+        .grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:14px}
+        .card{background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.015));padding:16px;border-radius:8px;border:1px solid rgba(255,255,255,0.02)}
+        .card strong{display:block;color:#fff;font-weight:600;margin-bottom:4px}
+        .card span{display:block;color:#b3b3b3;font-weight:300;font-size:0.9rem}
 
-        /* CTA */
+        /* BLOCKS */
+        .accent-block{background:transparent;padding:18px;border-radius:10px;border-left:3px solid rgba(255,255,255,0.06);margin:18px 0}
+        .accent-block .label{font-size:0.72rem;color:#9a9a9a;text-transform:uppercase;letter-spacing:1.6px;margin-bottom:8px;display:block}
+
+        /* LISTS */
+        .doc-list{list-style:none;margin:12px 0}
+        .doc-list li{color:#b3b3b3;font-size:0.95rem;margin-bottom:8px;position:relative;padding-left:16px}
+        .doc-list li::before{content:"·";position:absolute;left:0;color:#fff;font-weight:bold}
+
+        /* CTA & FORM */
         .cta{display:flex;flex-direction:column;align-items:center;gap:12px;padding-top:18px}
+        .contact-form{display:flex;flex-direction:column;gap:12px;width:100%;max-width:480px;margin:18px auto 8px;text-align:left}
+        .form-group{display:flex;flex-direction:column;gap:4px}
+        .form-group label{font-size:0.85rem;color:#cfcfcf}
+        .form-group input{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);padding:10px 14px;border-radius:8px;color:#fff;font-family:inherit;font-size:0.95rem;outline:none}
+        .form-group input:focus{border-color:rgba(255,255,255,0.3)}
         .btn{display:inline-block;background:#ffffff;color:#0d0d0d;padding:12px 28px;border-radius:999px;text-decoration:none;font-weight:700;box-shadow:0 8px 20px rgba(0,0,0,0.6);border:none;cursor:pointer;margin-top:8px}
+        .note{font-size:0.85rem;color:#9a9a9a}
 
         /* RESPONSIVE */
         @media(max-width:800px){
             .wrap{padding:20px}
+            .grid-2{grid-template-columns:1fr}
             h1{font-size:1.9rem}
             .main-nav{gap:8px}
             .main-nav a{padding:8px 10px;font-size:0.9rem}
@@ -93,9 +113,9 @@
     <div class="wrap">
         <!-- HEADER -->
         <header>
-            <div class="kicker">Doctrina & Análisis de Criterio</div>
-            <h1>Bitácora de Arquitectura de Decisión</h1>
-            <p class="subtitle">Ensayos, análisis de casos reales y reflexiones sobre la toma de decisiones en entornos de alta incertidumbre y riesgo patrimonial.</p>
+            <div class="kicker">Producto para headhunters · Evaluación de adecuación al puesto</div>
+            <h1>Juicio en el Caos · Assessment</h1>
+            <p class="subtitle">Evaluación de perfil de juicio ejecutivo para la selección y adecuación de talento directivo.</p>
 
             <!-- NAVEGACIÓN -->
             <nav class="main-nav" aria-label="Navegación principal">
@@ -105,53 +125,110 @@
                 <a href="entrenamiento.html">Entrenamiento</a>
                 <a href="simulador.html">Simulador</a>
                 <a href="arquitectura.html">Arquitectura</a>
-                <a href="blog.html" class="active">Blog</a>
-                <a href="assessment.html">Assessment</a>
+                <a href="assessment.html" class="active">Assessment</a>
             </nav>
         </header>
 
         <hr class="sep" />
 
-        <!-- LISTA DE ARTÍCULOS -->
+        <!-- SECCIÓN 1: EL PRODUCTO -->
         <section class="panel">
-            <span class="tag">Ensayos Recientes</span>
-            <h2 style="margin-top:8px">Publicaciones</h2>
+            <span class="tag">Observación de Criterio</span>
+            <h2 style="margin-top:8px">El Producto</h2>
+            <p>Un producto diseñado para firmas de headhunting y selección de personal. Permite a sus clientes conocer el perfil de juicio de los candidatos finalistas, identificando su estilo de decisión, sus puntos ciegos y su adecuación a puestos de alta dirección.</p>
+        </section>
 
-            <div class="article-list">
-                <!-- Articulo 1 -->
-                <article class="article-card">
-                    <div class="article-meta">Doctrina · 2026</div>
-                    <a href="#" class="article-title">La falacia de la decisión correcta: Por qué evaluar por resultados destruye el criterio</a>
-                    <p class="article-excerpt">Una decisión correcta ejecutada en un entorno hostil puede dar un resultado desastroso, mientras que un error grave puede verse premiado por puro azar. Cómo construir una Matriz de Decisiones Defendibles (MDT).</p>
-                    <a href="#" class="read-more">Leer ensayo →</a>
-                </article>
+        <hr class="sep" />
 
-                <!-- Articulo 2 -->
-                <article class="article-card">
-                    <div class="article-meta">Casos de Estudio · 2026</div>
-                    <a href="#" class="article-title">La anatomía de una extracción interna: El caso de los $200M</a>
-                    <p class="article-excerpt">Análisis del escenario donde la investigación formal de un fraude corporativo provocó la colapso operativo de la compañía al siguiente lunes. El peligro de no anticipar efectos de segundo orden.</p>
-                    <a href="#" class="read-more">Leer caso →</a>
-                </article>
+        <!-- SECCIÓN NUEVA: ALCANCE DEL ASSESSMENT -->
+        <section class="panel">
+            <span class="tag">Alcance y Metodología</span>
+            <h2 style="margin-top:8px">Lo que el Assessment mide — y lo que no mide</h2>
+            <p>El Assessment no califica el criterio del candidato como "bueno" o "malo". No emite un veredicto sobre su capacidad de decidir.</p>
+            <p class="muted">Lo que hace es evaluar cómo se manifiesta el juicio del candidato en un contexto específico — el puesto al que aspira. Mide el grado de ajuste entre su patrón de decisión y las exigencias del rol. La métrica no es "correcto/incorrecto", sino "adecuado/no adecuado para este contexto".</p>
+            <h2 style="margin-top:8px">Lo que el Assessment mide </h2>
+                    <p class="muted">Lo que hace es evaluar cómo se manifiesta el juicio del candidato en un contexto específico — el puesto al que aspira. Mide el grado de ajuste entre su patrón de decisión y las exigencias del rol. La métrica no es "correcto/incorrecto", sino "adecuado/no adecuado para este contexto".</p>
+            <p style="color:#ffffff;margin-top:8px">Esto permite a las firmas de selección fundamentar sus recomendaciones con datos concretos sobre el perfil de juicio del candidato, sin reducir la evaluación a una calificación simplista.</p>
+        </section>
 
-                <!-- Articulo 3 -->
-                <article class="article-card">
-                    <div class="article-meta">Liderazgo Ejecutivo · 2026</div>
-                    <a href="#" class="article-title">La soledad del criterio: El techo de cristal de las empresas de $100M</a>
-                    <p class="article-excerpt">Por qué el marco mental del fundador deja de ser funcional cuando la empresa escala, y cómo transferir la arquitectura de decisión al equipo directivo sin perder el control.</p>
-                    <a href="#" class="read-more">Leer ensayo →</a>
-                </article>
+        <hr class="sep" />
+
+        <!-- SECCIÓN 2: CUATRO DIMENSIONES OBSERVADAS -->
+        <section class="panel">
+            <span class="tag">Marco de Análisis</span>
+            <h2 style="margin-top:8px">Cuatro dimensiones observadas</h2>
+            <p class="muted">Durante la sesión de simulación se observa el desempeño del candidato a través de cuatro ejes fundamentales. Cada dimensión se evalúa en relación con el perfil requerido por el puesto, no en abstracto.</p>
+
+            <div class="grid-2">
+                <div class="card">
+                    <strong>1. Tolerancia a la Ambigüedad</strong>
+                    <span>Observación de la capacidad para actuar con información incompleta, contradictoria o en constante cambio sin parálisis operativa.</span>
+                </div>
+                <div class="card">
+                    <strong>2. Justificación de Criterio (MDT)</strong>
+                    <strong>2. Explicación de Criterio (MDT)</strong>
+                    <span>Registro del marco conceptual que utiliza para fundamentar decisiones difíciles y la defensa lógica de su postura.</span>
+                </div>
+                <div class="card">
+                    <strong>3. Autorregulación bajo Presión</strong>
+                    <span>Monitoreo de la estabilidad del juicio ante escenarios hostiles y restricciones severas de tiempo.</span>
+                </div>
+                <div class="card">
+                    <strong>4. Construcción de Escenarios</strong>
+                    <span>Observación de la habilidad para anticipar consecuencias de segundo y tercer orden antes de emitir una determinación.</span>
+                </div>
             </div>
         </section>
 
         <hr class="sep" />
 
-        <!-- CTA FINAL -->
+        <!-- SECCIÓN 3: EL ENTREGABLE -->
+        <section class="accent-block">
+            <span class="label">Entregable Táctico</span>
+            <h2 style="font-size:1.3rem;color:#ffffff;margin-bottom:8px">Un informe que evalúa la adecuación al puesto</h2>
+
+            <ul class="doc-list">
+                <li>Un perfil de juicio en cuatro dimensiones, con puntuaciones que reflejan el grado de manifestación de cada cualidad.</li>
+                <li>Un análisis de adecuación al puesto, identificando fortalezas y puntos ciegos del candidato en relación con las exigencias del rol.</li>
+                <li>Una comparativa anonimizada entre los finalistas.</li>
+                <li>Una recomendación fundamentada en el perfil de riesgo, no en un veredicto de "correcto o incorrecto".</li>
+            </ul>
+
+            <p class="muted" style="margin-top:12px">Este informe puede adjuntarse a la propuesta de la firma de headhunting, o presentarse directamente al cliente como un servicio de valor agregado.</p>
+        </section>
+
+        <hr class="sep" />
+
+        <!-- SECCIÓN 4: PARA FIRMAS QUE QUIEREN DIFERENCIARSE -->
+        <section class="panel">
+            <span class="tag">Valor para Headhunters</span>
+            <h2 style="margin-top:8px">Para firmas que quieren diferenciarse</h2>
+            <p class="muted">Ofrecer este proceso a sus clientes corporativos agrega un nivel de rigor inédito en el mercado directivo. El cliente final no solo recibe un currículum y referencias, sino una documentación clara de la solidez y los límites del juicio del candidato antes de su contratación.</p>
+            <p style="color:#ffffff;margin-top:8px">Es el producto de entrada que convierte al seminario en un ecosistema completo de servicios de observación, evaluación y desarrollo de criterio.</p>
+        </section>
+
+        <hr class="sep" />
+
+        <!-- SECCIÓN 5: CTA FINAL -->
         <div class="cta">
             <div class="panel" style="text-align:center;max-width:700px;width:100%">
-                <p style="font-size:1.15rem;color:#fff;margin-bottom:6px">¿Deseas profundizar en la metodología?</p>
-                <p class="muted" style="max-width:640px;margin:0 auto 14px">Conoce el libro "Juicio en el Caos" o agenda una sesión de diagnóstico para tu equipo directivo.</p>
-                <a href="libro.html" class="btn">Explorar el Libro</a>
+                <p class="muted" style="max-width:640px;margin:0 auto 8px">Sin calificaciones. Solo un diagnóstico de ajuste entre el perfil del candidato y las exigencias del puesto.</p>
+                <p style="font-size:1.15rem;color:#fff;margin-bottom:6px">Solicitar propuesta para firmas</p>
+                <p class="muted" style="max-width:640px;margin:0 auto 14px">Conversemos sobre cómo integrar este entregable en sus procesos de búsqueda ejecutiva.</p>
+
+                <form class="contact-form" action="mailto:contacto@juicioenelcaos.com" method="post" enctype="text/plain">
+                    <div class="form-group">
+                        <label for="email">Correo Electrónico de Contacto</label>
+                        <input type="email" id="email" name="Correo" placeholder="ejemplo@firmadeheadhunting.com" required />
+                    </div>
+                    <div class="form-group">
+                        <label for="whatsapp">Número de WhatsApp</label>
+                        <input type="tel" id="whatsapp" name="WhatsApp" placeholder="+52 55 0000 0000" required />
+                    </div>
+                    <button type="submit" class="btn">Solicitar Información</button>
+                </form>
+
+                <p class="note" style="margin-top:12px">Atención exclusiva para firmas de selección y consultoría directiva.</p>
             </div>
         </div>
 
