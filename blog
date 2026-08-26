@@ -1,45 +1,198 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Blog | Juicio en el Caos</title>
-  <link rel="stylesheet" href="../styles.css"> <!-- Ajusta la ruta a tu archivo CSS si es diferente -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blog · Juicio en el Caos</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
+    <style>
+        /* RESET */
+        *{box-sizing:border-box;margin:0;padding:0}
+        html,body{height:100%}
+
+        /* BASE - dark theme */
+        body{
+            background: #0d0d0d;
+            color: #e8e8e8;
+            font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+            font-weight:300;
+            line-height:1.6;
+            -webkit-font-smoothing:antialiased;
+            padding: 24px;
+        }
+
+        /* centered wrapper */
+        .wrap{
+            max-width:880px;
+            margin:36px auto;
+            padding:44px 48px;
+            background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+            border-radius:12px;
+            border:1px solid rgba(255,255,255,0.03);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+        }
+
+        /* BACK BUTTON */
+        .back-btn{
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            color: #9a9a9a;
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            padding: 6px 12px;
+            border-radius: 6px;
+            border: 1px solid rgba(255,255,255,0.04);
+            background: rgba(255,255,255,0.01);
+            transition: all 0.2s ease;
+        }
+        .back-btn:hover{
+            color: #ffffff;
+            border-color: rgba(255,255,255,0.15);
+            background: rgba(255,255,255,0.04);
+        }
+
+        header{margin-bottom:28px}
+        .kicker{font-size:0.78rem;color:#9a9a9a;letter-spacing:1.6px;text-transform:uppercase;margin-bottom:10px}
+        h1{
+            font-family:'Playfair Display', serif;
+            font-weight:700;
+            font-size:2.6rem;
+            color:#ffffff;
+            line-height:1.05;
+            margin-bottom:6px;
+        }
+        .subtitle{color:#cfcfcf;font-size:1.05rem;max-width:72ch;font-weight:300}
+
+        /* NAVIGATION */
+        .main-nav{display:flex;gap:10px;flex-wrap:wrap;margin:14px 0}
+        .main-nav a{color:#dcdcdc;text-decoration:none;padding:8px 12px;border-radius:8px;border:1px solid rgba(255,255,255,0.03);background:transparent;font-weight:600;font-size:0.95rem}
+        .main-nav a:hover{background:rgba(255,255,255,0.03)}
+        .main-nav a.active{background:#ffffff;color:#0d0d0d}
+
+        hr.sep{border:none;border-top:1px solid rgba(255,255,255,0.04);margin:36px 0}
+
+        /* BLOG GRID & CARDS */
+        .panel{background: linear-gradient(180deg, #151515, #121212);padding:22px;border-radius:10px;border:1px solid rgba(255,255,255,0.03)}
+        .tag{display:inline-block;padding:6px 10px;border-radius:999px;font-size:0.72rem;color:#bdbdbd;background:rgba(255,255,255,0.02);text-transform:uppercase;letter-spacing:1.6px}
+
+        h2{font-size:1.5rem;margin:8px 0 12px;color:#ffffff}
+        p{color:#d0d0d0;font-size:1rem;margin-bottom:12px}
+        .muted{color:#9a9a9a}
+
+        .blog-grid{display:flex;flex-direction:column;gap:16px;margin-top:20px}
+        .post-card{
+            background: linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.015));
+            padding:24px;
+            border-radius:10px;
+            border:1px solid rgba(255,255,255,0.03);
+            transition: border-color 0.2s ease;
+        }
+        .post-card:hover{border-color:rgba(255,255,255,0.1)}
+        .post-title{font-family:'Playfair Display', serif;font-size:1.4rem;color:#ffffff;text-decoration:none;margin-bottom:6px;display:block}
+        .post-title:hover{color:#cfcfcf}
+        .post-meta{font-size:0.8rem;color:#9a9a9a;margin-bottom:12px;display:block}
+        .read-more{display:inline-block;color:#ffffff;font-size:0.9rem;font-weight:600;text-decoration:none;margin-top:8px}
+        .read-more:hover{text-decoration:underline}
+
+        /* responsive */
+        @media(max-width:800px){
+            .wrap{padding:20px}
+            h1{font-size:1.9rem}
+            .main-nav{gap:8px}
+            .main-nav a{padding:8px 10px;font-size:0.9rem}
+        }
+    </style>
 </head>
 <body>
+    <div class="wrap">
 
-  <!-- Encabezado / Navegación principal -->
-  <header>
-    <nav>
-      <!-- Tu menú de navegación irá aquí -->
-    </nav>
-  </header>
+        <!-- BOTÓN REGRESAR AL SITIO PRINCIPAL -->
+        <a href="../index.html" class="back-btn">← Volver al sitio principal</a>
 
-  <!-- Contenido principal del Blog -->
-  <main class="blog-container">
-    <section class="blog-header">
-      <h1>Blog</h1>
-      <p>Artículos, publicaciones y análisis.</p>
-    </section>
+        <!-- HEADER & NAVEGACIÓN -->
+        <header>
+            <div class="kicker">Publicaciones · Arquitectura de Decisión</div>
+            <h1>Juicio en el Caos</h1>
+            <p class="subtitle">Análisis, doctrina sobre trazabilidad defendible y criterio ejecutivo bajo incertidumbre.</p>
 
-    <!-- Listado de artículos -->
-    <section class="posts-grid">
-      
-      <!-- Artículo de muestra -->
-      <article class="post-card">
-        <h2><a href="articulo-ejemplo.html">Título del Primer Artículo</a></h2>
-        <span class="post-date">25 de Agosto, 2026</span>
-        <p>Resumen o extracto breve del artículo para captar el interés del lector...</p>
-        <a href="articulo-ejemplo.html" class="read-more">Leer más</a>
-      </article>
+            <nav class="main-nav" aria-label="Navegación principal">
+                <a href="../index.html">Inicio</a>
+                <a href="../libro.html">Libro</a>
+                <a href="../intervenciones.html">Intervenciones</a>
+                <a href="../entrenamiento.html">Entrenamiento</a>
+                <a href="../simulador.html">Simulador</a>
+                <a href="../arquitectura.html">Arquitectura</a>
+                <a href="../assessment.html">Assessment</a>
+                <a href="index.html" class="active">Blog</a>
+            </nav>
+        </header>
 
-    </section>
-  </main>
+        <hr class="sep" />
 
-  <!-- Pie de página -->
-  <footer>
-    <p>&copy; 2026 Juicio en el Caos. Todos los derechos reservados.</p>
-  </footer>
+        <!-- LISTADO DE ARTÍCULOS -->
+        <section class="panel">
+            <span class="tag">Doctrina & Análisis</span>
+            <h2 style="margin-top:8px">Artículos Publicados</h2>
+            <p class="muted">Reflexiones sobre la toma de decisiones en entornos de alta consecuencia.</p>
 
+            <div class="blog-grid">
+                
+                <!-- Artículo Principal -->
+                <article class="post-card">
+                    <span class="post-meta">25 de Agosto, 2026 · Por José Eduardo Macías Almanza</span>
+                    <a href="quien-entrena-el-criterio.html" class="post-title">¿Quién entrena el criterio?</a>
+                    <p class="muted">El conocimiento es información organizada; el procedimiento es una secuencia de pasos. Ninguno de los dos produce criterio automáticamente cuando las herramientas se agotan.</p>
+                    <a href="quien-entrena-el-criterio.html" class="read-more">Leer artículo completo →</a>
+                </article>
+
+            </div>
+        </section>
+
+    </div> 
+
+    <!-- BOTÓN FLOTANTE WHATSAPP -->
+    <style>
+        .whatsapp-float {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            background-color: #25d366;
+            color: #fff;
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 14px rgba(0,0,0,0.4);
+            z-index: 1000;
+            text-decoration: none;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .whatsapp-float:hover {
+            transform: scale(1.08);
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+        }
+        .whatsapp-icon {
+            width: 30px;
+            height: 30px;
+            fill: currentColor;
+        }
+    </style>
+
+    <a href="https://wa.me/528717821011?text=Hola,%20me%20interesa%20solicitar%20informaci%C3%B3n%20sobre%20el%20seminario%20Juicio%20en%20el%20Caos." 
+       class="whatsapp-float" 
+       target="_blank" 
+       rel="noopener noreferrer" 
+       aria-label="Contacto por WhatsApp">
+        <svg class="whatsapp-icon" viewBox="0 0 24 24">
+            <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.705 1.754zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+        </svg>
+    </a> 
 </body>
 </html>
