@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>¿Quién entrena el criterio? · Juicio en el Caos</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
+    <style>
+        /* RESET */
+        *{box-sizing:border-box;margin:0;padding:0}
+        html,body{height:100%}
+
+        /* BASE - dark theme */
+        body{
+            background: #0d0d0d;
+            color: #e8e8e8;
+            font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+            font-weight:300;
+            line-height:1.7;
+            -webkit-font-smoothing:antialiased;
+            padding: 24px;
+        }
+
+        /* centered wrapper */
+        .wrap{
+            max-width:880px;
+            margin:36px auto;
+            padding:44px 48px;
+            background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+            border-radius:12px;
+            border:1px solid rgba(255,255,255,0.03);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+        }
+
+        /* BACK BUTTON */
+        .back-btn{
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            color: #9a9a9a;
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 24px;
+            padding: 6px 12px;
+            border-radius: 6px;
+            border: 1px solid rgba(255,255,255,0.04);
+            background: rgba(255,255,255,0.01);
+            transition: all 0.2s ease;
+        }
+        .back-btn:hover{
+            color: #ffffff;
+            border-color: rgba(255,255,255,0.15);
+            background: rgba(255,255,255,0.04);
+        }
+
+        header{margin-bottom:28px}
+        .kicker{font-size:0.78rem;color:#9a9a9a;letter-spacing:1.6px;text-transform:uppercase;margin-bottom:10px}
+        h1{
+            font-family:'Playfair Display', serif;
+            font-weight:700;
+            font-size:2.6rem;
+            color:#ffffff;
+            line-height:1.15;
+            margin-bottom:12px;
+        }
+        .post-meta{font-size:0.85rem;color:#9a9a9a;margin-bottom:20px;display:block}
+
+        /* NAVIGATION */
+        .main-nav{display:flex;gap:10px;flex-wrap:wrap;margin:14px 0}
+        .main-nav a{color:#dcdcdc;text-decoration:none;padding:8px 12px;border-radius:8px;border:1px solid rgba(255,255,255,0.03);background:transparent;font-weight:600;font-size:0.95rem}
+        .main-nav a:hover{background:rgba(255,255,255,0.03)}
+        .main-nav a.active{background:#ffffff;color:#0d0d0d}
+
+        hr.sep{border:none;border-top:1px solid rgba(255,255,255,0.04);margin:36px 0}
+
+        /* ARTICLE BODY STYLES */
+        .article-content h2{
+            font-family:'Playfair Display', serif;
+            font-size:1.6rem;
+            color:#ffffff;
+            margin:36px 0 14px 0;
+            padding-top: 12px;
+            border-top: 1px solid rgba(255,255,255,0.03);
+        }
+        .article-content p{
+            color:#d0d0d0;
+            font-size:1.02rem;
+            margin-bottom:18px;
+        }
+        .article-content strong{
+            color:#ffffff;
+            font-weight:600;
+        }
+        
+        /* Highlight box for key sections */
+        .qualities-list{
+            background: linear-gradient(180deg, #151515, #121212);
+            padding:24px;
+            border-radius:10px;
+            border:1px solid rgba(255,255,255,0.04);
+            margin:24px 0;
+        }
+        .quality-item{
+            margin-bottom:16px;
+        }
+        .quality-item:last-child{
+            margin-bottom:0;
+        }
+        .quality-item strong{
+            display:block;
+            font-size:1.05rem;
+            color:#ffffff;
+            margin-bottom:4px;
+        }
+
+        /* CTA Panel */
+        .article-cta{
+            background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+            padding:28px;
+            border-radius:10px;
+            border:1px solid rgba(255,255,255,0.06);
+            text-align:center;
+            margin-top:40px;
+        }
+        .btn{display:inline-block;background:#ffffff;color:#0d0d0d;padding:12px 28px;border-radius:999px;text-decoration:none;font-weight:700;box-shadow:0 8px 20px rgba(0,0,0,0.6);margin-top:12px}
+
+        /* responsive */
+        @media(max-width:800px){
+            .wrap{padding:20px}
+            h1{font-size:1.9rem}
+            .article-content h2{font-size:1.35rem}
+            .main-nav{gap:8px}
+            .main-nav a{padding:8px 10px;font-size:0.9rem}
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+
+        <!-- BOTONES DE NAVEGACIÓN -->
+        <a href="index.html" class="back-btn">← Volver al Blog</a>
+        <a href="../index.html" class="back-btn" style="margin-left: 8px;">← Sitio Principal</a>
+
+        <!-- HEADER -->
+        <header>
+            <div class="kicker">Doctrina · Arquitectura de Decisión</div>
+            <h1>¿Quién entrena el criterio?</h1>
+            <span class="post-meta">25 de Agosto, 2026 · Por José Eduardo Macías Almanza</span>
+            
+            <nav class="main-nav" aria-label="Navegación principal">
+                <a href="../index.html">Inicio</a>
+                <a href="../libro.html">Libro</a>
+                <a href="../intervenciones.html">Intervenciones</a>
+                <a href="../entrenamiento.html">Entrenamiento</a>
+                <a href="../simulador.html">Simulador</a>
+                <a href="../arquitectura.html">Arquitectura</a>
+                <a href="../assessment.html">Assessment</a>
+                <a href="index.html" class="active">Blog</a>
+            </nav>
+        </header>
+
+        <hr class="sep" />
+
+        <!-- CONTENIDO DEL ARTÍCULO -->
+        <article class="article-content">
+
+            <h2>1. La pregunta de apertura</h2>
+            <p>Todos exigimos criterio. Lo pedimos en un mando policial, en un consejo de administración, en un padre de familia que decide en segundos si cruza la calle con su hijo o espera. Lo exigimos en el investigador que interpreta un indicio ambiguo y en el operador que decide abrir una puerta o esperar refuerzos. La palabra aparece en evaluaciones de desempeño, en perfiles de puesto, en discursos de toma de protesta. Se asume como una cualidad que las personas simplemente tienen, o no tienen, como si fuera un rasgo de nacimiento repartido de forma desigual.</p>
+            <p>Pero el criterio no nace. Se forma. Y si se forma, entonces existe un lugar, un método, una disciplina donde ese entrenamiento ocurre — o debería ocurrir. La pregunta que rara vez se hace, porque incomoda, es esta: ¿quién entrena el criterio? ¿La academia, la experiencia acumulada, el manual, el ensayo y error, la ausencia deliberada de instrucción? Responder con honestidad a esta pregunta obliga a desmontar una confusión que sostiene buena parte de la formación profesional contemporánea.</p>
+
+            <h2>2. Qué significa entrenar el criterio</h2>
+            <p>La confusión empieza porque cuatro cosas distintas se tratan como si fueran una sola: experiencia, conocimiento, procedimiento y criterio.</p>
+            <p>El conocimiento es información organizada — lo que se puede enseñar en un aula, memorizar, evaluar con un examen. El procedimiento es una secuencia de pasos diseñada para un escenario previsto: si ocurre A, se ejecuta B. La experiencia es la acumulación de exposiciones reales a situaciones, con o sin reflexión posterior sobre ellas. Ninguna de las tres, por sí sola ni en conjunto, produce criterio de forma automática.</p>
+            <p>El criterio es la capacidad de construir una decisión defendible cuando el conocimiento es insuficiente, el procedimiento no aplica y la experiencia previa no ofrece un precedente exacto. Es, en otras palabras, lo que se activa exactamente cuando las otras tres herramientas se agotan. Entrenar el criterio no es acumular más conocimiento, ni memorizar más procedimientos, ni simplemente exponerse a más situaciones. Es desarrollar, de forma deliberada, la capacidad de razonar bajo incertidumbre y sostener esa decisión después.</p>
+            <p>Esta distinción importa porque la mayoría de los sistemas de formación entrenan las primeras tres capacidades y asumen que la cuarta aparecerá por sí sola, como un subproducto natural del tiempo en el puesto. No es así. El criterio se entrena de forma distinta, y quien no lo entrena de forma distinta forma operadores competentes en lo previsto y desarmados frente a lo imprevisto.</p>
+
+            <h2>3. Cuando el procedimiento deja de existir</h2>
+            <p>Todo procedimiento tiene un límite. Está diseñado para cubrir los escenarios que sus autores lograron anticipar, y ningún conjunto de autores anticipa todos los escenarios posibles. Llega un momento — en campo, en una sala de juntas, en una negociación, en una crisis de seguridad — en que la persona agota el manual. El siguiente paso no está escrito. La situación real no coincide con ninguno de los casos previstos, o coincide parcialmente, de una forma que hace que aplicar el procedimiento literal produzca un resultado peor que improvisar.</p>
+            <p>Este es el momento donde se revela quién fue entrenado en procedimiento y quién fue entrenado en criterio. El primero se detiene, busca instrucciones, escala la decisión, o peor, aplica el procedimiento de todas formas porque es lo único que tiene, aunque el contexto ya no lo sostenga. El segundo construye una respuesta propia con los elementos disponibles: información incompleta, tiempo limitado, consecuencias reales.</p>
+            <p>No hay manera de eliminar este momento de las organizaciones que operan en entornos complejos. Se puede, en cambio, prepararse para él. Y prepararse para él exige aceptar una condición incómoda que la mayoría de las estructuras organizacionales prefiere no nombrar en voz alta.</p>
+
+            <h2>4. La decisión que tendrás que sostener solo</h2>
+            <p>La condición es esta: el sistema que rodea a un decisor — el mando, el protocolo, el comité, el equipo de asesores — puede no estar presente en el instante exacto en que la decisión debe tomarse. Puede desaparecer por distancia, por tiempo, por ambigüedad de mando, o simplemente porque nadie más tiene la información completa que la persona tiene frente a sí en ese segundo. Cuando eso ocurre, la decisión deja de ser una responsabilidad distribuida y se convierte en una responsabilidad individual.</p>
+            <p>Esto no es una falla del sistema. Es una característica estructural de cualquier entorno donde las decisiones de mayor consecuencia ocurren, casi por definición, en los puntos donde el sistema tiene menos alcance: el filo de la operación, el momento sin conectividad, la sala donde solo una persona tiene todos los datos sobre la mesa. Formar a alguien para operar exclusivamente dentro del sistema, y no también fuera de él, es prepararlo para el noventa por ciento de los casos y abandonarlo en el diez por ciento que define su carrera, su institución o, en los casos más graves, vidas humanas.</p>
+            <p>Aceptar esta condición cambia la pregunta de fondo. Ya no se trata de cómo evitar quedarse solo con la decisión — eso, en algún momento, va a ocurrir — sino de cómo llegar a ese momento con una estructura interna capaz de sostenerla.</p>
+
+            <h2>5. El evaluador siempre llega después</h2>
+            <p>Toda decisión tomada en soledad, bajo presión y con información incompleta, será evaluada más tarde por alguien que no estaba ahí. Un consejo, un juez, un superior jerárquico, un investigador, la familia de los involucrados, la opinión pública. El evaluador siempre llega después del hecho, y llega con algo que el decisor original no tuvo: tiempo para pensar y, casi siempre, más información de la que existía en el momento de decidir.</p>
+            <p>Esta asimetría rara vez se reconoce de forma explícita, pero determina el resultado de la mayoría de las revisiones posteriores. El evaluador reconstruye los hechos con datos que el decisor no tenía disponibles — el resultado final, testimonios recabados después, análisis forenses, la ventaja completa de saber cómo terminó la historia. Y desde esa posición, evalúa una decisión que fue tomada sin ninguna de esas ventajas.</p>
+            <p>El decisor que enfrenta este momento sin haberlo anticipado descubre, con frecuencia demasiado tarde, que la lógica que sostuvo su decisión en el instante de tomarla no es la misma lógica con la que será juzgada después. Anticipar esta asimetría — no para manipular la evaluación, sino para sostener la decisión con honestidad frente a ella — es una de las funciones centrales del criterio entrenado.</p>
+
+            <h2>6. El resultado no determina la calidad de una decisión</h2>
+            <p>Aquí aparece uno de los errores de razonamiento más extendidos, y más peligrosos, en la evaluación de decisiones bajo incertidumbre: juzgar la calidad de una decisión por el resultado que produjo. Una decisión correcta, tomada con la mejor información disponible en el momento, puede terminar mal por factores que estaban fuera del control o del conocimiento del decisor. Una decisión deficiente, tomada con negligencia o sin análisis, puede terminar bien por pura casualidad.</p>
+            <p>Este fenómeno tiene nombre en la literatura sobre juicio bajo incertidumbre: sesgo retrospectivo. Una vez conocido el desenlace, el cerebro humano reconstruye la cadena de eventos previa como si hubiera sido obvia, como si las señales hubieran estado ahí para cualquiera que las quisiera ver. No lo estaban. Estaban disponibles solo con el nivel de ambigüedad, ruido e incompletitud que existía en el momento real de la decisión.</p>
+            <p>Separar el resultado de la calidad del proceso decisorio es indispensable para evaluar con justicia el trabajo de cualquier persona que opera bajo incertidumbre, y es igualmente indispensable para que esa misma persona pueda evaluarse a sí misma sin destruirse cada vez que un resultado no sale como se esperaba. La pregunta correcta nunca es "¿salió bien?". La pregunta correcta es "¿fue razonable, con lo que se sabía entonces?".</p>
+
+            <h2>7. Qué queda de una decisión cuando todo salió mal</h2>
+            <p>Y sin embargo, hay decisiones donde incluso esa pregunta se queda corta. Hay escenarios donde el resultado fue catastrófico, la evaluación posterior fue severa, y el decisor original se enfrenta a la pregunta más difícil de todas: ¿qué queda, entonces, de lo que hice?</p>
+            <p>Lo que queda, si el proceso fue construido con seriedad, es un núcleo que ni el resultado adverso ni el juicio externo pueden disolver: el Punto Irreductible. Es la porción de la decisión que se sostiene por sí misma, independientemente de cómo terminaron las cosas, porque fue construida sobre información verificable en el momento, sobre un razonamiento que puede reconstruirse paso a paso, y sobre una lógica que cualquier persona razonable, colocada en la misma posición con la misma información, habría podido seguir. Es lo que en la doctrina de Trazabilidad Mínima Defendible (TMD) se busca preservar desde antes de que la decisión ocurra: no la certeza de haber acertado, sino la posibilidad de reconstruir, después, por qué la decisión tuvo sentido cuando se tomó.</p>
+            <p>El Punto Irreductible no es una defensa retórica que se construye después del hecho para justificar lo ya ocurrido. Es una estructura que se diseña antes, en el momento mismo de decidir, precisamente porque el decisor sabe — porque fue entrenado para saber — que el evaluador va a llegar después, con más información y sin la presión del instante. Quien llega a ese momento sin haber construido su Punto Irreductible de antemano descubre que no tiene nada que sostener frente al juicio externo, más allá de la esperanza de que el resultado hubiera sido distinto. Quien sí lo construyó, en cambio, puede sostener la decisión — no el resultado, la decisión — sin necesidad de que nadie más la valide.</p>
+
+            <h2>8. Las siete cualidades que construyen una Arquitectura de Decisión</h2>
+            <p>Todo lo anterior converge en una estructura. No basta con saber que el criterio existe, que se agota el procedimiento, que el evaluador llega después y que el resultado no valida el proceso. Hace falta un marco que se pueda entrenar, replicar y sostener de forma consistente, decisión tras decisión. El mercado ya reconoce estas siete cualidades como críticas para el liderazgo directivo. Lo que no existe todavía, en la mayoría de las organizaciones, es un programa capaz de desarrollarlas de forma conjunta.</p>
+
+            <div class="qualities-list">
+                <div class="quality-item">
+                    <strong>Tolerancia a la ambigüedad.</strong>
+                    <p>La capacidad de mantenerse productivo frente a información contradictoria, en lugar de detenerse a esperar que el panorama se aclare por sí solo.</p>
+                </div>
+                <div class="quality-item">
+                    <strong>Decisión con información incompleta.</strong>
+                    <p>La disposición a tomar determinaciones firmes sin certeza absoluta, entendiendo que esa certeza, en los entornos donde el criterio realmente se pone a prueba, nunca va a llegar a tiempo.</p>
+                </div>
+                <div class="quality-item">
+                    <strong>Claridad estratégica bajo presión.</strong>
+                    <p>La habilidad de crear foco precisamente cuando el entorno genera confusión, separando lo que importa de lo que solo hace ruido en el momento de mayor tensión.</p>
+                </div>
+                <div class="quality-item">
+                    <strong>Autorregulación operativa.</strong>
+                    <p>La gestión del propio estrés antes de que interfiera en el juicio, de forma que la reacción fisiológica ante la presión no termine sustituyendo al razonamiento.</p>
+                </div>
+                <div class="quality-item">
+                    <strong>Construcción de escenarios compartidos.</strong>
+                    <p>La capacidad de coordinar el criterio entre múltiples decisores, de modo que una decisión distribuida no se convierta en una colección de interpretaciones incompatibles entre sí.</p>
+                </div>
+                <div class="quality-item">
+                    <strong>Explicación de decisiones (MDT).</strong>
+                    <p>La capacidad de explicar la lógica del juicio sin burocracia — de sostener, con claridad y sin necesidad de un aparato justificativo excesivo, por qué la decisión tuvo sentido cuando se tomó.</p>
+                </div>
+                <div class="quality-item">
+                    <strong>Soledad del criterio.</strong>
+                    <p>La disposición a asumir la responsabilidad final sin delegarla, incluso cuando el sistema, el equipo o la jerarquía ya no están presentes para compartirla.</p>
+                </div>
+            </div>
+
+            <p>Estas siete cualidades no eliminan la incertidumbre ni garantizan resultados favorables. Eso no está en su naturaleza ni en la de ninguna estructura de decisión. Lo que ofrecen es algo distinto y, en última instancia, más valioso: la capacidad de decidir con integridad cuando el sistema desaparece, y la capacidad de sostener esa decisión cuando el evaluador, inevitablemente, llegue después.</p>
+            <p>Entrenar el criterio es entrenar esta arquitectura. No hay atajo, y no hay sustituto.</p>
+
+        </article>
+
+        <!-- CTA FINAL DEL ARTÍCULO -->
+        <div class="article-cta">
+            <h3 style="color:#fff;font-family:'Playfair Display',serif;font-size:1.4rem;margin-bottom:8px">Desarrolla esta arquitectura en tu equipo</h3>
+            <p style="color:#9a9a9a;font-size:0.95rem;max-width:600px;margin:0 auto 12px">Descubre cómo la intervención residencial de 48 horas de Juicio en el Caos prepara a decisores ejecutivos bajo presión real.</p>
+            <a href="../index.html" class="btn">Conocer las Intervenciones</a>
+        </div>
+
+    </div> 
+
+    <!-- BOTÓN FLOTANTE WHATSAPP -->
+    <style>
+        .whatsapp-float {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            background-color: #25d366;
+            color: #fff;
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 14px rgba(0,0,0,0.4);
+            z-index: 1000;
+            text-decoration: none;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .whatsapp-float:hover {
+            transform: scale(1.08);
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+        }
+        .whatsapp-icon {
+            width: 30px;
+            height: 30px;
+            fill: currentColor;
+        }
+    </style>
+
+    <a href="https://wa.me/528717821011?text=Hola,%20le%C3%AD%20el%20art%C3%ADculo%20'%C2%BFQui%C3%A9n%20entrena%20el%20criterio?'%20y%20me%20interesa%20m%C3%A1s%20informaci%C3%B3n." 
+       class="whatsapp-float" 
+       target="_blank" 
+       rel="noopener noreferrer" 
+       aria-label="Contacto por WhatsApp">
+        <svg class="whatsapp-icon" viewBox="0 0 24 24">
+            <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.705 1.754zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+        </svg>
+    </a> 
+</body>
+</html>
