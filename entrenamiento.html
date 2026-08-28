@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Juicio en el Caos · Intervenciones de Entrenamiento</title>
+    <title>Juicio en el Caos · Programa de Desarrollo para Mandos Medios</title>
+    <meta name="description" content="Programa de inmersión para mandos medios y ejecutivos operativos que quieren dejar de ejecutar y empezar a decidir. Las 12 transformaciones de Juicio en el Caos." />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
@@ -37,7 +38,7 @@
         h1{
             font-family:'Playfair Display', serif;
             font-weight:700;
-            font-size:2.6rem;
+            font-size:2.4rem;
             color:#ffffff;
             line-height:1.05;
             margin-bottom:6px;
@@ -54,26 +55,40 @@
 
         /* CARDS & PANELS */
         .panel{background: linear-gradient(180deg, #151515, #121212);padding:22px;border-radius:10px;border:1px solid rgba(255,255,255,0.03)}
-        .case-block{
-            background: linear-gradient(180deg, #151515, #121212);
-            padding: 26px;
-            border-radius: 10px;
-            border: 1px solid rgba(255,255,255,0.03);
-            border-left: 3px solid rgba(255,255,255,0.15);
-            margin-top: 20px;
-        }
         .tag{display:inline-block;padding:6px 10px;border-radius:999px;font-size:0.72rem;color:#bdbdbd;background:rgba(255,255,255,0.02);text-transform:uppercase;letter-spacing:1.6px}
 
         h2{font-size:1.5rem;margin:8px 0 12px;color:#ffffff}
-        h3{font-size:1.25rem;margin:8px 0 14px;color:#ffffff}
+        h3{font-size:1.1rem;margin:10px 0 6px;color:#ffffff;font-weight:600}
         p{color:#d0d0d0;font-size:1rem;margin-bottom:12px}
         .muted{color:#9a9a9a}
+        .highlight{color:#ffffff;font-weight:400}
 
-        /* LISTS & HIGHLIGHTS */
-        .case-section-item{margin-bottom:12px;color:#d0d0d0}
-        .case-section-item strong{color:#ffffff;font-weight:600}
+        /* FORMAT CARDS */
+        .format-card{background:transparent;padding:14px;border-radius:8px;border:1px solid rgba(255,255,255,0.02);margin-bottom:12px}
+        .format-card h4{color:#fff;font-weight:600;margin-bottom:2px}
+        .format-card p{margin-bottom:4px}
 
-        /* CTA & FORM */
+        /* CASE BLOCK (evidencia) */
+        .case-block{
+            background: linear-gradient(180deg, #151515, #121212);
+            padding: 20px;
+            border-radius: 10px;
+            border: 1px solid rgba(255,255,255,0.03);
+            border-left: 3px solid rgba(255,255,255,0.1);
+            margin-top: 16px;
+        }
+        .case-block .case-title{font-family:'Playfair Display',serif;font-size:1.2rem;color:#fff;margin:4px 0 6px}
+        .case-block .case-meta{font-size:0.78rem;color:#9a9a9a;text-transform:uppercase;letter-spacing:1.2px}
+
+        /* LISTS */
+        .takeaway-list{list-style:none;margin:8px 0}
+        .takeaway-list li{color:#b3b3b3;font-size:0.9rem;margin-bottom:4px;position:relative;padding-left:14px}
+        .takeaway-list li::before{content:"·";position:absolute;left:0;color:#fff;font-weight:bold}
+
+        .transform-list{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin:10px 0}
+        .transform-list span{background:rgba(255,255,255,0.02);padding:6px 10px;border-radius:4px;font-size:0.85rem;color:#b3b3b3}
+
+        /* CTA */
         .cta{display:flex;flex-direction:column;align-items:center;gap:12px;padding-top:18px}
         .btn{display:inline-block;background:#ffffff;color:#0d0d0d;padding:12px 28px;border-radius:999px;text-decoration:none;font-weight:700;box-shadow:0 8px 20px rgba(0,0,0,0.6);border:none;cursor:pointer;margin-top:8px}
         .btn:hover{background:#e2e2e2}
@@ -82,9 +97,10 @@
         /* RESPONSIVE */
         @media(max-width:800px){
             .wrap{padding:20px}
-            h1{font-size:1.9rem}
+            h1{font-size:1.8rem}
             .main-nav{gap:8px}
             .main-nav a{padding:8px 10px;font-size:0.9rem}
+            .transform-list{grid-template-columns:1fr}
         }
     </style>
 </head>
@@ -92,109 +108,142 @@
     <div class="wrap">
         <!-- HEADER -->
         <header>
-            <div class="kicker">Análisis Operativo // Evidencia de Criterio</div>
-            <h1>Intervenciones de Entrenamiento</h1>
-            <p class="subtitle">Casos de estudio prácticos, simulaciones operativas y la evidencia del criterio puesto a prueba.</p>
+            <div class="kicker">Dimensión · Programa de Desarrollo</div>
+            <h1>Programa de Desarrollo de Criterio Directivo</h1>
+            <p class="subtitle">De la ejecución a la decisión. Para mandos medios y ejecutivos operativos que quieren dejar de resolver problemas y empezar a definir el rumbo.</p>
 
             <!-- NAVEGACIÓN -->
             <nav class="main-nav" aria-label="Navegación principal">
                 <a href="index.html">Inicio</a>
-                <a href="libro.html">Libro</a>
-                <a href="intervenciones.html">Intervenciones</a>
-                <a href="entrenamiento.html" class="active">Entrenamiento</a>
+                <a href="arquitectura.html">Seminario CEOs</a>
+                <a href="entrenamiento.html" class="active">Programa de Desarrollo</a>
+                <a href="intervenciones.html">Arquitectura de Escenarios</a>
+                <a href="blog.html">Blog</a>
                 <a href="simulador.html">Simulador</a>
-                <a href="arquitectura.html">Arquitectura</a>
-                <a href="assessment.html">Assessment</a>
+                <a href="evaluacion.html">Evaluación</a>
+                <a href="libro.html">Libro</a>
             </nav>
         </header>
 
         <hr class="sep" />
 
-        <!-- SECCIÓN INTRODUCTORIA -->
+        <!-- INTRO: EL PROBLEMA -->
         <section class="panel">
-            <span class="tag">Casos de estudio · Evidencia del método</span>
-            <h2 style="margin-top:8px">Arquitectura de Escenarios en acción</h2>
-            <p style="margin-bottom:0">Cada caso documenta una intervención real donde el marco de Juicio en el Caos permitió leer el escenario completo antes de que la decisión fuera irreversible. Los nombres y datos sensibles han sido anonimizados.</p>
+            <span class="tag">Para quienes quieren dar el salto</span>
+            <h2 style="margin-top:8px">Usted es técnicamente impecable. Sabe ejecutar. Sabe resolver.</h2>
+            <p style="font-size:1.05rem;color:#ffffff;font-weight:400;">Pero hay un salto que no ha dado: el paso de operar a decidir.</p>
+            <p class="muted">Lleva años resolviendo problemas operativos. Pero cuando llega el momento de decidir el rumbo, no está en la mesa. Este programa está diseñado para eso: para construir el criterio que necesita para estar en esa mesa.</p>
         </section>
 
         <hr class="sep" />
 
-        <!-- CASO 1: OPERACIÓN UCI -->
-        <div class="case-block">
-            <span class="tag">Caso 01 · Continuidad de negocio</span>
-            <h3>Operación UCI</h3>
-            
-            <p class="case-section-item">
-                <strong>Contexto:</strong> El director de un hospital privado enfrentaba una amenaza de huelga de brazos caídos y un bloqueo total de la Unidad de Cuidados Intensivos (UCI) por parte del sindicato de enfermería, liderado por una secretaria general con motivaciones políticas. La crisis ponía en riesgo inminente la vida de los pacientes en estado crítico y amenazaba con destruir la reputación del hospital ante los medios de comunicación en cuestión de horas.
-            </p>
-            
-            <p class="case-section-item">
-                <strong>El marco que fallaba:</strong> El director estaba atrapado en la extorsión emocional y el miedo al escándalo público. Su parálisis se debía a que estaba respondiendo desde la capa de la moralidad y la culpa, sintiéndose responsable directo de la vida de los pacientes, lo que lo llevaba a considerar ceder a las demandas sindicales desproporcionadas para evitar una tragedia y el linchamiento mediático.
-            </p>
+        <!-- EL NÚCLEO: LAS 12 TRANSFORMACIONES -->
+        <section class="panel">
+            <span class="tag">El núcleo de la experiencia</span>
+            <h2>Las 12 transformaciones</h2>
+            <p class="muted">Las mismas 12 transformaciones de Juicio en el Caos, vividas desde la realidad del mando medio. No es un "CEO light". Es la misma experiencia, con la profundidad que corresponde a tu nivel de decisión.</p>
 
-            <p class="case-section-item">
-                <strong>Relectura del escenario:</strong> La intervención cambió el enfoque de un problema humanitario a uno legal y de consecuencias. Se obligó al director a notificar formalmente a las autoridades de salud y ministeriales sobre el secuestro de la UCI, convirtiendo el paro laboral en un delito en flagrancia.
-            </p>
+            <div class="transform-list">
+                <span>1. El problema no era la decisión</span>
+                <span>2. El escenario también se construye</span>
+                <span>3. Separar disciplina de sistema</span>
+                <span>4. Lo que no aparece en el expediente</span>
+                <span>5. El tiempo real</span>
+                <span>6. Explicar y justificar no son lo mismo</span>
+                <span>7. Las capas de un mismo caso</span>
+                <span>8. La soledad de quien decide</span>
+                <span>9. Reconstruir la propia historia</span>
+                <span>10. La transferencia</span>
+                <span>11. Un lenguaje compartido</span>
+                <span>12. Salida</span>
+            </div>
+            <p class="muted" style="font-size:0.85rem;">* El orden y la profundidad se ajustan a la dinámica de cada grupo.</p>
+        </section>
 
-            <p class="case-section-item">
-                <strong>Resultado:</strong> Al formalizar las actas y hacer responsable legal a la líder sindical por cada minuto que pasara y pusiera en riesgo la vida de los pacientes, el costo de mantener la huelga se volvió prohibitivo para el sindicato. El escenario real mutó de "un hospital negligente" a "un sindicato cometiendo tentativa de homicidio/omisión de auxilio", forzando la liberación inmediata del área crítica sin ceder a las extorsiones.
-            </p>
+        <hr class="sep" />
 
-            <p class="muted" style="font-size:0.9rem;margin-top:14px;margin-bottom:0">
-                Intervenciones: 3 movimientos clave para desactivar el secuestro de la UCI y reconfigurar la responsabilidad legal.
-            </p>
-        </div>
+        <!-- FORMATO -->
+        <section class="panel">
+            <span class="tag">Formato</span>
+            <h2>Un fin de semana de inmersión</h2>
+            <p class="muted">Trabajamos sobre decisiones reales. Con presión real. En un entorno donde nadie puede decidir por usted.</p>
 
-        <!-- CASO 2: OPERACIÓN AEGIS -->
-        <div class="case-block">
-            <span class="tag">Caso 02 · Riesgo patrimonial</span>
-            <h3>Operación Aegis (MedTech)</h3>
+            <div class="format-card">
+                <h4>Duración</h4>
+                <p>Viernes 6:00 pm — Domingo 5:00 pm</p>
+                <p class="muted">Inmersión ininterrumpida: sin salir de la sede, sin regreso a la rutina, durante todo el fin de semana.</p>
+            </div>
+            <div class="format-card">
+                <h4>Grupo Reducido</h4>
+                <p>Entre 4 y 12 participantes</p>
+                <p class="muted">Por encima de 12 se pierde la exposición individual real que el formato requiere.</p>
+            </div>
+            <div class="format-card">
+                <h4>Sede Itinerante</h4>
+                <p>Hotel 4 o 5 estrellas en distintas ciudades</p>
+                <p class="muted">El programa se imparte en sedes itinerantes. La ubicación se confirma con cada edición.</p>
+            </div>
+            <div class="format-card">
+                <h4>Condición</h4>
+                <p>Sin celulares. Sin distracciones. Sin salida.</p>
+                <p class="muted">El criterio no se desarrolla en condiciones cómodas. Se desarrolla bajo presión real, con información parcial y consecuencias reales.</p>
+            </div>
+        </section>
 
-            <p class="case-section-item">
-                <strong>Contexto:</strong> La Directora de Operaciones de MedTech Solutions se enfrentaba a una extorsión de 3 millones de dólares en Bitcoin a menos de 72 horas de cerrar la venta de la compañía a una multinacional suiza por 42 millones de dólares (programada para el viernes a las 10:00 AM). Un correo anónimo contenía un PDF que demostraba el plagio de 40 líneas de código bajo una licencia "viral" (GPLv3) que obligaría a liberar el software al dominio público, destruyendo su valor comercial. Su socio histórico (el CTO) había confirmado el error de inmediato y suplicaba pagar el chantaje para salvar el trato.
-            </p>
+        <hr class="sep" />
 
-            <p class="case-section-item">
-                <strong>El marco que fallaba:</strong> La toma de decisiones estaba anulada por el anclaje psicológico de la culpa interna y la inminencia de la ruina financiera o penal. Al estar la confirmación del CTO alineada con la amenaza externa, la directora asumió el problema técnico como un hecho consumado e irrefutable. Estaba atrapada en la falsa dicotomía de financiar un delito (extorsión) para salvar la venta, o no pagar y enfrentar demandas multimillonarias por fraude el viernes por la mañana.
-            </p>
+        <!-- LO QUE TE LLEVAS -->
+        <section class="panel">
+            <span class="tag">Transformación</span>
+            <h2>Lo que te llevas</h2>
+            <ul class="takeaway-list">
+                <li><strong style="color:#fff;">Una capacidad instalada:</strong> Construir escenarios antes de decidir.</li>
+                <li><strong style="color:#fff;">Un lenguaje compartido:</strong> Para discutir escenarios complejos con otros decisores.</li>
+                <li><strong style="color:#fff;">Una arquitectura de decisión:</strong> Que puedes aplicar en cualquier dominio.</li>
+                <li><strong style="color:#fff;">La experiencia de haber enfrentado, en 48 horas, las mismas condiciones que enfrentas en tu organización.</strong></li>
+                <li><strong style="color:#fff;">La base de criterio para aspirar a la alta dirección.</strong></li>
+            </ul>
+        </section>
 
-            <p class="case-section-item">
-                <strong>Relectura del escenario:</strong> Se determinó que el verdadero peligro no era el código abierto, sino la falta de filtros independientes. El custodio del código (el CTO) era el único intermediario con los auditores, convirtiéndose en el principal sospechoso de una fuga o un montaje interno. Se rompió la urgencia artificial del extorsionador mediante una prórroga administrativa legítima (ajustes fiscales regulatorios), posponiendo la firma y bloqueando la transferencia de fondos (evitando que el fraude se consumara legalmente).
-            </p>
+        <hr class="sep" />
 
-            <p class="case-section-item">
-                <strong>Resultado:</strong> Se ordenó una auditoría forense externa y secreta que respondiera solo a la Dirección. Esto reveló el escenario real definitivo: la posibilidad de un montaje total. Si el software estaba limpio, se destruía la extorsión de 3 millones, se ejecutaba la venta de 42 millones intacta y se obtenían las pruebas científicas para encarcelar a la insurgencia interna.
-            </p>
+        <!-- EVIDENCIA: CASOS DE ESTUDIO -->
+        <section>
+            <span class="tag">Evidencia del método</span>
+            <h2 style="margin-top:8px">Casos reales, decisiones reales</h2>
+            <p class="muted">Estos son algunos de los casos que se trabajan en el programa. No son teoría. Son dilemas reales que enfrentaron líderes como tú.</p>
 
-            <p class="muted" style="font-size:0.9rem;margin-top:14px;margin-bottom:0">
-                Intervenciones: 4 movimientos clave desde la redefinición del rol de la directora hasta el quiebre de la premisa del código existente.
-            </p>
-        </div>
+            <!-- Caso 1 -->
+            <div class="case-block">
+                <span class="case-meta">Caso · Continuidad de negocio</span>
+                <p class="case-title">Operación UCI</p>
+                <p class="muted" style="font-size:0.9rem;">Un director de hospital enfrentaba una amenaza de huelga que ponía en riesgo la vida de pacientes en la UCI. La presión era máxima. La decisión: ¿ceder a la extorsión o exponer a los responsables?</p>
+                <p style="font-size:0.9rem;color:#b3b3b3;margin-top:4px;"><strong style="color:#fff;">Resultado:</strong> La intervención cambió el enfoque de un problema humanitario a uno legal, forzando la liberación del área crítica sin ceder a la extorsión.</p>
+            </div>
 
-        <!-- CASO 3: OPERACIÓN ALTAMIRA -->
-        <div class="case-block">
-            <span class="tag">Caso 03 · Toma de decisiones bajo presión</span>
-            <h3>Operación Altamira</h3>
+            <!-- Caso 2 -->
+            <div class="case-block">
+                <span class="case-meta">Caso · Riesgo patrimonial</span>
+                <p class="case-title">Operación Aegis</p>
+                <p class="muted" style="font-size:0.9rem;">Una directora de operaciones enfrentaba una extorsión de 3 millones de dólares a 72 horas de cerrar la venta de su empresa. El CTO confirmaba el error. La urgencia era real.</p>
+                <p style="font-size:0.9rem;color:#b3b3b3;margin-top:4px;"><strong style="color:#fff;">Resultado:</strong> Se rompió la urgencia artificial, se ordenó una auditoría forense secreta, y se reveló que la amenaza podía ser un montaje interno.</p>
+            </div>
 
-            <p class="case-section-item">
-                <strong>Contexto:</strong> El director general de Inversiones Altamira enfrentaba la paralización de un proyecto inmobiliario de 15 millones de dólares a menos de 72 horas de una junta crucial con inversionistas. Un líder sindical (Mateo) amenazaba con denunciar ante el INAH el hallazgo masivo de restos arqueológicos en el terreno si no se cedía a una extorsión financiera y operativa. Paralelamente, el ingeniero de obra presionaba al director a cometer un delito federal (destruir los restos con maquinaria) antes de tomar un vuelo esa misma tarde.
-            </p>
+            <!-- Caso 3 -->
+            <div class="case-block">
+                <span class="case-meta">Caso · Toma de decisiones bajo presión</span>
+                <p class="case-title">Operación Altamira</p>
+                <p class="muted" style="font-size:0.9rem;">Un director general enfrentaba la paralización de un proyecto inmobiliario de 15 millones. Un líder sindical amenazaba con denunciar hallazgos arqueológicos si no se cedía a la extorsión.</p>
+                <p style="font-size:0.9rem;color:#b3b3b3;margin-top:4px;"><strong style="color:#fff;">Resultado:</strong> Se identificó que el conflicto era un síntoma de una conspiración interna. El director usó el silencio y la ausencia como herramientas de presión, transfiriendo el pánico a los extorsionadores.</p>
+            </div>
+        </section>
 
-            <p class="case-section-item">
-                <strong>El marco que fallaba:</strong> El director estaba atrapado en el efecto túnel y una urgencia artificial. Su parálisis operativa se debía a que aceptó como verdad absoluta la narrativa del extorsionador (que el hallazgo era masivo y legítimo) y operaba bajo el pánico de una ventana de tiempo ficticia (el vuelo de las 4:00 PM y la junta del lunes). Sentía que debía elegir inmediatamente entre dos opciones destructivas: ceder a la extorsión o cometer un delito.
-            </p>
+        <hr class="sep" />
 
-            <p class="case-section-item">
-                <strong>Relectura del escenario:</strong> Se identificó que el conflicto con el sindicato y el INAH eran solo síntomas. El escenario real era una conspiración interna o una grave vulnerabilidad en el gobierno corporativo (el ingeniero y el líder sindical operaban en perfecta coordinación para forzar un delito o una extorsión).
-            </p>
-
-            <p class="case-section-item">
-                <strong>Resultado:</strong> Se determinó que el hallazgo requería verificación científica independiente y secreta (perito privado). En lugar de reaccionar, el director mantuvo su agenda normal y tomó su vuelo, utilizando el vacío de su ausencia y el silencio como herramientas de presión psicológica. Esta estrategia transfirió el pánico hacia los extorsionadores, congeló el peligro de fraude y retuvo el control absoluto del tablero y del dinero.
-            </p>
-
-            <p class="muted" style="font-size:0.9rem;margin-top:14px;margin-bottom:0">
-                Intervenciones: 4 movimientos clave desde el cuestionamiento del origen del dato hasta la ejecución del vacío operativo.
-            </p>
+        <!-- PUERTA DE ENTRADA AL SIGUIENTE NIVEL -->
+        <div class="panel" style="border-left:3px solid rgba(255,255,255,0.1);">
+            <p style="color:#fff;font-weight:600;margin-bottom:4px;">¿Y después del programa?</p>
+            <p class="muted" style="font-size:0.95rem;">Los participantes que completen el programa y demuestren capacidad, podrán acceder al <a href="arquitectura.html" style="color:#fff;">Seminario para Fundadores y CEOs</a>. Este es el primer paso. No el último.</p>
         </div>
 
         <hr class="sep" />
@@ -202,14 +251,20 @@
         <!-- CTA FINAL -->
         <div class="cta">
             <div class="panel" style="text-align:center;max-width:700px;width:100%">
-                <h2>Lleve estas simulaciones a su equipo</h2>
-                <p class="muted" style="max-width:600px;margin:8px auto 16px;font-size:1.05rem">
-                    Cada uno de estos casos forma parte del entrenamiento dinámico en Juicio en el Caos. Diseñamos intervenciones a la medida de la estructura de riesgo de su organización.
+                <h2>El siguiente paso</h2>
+                <p class="muted" style="max-width:600px;margin:8px auto 16px;font-size:1.05rem;">
+                    Si quieres dejar de ejecutar y empezar a decidir, este programa es tu punto de entrada.
                 </p>
-                <a href="index.html#contacto" class="btn">Solicitar Admisión al Seminario</a>
-                <p class="note" style="margin-top:12px">Sin compromiso · Cupo limitado</p>
+                <a href="index.html#contacto" class="btn">Inscribirse al Programa</a>
+                <p class="note" style="margin-top:12px;">Cupo limitado · Próxima edición por confirmar</p>
             </div>
         </div>
+
+        <hr class="sep" />
+
+        <footer style="color:#8f8f8f;font-size:0.85rem;margin-top:8px;">
+            <p>&copy; 2026 Juicio en el Caos. Todos los derechos reservados.</p>
+        </footer>
 
     </div>
 </body>
