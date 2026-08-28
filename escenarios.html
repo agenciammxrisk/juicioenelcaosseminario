@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Escenarios con Juicio en el Caos · Guía para Decisiones Críticas</title>
+    <meta name="description" content="Guía personalizada para decisores que enfrentan dilemas complejos. Un espacio para desenmarañar el escenario y construir la decisión defendible." />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
+    <style>
+        /* RESET & BASE */
+        *{box-sizing:border-box;margin:0;padding:0}
+        html,body{height:100%}
+
+        body{
+            background: #0d0d0d;
+            color: #e8e8e8;
+            font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+            font-weight:300;
+            line-height:1.6;
+            -webkit-font-smoothing:antialiased;
+            padding: 24px;
+        }
+
+        .wrap{
+            max-width:880px;
+            margin:36px auto;
+            padding:44px 48px;
+            background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+            border-radius:12px;
+            border:1px solid rgba(255,255,255,0.03);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+        }
+
+        header{margin-bottom:28px}
+        .kicker{font-size:0.78rem;color:#9a9a9a;letter-spacing:1.6px;text-transform:uppercase;margin-bottom:10px}
+        h1{
+            font-family:'Playfair Display', serif;
+            font-weight:700;
+            font-size:2.6rem;
+            color:#ffffff;
+            line-height:1.05;
+            margin-bottom:6px;
+        }
+        .subtitle{color:#cfcfcf;font-size:1.05rem;max-width:72ch;font-weight:300}
+
+        /* NAVEGACIÓN */
+        .main-nav{display:flex;gap:10px;flex-wrap:wrap;margin:14px 0}
+        .main-nav a{color:#dcdcdc;text-decoration:none;padding:8px 12px;border-radius:8px;border:1px solid rgba(255,255,255,0.03);background:transparent;font-weight:600;font-size:0.95rem}
+        .main-nav a:hover{background:rgba(255,255,255,0.03)}
+        .main-nav a.active{background:#ffffff;color:#0d0d0d}
+
+        hr.sep{border:none;border-top:1px solid rgba(255,255,255,0.04);margin:36px 0}
+
+        /* CARDS & PANELS */
+        .panel{background: linear-gradient(180deg, #151515, #121212);padding:22px;border-radius:10px;border:1px solid rgba(255,255,255,0.03)}
+        .tag{display:inline-block;padding:6px 10px;border-radius:999px;font-size:0.72rem;color:#bdbdbd;background:rgba(255,255,255,0.02);text-transform:uppercase;letter-spacing:1.6px}
+
+        h2{font-size:1.5rem;margin:8px 0 12px;color:#ffffff}
+        h3{font-size:1rem;margin:10px 0;color:#eaeaea}
+        p{color:#d0d0d0;font-size:1rem;margin-bottom:12px}
+        .muted{color:#9a9a9a}
+        .highlight{color:#ffffff;font-weight:400}
+
+        /* FORMAT CARDS */
+        .format-card{background:transparent;padding:14px;border-radius:8px;border:1px solid rgba(255,255,255,0.02);margin-bottom:12px}
+        .format-card h4{color:#fff;font-weight:600;margin-bottom:2px}
+        .format-card p{margin-bottom:4px}
+
+        /* LISTS */
+        .takeaway-list{list-style:none;margin:8px 0}
+        .takeaway-list li{color:#b3b3b3;font-size:0.9rem;margin-bottom:4px;position:relative;padding-left:14px}
+        .takeaway-list li::before{content:"·";position:absolute;left:0;color:#fff;font-weight:bold}
+
+        /* CTA */
+        .cta{display:flex;flex-direction:column;align-items:center;gap:12px;padding-top:18px}
+        .btn{display:inline-block;background:#ffffff;color:#0d0d0d;padding:12px 28px;border-radius:999px;text-decoration:none;font-weight:700;box-shadow:0 8px 20px rgba(0,0,0,0.6);border:none;cursor:pointer;margin-top:8px}
+        .btn:hover{background:#e2e2e2}
+        .note{font-size:0.85rem;color:#9a9a9a}
+
+        /* RESPONSIVE */
+        @media(max-width:800px){
+            .wrap{padding:20px}
+            h1{font-size:1.9rem}
+            .main-nav{gap:8px}
+            .main-nav a{padding:8px 10px;font-size:0.9rem}
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <!-- HEADER -->
+        <header>
+            <div class="kicker">Guía para Decisiones Críticas · Transferencia de Riesgo</div>
+            <h1>Escenarios con Juicio en el Caos</h1>
+            <p class="subtitle">Una guía para decisores que enfrentan dilemas donde el manual ya no alcanza.</p>
+
+            <!-- NAVEGACIÓN -->
+            <nav class="main-nav" aria-label="Navegación principal">
+                <a href="index.html">Inicio</a>
+                <a href="arquitectura.html">Seminario CEOs</a>
+                <a href="entrenamiento.html">Programa de Desarrollo</a>
+                <a href="intervenciones.html">Arquitectura de Escenarios</a>
+                <a href="escenarios.html" class="active">Escenarios · Guía</a>
+                <a href="blog.html">Blog</a>
+                <a href="simulador.html">Simulador</a>
+                <a href="evaluacion.html">Evaluación</a>
+                <a href="libro.html">Libro</a>
+            </nav>
+        </header>
+
+        <hr class="sep" />
+
+        <!-- INTRO -->
+        <section class="panel">
+            <span class="tag">No es un consejo. No es una recomendación.</span>
+            <h2 style="margin-top:8px">Es un proceso de guía para que usted construya el escenario completo y decida con claridad.</h2>
+            <p class="muted">Cuando una decisión crítica no puede esperar, pero tampoco puede equivocarse, hay un espacio donde el decisor puede desenmarañar el escenario con alguien que no tiene interés en el resultado, solo en la calidad del proceso.</p>
+        </section>
+
+        <hr class="sep" />
+
+        <!-- PARA QUIÉN ES -->
+        <section class="panel">
+            <span class="tag">Para quién es</span>
+            <h2>Este servicio es para usted si...</h2>
+            <ul class="takeaway-list">
+                <li>Es fundador, CEO o director general y enfrenta una decisión que define el futuro de su organización.</li>
+                <li>Necesita validar su lectura de un escenario complejo con alguien que no está en el juego.</li>
+                <li>Está atascado en un dilema y necesita un "espejo" que le ayude a ver lo que no está viendo.</li>
+                <li>Enfrenta un conflicto entre socios, una decisión de sucesión, una adquisición o una venta.</li>
+                <li>Sabe que la decisión correcta no es la que tiene el mejor resultado, sino la que se sostiene después.</li>
+            </ul>
+        </section>
+
+        <hr class="sep" />
+
+        <!-- CÓMO FUNCIONA -->
+        <section class="panel">
+            <span class="tag">El proceso</span>
+            <h2>El Escenario</h2>
+
+            <div class="format-card">
+                <h4>1. El Caso</h4>
+                <p class="muted">El decisor presenta el dilema. Juntos identificamos la pregunta que realmente necesita respuesta, no la que parece obvia.</p>
+            </div>
+            <div class="format-card">
+                <h4>2. El Escenario</h4>
+                <p class="muted">Construimos el escenario completo: variables, actores, condiciones de posibilidad. No lo que pasó, sino lo que hace posible que esto esté ocurriendo.</p>
+            </div>
+            <div class="format-card">
+                <h4>3. El Umbral</h4>
+                <p class="muted">Identificamos el punto donde ya hay suficiente información para decidir de forma justificable. El momento en que esperar ya no es prudencia, es parálisis.</p>
+            </div>
+            <div class="format-card">
+                <h4>4. La Decisión</h4>
+                <p class="muted">El decisor toma la decisión. Yo solo guío el proceso. No hay recomendación. Hay una construcción compartida del escenario.</p>
+            </div>
+            <div class="format-card">
+                <h4>5. La Trazabilidad</h4>
+                <p class="muted">Documentamos la lógica de la decisión para que pueda sostenerse después. No importa el resultado. Importa que la decisión fue defendible.</p>
+            </div>
+        </section>
+
+        <hr class="sep" />
+
+        <!-- LA TARIFA -->
+        <section class="panel" style="border-left:3px solid rgba(255,255,255,0.1);">
+            <span class="tag">Transferencia de Riesgo</span>
+            <h2>¿Cuánto cuesta?</h2>
+            <p style="font-size:1.05rem;color:#ffffff;font-weight:400;">No cobramos por hora. Cobramos en función de lo que está en juego.</p>
+            <p class="muted">La tarifa se calcula a partir del valor en juego, la consecuencia del error y la complejidad del escenario.</p>
+
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:12px;">
+                <div style="background:rgba(255,255,255,0.02);padding:14px;border-radius:6px;border-left:2px solid rgba(255,255,255,0.05);">
+                    <p style="color:#9a9a9a;font-size:0.85rem;font-weight:600;text-transform:uppercase;letter-spacing:1.2px;">Riesgo Bajo</p>
+                    <p style="font-size:0.9rem;color:#b3b3b3;">Valor en juego: $1M - $10M</p>
+                    <p style="font-size:1.1rem;color:#ffffff;font-weight:600;">$5,000 - $15,000</p>
+                </div>
+                <div style="background:rgba(255,255,255,0.02);padding:14px;border-radius:6px;border-left:2px solid rgba(255,255,255,0.08);">
+                    <p style="color:#9a9a9a;font-size:0.85rem;font-weight:600;text-transform:uppercase;letter-spacing:1.2px;">Riesgo Medio</p>
+                    <p style="font-size:0.9rem;color:#b3b3b3;">Valor en juego: $10M - $50M</p>
+                    <p style="font-size:1.1rem;color:#ffffff;font-weight:600;">$15,000 - $50,000</p>
+                </div>
+                <div style="background:rgba(255,255,255,0.02);padding:14px;border-radius:6px;border-left:2px solid rgba(255,255,255,0.12);">
+                    <p style="color:#9a9a9a;font-size:0.85rem;font-weight:600;text-transform:uppercase;letter-spacing:1.2px;">Riesgo Alto</p>
+                    <p style="font-size:0.9rem;color:#b3b3b3;">Valor en juego: $50M - $200M</p>
+                    <p style="font-size:1.1rem;color:#ffffff;font-weight:600;">$50,000 - $150,000</p>
+                </div>
+                <div style="background:rgba(255,255,255,0.02);padding:14px;border-radius:6px;border-left:2px solid rgba(255,255,255,0.18);">
+                    <p style="color:#9a9a9a;font-size:0.85rem;font-weight:600;text-transform:uppercase;letter-spacing:1.2px;">Riesgo Crítico</p>
+                    <p style="font-size:0.9rem;color:#b3b3b3;">Valor en juego: $200M+</p>
+                    <p style="font-size:1.1rem;color:#ffffff;font-weight:600;">Negociación personalizada</p>
+                </div>
+            </div>
+
+            <p class="muted" style="margin-top:12px;font-size:0.9rem;">* La tarifa se confirma en la conversación inicial, después de conocer el valor en juego y la complejidad del escenario.</p>
+        </section>
+
+        <hr class="sep" />
+
+        <!-- LO QUE TE LLEVAS -->
+        <section class="panel">
+            <span class="tag">Resultado</span>
+            <h2>Lo que te llevas</h2>
+            <ul class="takeaway-list">
+                <li><strong style="color:#fff;">Una decisión defendible:</strong> No el resultado, sino la certeza de que la decisión fue construida con rigor.</li>
+                <li><strong style="color:#fff;">Un escenario completo:</strong> No lo que ves, sino lo que estabas omitiendo.</li>
+                <li><strong style="color:#fff;">La tranquilidad de haber decidido:</strong> No después de que el daño ocurrió, sino en el momento que importa.</li>
+                <li><strong style="color:#fff;">La trazabilidad:</strong> Un documento que sostiene la decisión si alguien la evalúa después.</li>
+            </ul>
+        </section>
+
+        <hr class="sep" />
+
+        <!-- CTA FINAL -->
+        <div class="cta">
+            <div class="panel" style="text-align:center;max-width:700px;width:100%">
+                <h2>El siguiente paso</h2>
+                <p class="muted" style="max-width:600px;margin:8px auto 16px;font-size:1.05rem;">
+                    Una conversación de diagnóstico para conocer su dilema y determinar si este espacio de guía es el adecuado para su decisión.
+                </p>
+                <a href="index.html#contacto" class="btn">Solicitar conversación de diagnóstico</a>
+                <p class="note" style="margin-top:12px;">Sin compromiso · Confidencialidad garantizada · Transferencia de riesgo</p>
+            </div>
+        </div>
+
+        <hr class="sep" />
+
+        <footer style="color:#8f8f8f;font-size:0.85rem;margin-top:8px;">
+            <p>&copy; 2026 Juicio en el Caos. Todos los derechos reservados.</p>
+        </footer>
+
+    </div>
+</body>
+</html>
