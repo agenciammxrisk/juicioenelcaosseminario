@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Juicio en el Caos - El Libro</title>
+    <meta name="description" content="Juicio en el Caos: doctrina sobre trazabilidad defendible y juicio bajo incertidumbre. Disponible en inglés y español en Amazon." />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
@@ -12,10 +13,12 @@
         html,body{height:100%}
         body{background:#0d0d0d;color:#e8e8e8;font-family:'Cormorant Garamond',serif;padding:0;margin:0}
         .navbar{background:rgba(255,255,255,0.02);border-bottom:1px solid rgba(255,255,255,0.03);padding:20px 0}
-        .navbar .container{max-width:1000px;margin:0 auto;padding:0 24px;display:flex;justify-content:space-between;align-items:center}
+        .navbar .container{max-width:1000px;margin:0 auto;padding:0 24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
         .navbar .logo{color:#fff;text-decoration:none;font-weight:700;font-family:'Playfair Display',serif;font-size:1.1rem}
-        .nav-menu{list-style:none;display:flex;gap:24px;margin:0}
-        .nav-menu a{color:#cfcfcf;text-decoration:none;font-size:0.95rem}
+        .nav-menu{list-style:none;display:flex;gap:16px;margin:0;flex-wrap:wrap}
+        .nav-menu a{color:#cfcfcf;text-decoration:none;font-size:0.9rem}
+        .nav-menu a:hover{color:#fff}
+        .nav-menu a.active{color:#fff;font-weight:600}
         .hero{padding:80px 24px;text-align:center}
         .hero .container{max-width:1000px;margin:0 auto}
         .hero h1{font-family:'Playfair Display',serif;font-weight:700;font-size:3.5rem;color:#fff;margin-bottom:12px}
@@ -35,8 +38,8 @@
         .book-audience ul{list-style:none;padding-left:0;margin:12px 0}
         .book-audience li{padding:8px 0;padding-left:20px;position:relative;color:#d0d0d0}
         .book-audience li:before{content:'→';position:absolute;left:0;color:#9a9a9a}
-        .edition-links{display:flex;gap:20px;margin-top:20px}
-        .edition{flex:1}
+        .edition-links{display:flex;gap:20px;margin-top:20px;flex-wrap:wrap}
+        .edition{flex:1;min-width:180px}
         .edition h4{font-family:'DM Mono',monospace;font-size:0.85rem;text-transform:uppercase;color:#9a9a9a;margin-bottom:12px}
         .btn{display:inline-block;background:#fff;color:#0d0d0d;padding:12px 28px;border-radius:999px;text-decoration:none;font-weight:700;font-size:0.95rem}
         .btn:hover{opacity:0.9}
@@ -51,13 +54,14 @@
         <div class="container">
             <a href="index.html" class="logo">Juicio en el Caos</a>
             <ul class="nav-menu">
-                <li><a href="index.html#inicio">Inicio</a></li>
-                <li><a href="index.html#sobre">Sobre</a></li>
-                <li><a href="arquitectura.html">Seminario</a></li>
-                <li><a href="libro.html">Libro</a></li>
-                <li><a href="intervencionesdeentrenamiento.html">Intervenciones</a></li>
-                <li><a href="index.html#instructores">Facilitador</a></li>
-                <li><a href="index.html#contacto">Contacto</a></li>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="arquitectura.html">Seminario CEOs</a></li>
+                <li><a href="entrenamiento.html">Programa de Desarrollo</a></li>
+                <li><a href="intervenciones.html">Arquitectura de Escenarios</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="simulador.html">Simulador</a></li>
+                <li><a href="evaluacion.html">Evaluación</a></li>
+                <li><a href="libro.html" class="active">Libro</a></li>
             </ul>
         </div>
     </nav>
@@ -133,7 +137,7 @@
                 <div class="book-complement">
                     <h3>Más Allá del Libro</h3>
                     <p><strong>Juicio en el Caos</strong> es también el nombre de un seminario privado de fin de semana, donde estas ideas se viven en vez de solo leerse.</p>
-                    <p><a href="arquitectura.html" class="link-arrow">Conocer el seminario ��</a></p>
+                    <p><a href="arquitectura.html" class="link-arrow">Conocer el seminario →</a></p>
                 </div>
             </div>
 
