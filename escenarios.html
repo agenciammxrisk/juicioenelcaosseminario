@@ -223,32 +223,42 @@
             <span class="tag">Transferencia de Riesgo</span>
             <h2>¿Cuánto cuesta?</h2>
             <p style="font-size:1.05rem;color:#ffffff;font-weight:400;">No cobramos por hora. Cobramos en función de lo que está en juego.</p>
-            <p class="muted">La tarifa se calcula a partir del valor en juego, la consecuencia del error y la complejidad del escenario.</p>
+            <p class="muted">La tarifa se calcula a partir del valor en juego, la complejidad del escenario y el significado del monto para el decisor.</p>
 
-            <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:12px;">
-                <div style="background:rgba(255,255,255,0.02);padding:14px;border-radius:6px;border-left:2px solid rgba(255,255,255,0.05);">
-                    <p style="color:#9a9a9a;font-size:0.85rem;font-weight:600;text-transform:uppercase;letter-spacing:1.2px;">Riesgo Bajo</p>
-                    <p style="font-size:0.9rem;color:#b3b3b3;">Valor en juego: $1M - $10M</p>
-                    <p style="font-size:1.1rem;color:#ffffff;font-weight:600;">$5,000 - $15,000</p>
-                </div>
-                <div style="background:rgba(255,255,255,0.02);padding:14px;border-radius:6px;border-left:2px solid rgba(255,255,255,0.08);">
-                    <p style="color:#9a9a9a;font-size:0.85rem;font-weight:600;text-transform:uppercase;letter-spacing:1.2px;">Riesgo Medio</p>
-                    <p style="font-size:0.9rem;color:#b3b3b3;">Valor en juego: $10M - $50M</p>
-                    <p style="font-size:1.1rem;color:#ffffff;font-weight:600;">$15,000 - $50,000</p>
-                </div>
-                <div style="background:rgba(255,255,255,0.02);padding:14px;border-radius:6px;border-left:2px solid rgba(255,255,255,0.12);">
-                    <p style="color:#9a9a9a;font-size:0.85rem;font-weight:600;text-transform:uppercase;letter-spacing:1.2px;">Riesgo Alto</p>
-                    <p style="font-size:0.9rem;color:#b3b3b3;">Valor en juego: $50M - $200M</p>
-                    <p style="font-size:1.1rem;color:#ffffff;font-weight:600;">$50,000 - $150,000</p>
-                </div>
-                <div style="background:rgba(255,255,255,0.02);padding:14px;border-radius:6px;border-left:2px solid rgba(255,255,255,0.18);">
-                    <p style="color:#9a9a9a;font-size:0.85rem;font-weight:600;text-transform:uppercase;letter-spacing:1.2px;">Riesgo Crítico</p>
-                    <p style="font-size:0.9rem;color:#b3b3b3;">Valor en juego: $200M+</p>
-                    <p style="font-size:1.1rem;color:#ffffff;font-weight:600;">Negociación personalizada</p>
-                </div>
+            <div style="margin-top:16px;background:rgba(255,255,255,0.02);padding:16px;border-radius:6px;border:1px solid rgba(255,255,255,0.05);">
+                <p style="color:#ffffff;font-weight:600;font-size:1.1rem;">Lectura de Escenario: $25,000 MXN</p>
+                <p class="muted" style="font-size:0.9rem;">Esta es la inversión mínima para acceder al servicio. Cubre el diagnóstico inicial y la construcción del escenario base.</p>
             </div>
 
-            <p class="muted" style="margin-top:12px;font-size:0.9rem;">* La tarifa se confirma en la conversación inicial, después de conocer el valor en juego y la complejidad del escenario.</p>
+            <div style="margin-top:16px;">
+                <p style="color:#ffffff;font-weight:600;font-size:0.95rem;">¿Cómo se determina la tarifa final?</p>
+                <ul style="list-style:none;margin-top:8px;">
+                    <li style="color:#b3b3b3;font-size:0.9rem;padding-left:14px;position:relative;margin-bottom:6px;">
+                        <span style="position:absolute;left:0;color:#fff;">·</span> 
+                        <strong style="color:#fff;">Valor en juego:</strong> ¿Cuánto representa la decisión para la organización o el patrimonio?
+                    </li>
+                    <li style="color:#b3b3b3;font-size:0.9rem;padding-left:14px;position:relative;margin-bottom:6px;">
+                        <span style="position:absolute;left:0;color:#fff;">·</span> 
+                        <strong style="color:#fff;">Complejidad del escenario:</strong> ¿Cuántas variables, actores y niveles de consecuencia están involucrados?
+                    </li>
+                    <li style="color:#b3b3b3;font-size:0.9rem;padding-left:14px;position:relative;margin-bottom:6px;">
+                        <span style="position:absolute;left:0;color:#fff;">·</span> 
+                        <strong style="color:#fff;">Significado del monto:</strong> ¿El valor en juego es cotidiano o representa una parte significativa del patrimonio?
+                    </li>
+                    <li style="color:#b3b3b3;font-size:0.9rem;padding-left:14px;position:relative;margin-bottom:6px;">
+                        <span style="position:absolute;left:0;color:#fff;">·</span> 
+                        <strong style="color:#fff;">Consecuencia del error:</strong> ¿El error es recuperable o irreversible?
+                    </li>
+                </ul>
+            </div>
+
+            <div style="margin-top:16px;background:rgba(255,255,255,0.02);padding:14px;border-radius:6px;border-left:2px solid rgba(255,255,255,0.15);">
+                <p style="color:#ffffff;font-weight:600;font-size:0.95rem;">Casos patrimoniales</p>
+                <p class="muted" style="font-size:0.9rem;">Cuando el valor en juego representa más del 50% del patrimonio del decisor, la tarifa se ajusta al significado del monto. El valor del servicio no es el mismo para una decisión de $1M que representa el 80% del patrimonio que para una decisión de $1M en una empresa que mueve $500M al año.</p>
+            </div>
+
+            <p class="muted" style="margin-top:14px;font-size:0.9rem;">La tarifa final se confirma en la conversación de diagnóstico, después de conocer el contexto completo del decisor.</p>
+            <p class="muted" style="font-size:0.85rem;color:#7a7a7a;margin-top:4px;">Este servicio no es para cualquier decisión. Es para decisiones que importan.</p>
         </section>
 
         <hr class="sep" />
