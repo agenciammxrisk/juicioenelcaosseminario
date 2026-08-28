@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Juicio en el Caos - Arquitectura del Seminario</title>
+    <title>Juicio en el Caos · Seminario para Fundadores y CEOs</title>
+    <meta name="description" content="Seminario residencial exclusivo para Fundadores, Dueños y Directores Generales. 12 transformaciones para decidir lo que define el futuro de su organización." />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
@@ -12,22 +13,34 @@
         html,body{height:100%}
         body{background:#0d0d0d;color:#e8e8e8;font-family:'Inter',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;line-height:1.6;padding:24px}
         .wrap{max-width:880px;margin:36px auto;padding:44px 48px;background:linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01));border-radius:12px;border:1px solid rgba(255,255,255,0.03);box-shadow:0 10px 30px rgba(0,0,0,0.6)}
-        nav.navbar{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px}
+        nav.navbar{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px;flex-wrap:wrap;gap:12px}
         .logo{color:#fff;text-decoration:none;font-weight:700;font-family:'Playfair Display',serif;font-size:1.1rem}
-        .nav-menu{list-style:none;display:flex;gap:14px}
-        .nav-menu a{color:#cfcfcf;text-decoration:none;font-size:0.95rem}
+        .nav-menu{list-style:none;display:flex;gap:14px;flex-wrap:wrap}
+        .nav-menu a{color:#cfcfcf;text-decoration:none;font-size:0.9rem}
+        .nav-menu a:hover{color:#fff}
         .panel{background:linear-gradient(180deg,#151515,#121212);padding:22px;border-radius:10px;border:1px solid rgba(255,255,255,0.03)}
         .kicker{font-size:0.78rem;color:#9a9a9a;letter-spacing:1.6px;text-transform:uppercase;margin-bottom:10px}
-        h1{font-family:'Playfair Display',serif;font-weight:700;font-size:2.2rem;color:#fff;margin-bottom:8px}
+        h1{font-family:'Playfair Display',serif;font-weight:700;font-size:2.2rem;color:#fff;margin-bottom:8px;line-height:1.1}
+        h2{font-family:'Playfair Display',serif;font-weight:600;font-size:1.5rem;color:#fff;margin:12px 0 8px}
+        h3{font-size:1rem;color:#fff;margin:10px 0 4px;font-weight:600}
         p{color:#d0d0d0;margin-bottom:12px}
         .muted{color:#9a9a9a}
+        .highlight{color:#ffffff;font-weight:400}
         .section-meta{display:flex;align-items:center;gap:12px;margin:18px 0}
+        .section-tag{font-size:0.72rem;color:#9a9a9a;text-transform:uppercase;letter-spacing:1.6px}
         .format-card{background:transparent;padding:14px;border-radius:8px;border:1px solid rgba(255,255,255,0.02);margin-bottom:12px}
-        .case-card{background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.05);padding:20px;border-radius:6px}
-        .case-category{font-family:'DM Mono',monospace;font-size:0.78rem;text-transform:uppercase;letter-spacing:1.6px;color:#bfbfbf;display:inline-block;margin-bottom:8px}
-        .case-title{font-family:'Playfair Display',serif;font-size:1.4rem;color:#fff;margin-bottom:12px}
-        .btn{display:inline-block;background:#ffffff;color:#0d0d0d;padding:10px 20px;border-radius:999px;text-decoration:none;font-weight:700}
-        footer{margin-top:28px;color:#8f8f8f;font-size:0.95rem}
+        .format-card h4{color:#fff;font-weight:600;margin-bottom:2px}
+        .format-card p{margin-bottom:4px}
+        .case-block{background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.05);padding:20px;border-radius:6px;margin:12px 0}
+        .case-block .impact{font-family:'Playfair Display',serif;font-size:1.4rem;color:#fff;margin:8px 0}
+        .btn{display:inline-block;background:#ffffff;color:#0d0d0d;padding:12px 28px;border-radius:999px;text-decoration:none;font-weight:700;box-shadow:0 8px 20px rgba(0,0,0,0.6);border:none;cursor:pointer;margin-top:8px}
+        .btn.ghost{background:transparent;color:#fff;border:1px solid rgba(255,255,255,0.06)}
+        .filtro-box{background:rgba(255,255,255,0.02);border-left:3px solid rgba(255,255,255,0.1);padding:16px 18px;margin:14px 0;border-radius:4px}
+        .filtro-box p{margin-bottom:4px}
+        .takeaway-list{list-style:none;margin:8px 0}
+        .takeaway-list li{color:#b3b3b3;font-size:0.9rem;margin-bottom:4px;position:relative;padding-left:14px}
+        .takeaway-list li::before{content:"·";position:absolute;left:0;color:#fff;font-weight:bold}
+        footer{margin-top:28px;color:#8f8f8f;font-size:0.9rem;border-top:1px solid rgba(255,255,255,0.03);padding-top:16px}
         @media(max-width:800px){.wrap{padding:20px}.nav-menu{display:none}h1{font-size:1.6rem}}
     </style>
 </head>
@@ -37,69 +50,135 @@
             <a href="index.html" class="logo">Juicio en el Caos</a>
             <ul class="nav-menu">
                 <li><a href="index.html">Inicio</a></li>
-                <li><a href="index.html#sobre">Sobre</a></li>
-                <li><a href="arquitectura.html">Seminario</a></li>
-                <li><a href="libro.html">Libro</a></li>
-                <li><a href="intervencionesdeentrenamiento.html">Intervenciones</a></li>
+                <li><a href="arquitectura.html" style="color:#fff;font-weight:600">Seminario CEOs</a></li>
+                <li><a href="entrenamiento.html">Programa de Desarrollo</a></li>
+                <li><a href="intervenciones.html">Arquitectura de Escenarios</a></li>
+                <li><a href="blog.html">Blog</a></li>
                 <li><a href="simulador.html">Simulador</a></li>
-                <li><a href="index.html#contacto">Contacto</a></li>
+                <li><a href="evaluacion.html">Evaluación</a></li>
+                <li><a href="libro.html">Libro</a></li>
             </ul>
         </nav>
 
         <header>
-            <div class="kicker">Arquitectura · Seminario</div>
-            <h1>Arquitectura del Seminario</h1>
-            <p>Un seminario sobre la construcción del criterio que necesitará cuando nadie pueda decidir por usted. Diseñado para Fundadores, Dueños de Negocio y Directores Generales.</p>
+            <div class="kicker">Dimensión CEO · Grupo Exclusivo</div>
+            <h1>Seminario para Fundadores y Directores Generales</h1>
+            <p style="font-size:1.05rem;color:#cfcfcf;">Las 12 transformaciones de Juicio en el Caos, vividas desde la realidad de la alta dirección. Para quienes ya deciden el futuro y enfrentan la soledad del criterio.</p>
         </header>
 
-        <section class="panel" style="margin-top:18px">
-            <div class="section-meta">
-                <span class="section-num">01</span>
-                <div style="flex:1;height:1px;background:rgba(255,255,255,0.03)"></div>
-                <span class="section-tag muted">Formato</span>
-            </div>
+        <!-- FILTRO DE ADMISIÓN (destacado desde el inicio) -->
+        <div class="filtro-box" style="margin-top:18px;">
+            <p style="color:#fff;font-weight:600;margin-bottom:2px;">⛔ La admisión requiere entrevista previa</p>
+            <p class="muted" style="font-size:0.9rem;">No es cuestión de precio. Es cuestión de <strong style="color:#fff;">nivel de decisión</strong>. Este seminario está diseñado exclusivamente para Fundadores, Dueños de Negocio y Directores Generales cuyas decisiones definen el futuro de su organización.</p>
+        </div>
 
-            <h2 style="color:#fff">Un Fin de Semana de Inmersión Total</h2>
-            <p class="muted">Trabajamos sobre decisiones reales. Con presión real. En un entorno donde nadie puede decidir por usted.</p>
+        <hr style="border:none;border-top:1px solid rgba(255,255,255,0.04);margin:22px 0">
 
-            <div style="margin:18px 0;padding:18px;background:transparent;border-left:3px solid rgba(255,255,255,0.06);border-radius:8px">
-                <h4 style="font-family:'Playfair Display',serif;font-weight:600;font-size:1.1rem;margin-bottom:8px;color:#fff">Un Caso Real</h4>
-                <p>Hace algunos años, un empresario descubrió que su socio desviaba cerca de diez millones de pesos al año. La investigación técnica fue impecable y la evidencia concluyente.</p>
-                <p style="font-weight:600;color:#fff">¿Cómo decidir cuando la solución técnica destruye la viabilidad operativa? Este caso real es la base de nuestro entrenamiento: exponer al participante a la arquitectura emocional de la decisión real.</p>
-                <p class="muted" style="margin-top:10px;font-style:italic">Las decisiones que más valor destruyen rara vez nacen de la incompetencia. Con frecuencia nacen de escenarios invisibles o mal auditados.</p>
-            </div>
-
-            <div class="format-details" style="margin-top:18px">
-                <h3 style="color:#fff">Estructura del Fin de Semana</h3>
-                <div class="format-card">
-                    <h4>Duración</h4>
-                    <p>Viernes 6:00 pm — Domingo 2:00 pm</p>
-                    <p class="muted">Inmersión ininterrumpida: sin salir de la sede, sin regreso a la rutina, durante todo el fin de semana.</p>
-                </div>
-                <div class="format-card">
-                    <h4>Grupo Reducido</h4>
-                    <p>Entre 4 y 10 participantes</p>
-                    <p class="muted">Por encima de 10 se pierde la exposición individual real que el formato requiere.</p>
-                </div>
-                <div class="format-card">
-                    <h4>Sede Privada</h4>
-                    <p>Confirmada directamente con cada grupo antes de la edición</p>
-                    <p class="muted">Garantiza confidencialidad y profundidad en el análisis.</p>
-                </div>
-            </div>
-
-            <div style="margin-top:22px;border-top:1px solid rgba(255,255,255,0.03);padding-top:18px">
-                <h3 style="font-family:'Playfair Display',serif;color:#fff">¿Qué Cambiará?</h3>
-                <p class="muted">Cuando termine el seminario seguirá enfrentando incertidumbre. Seguirá tomando decisiones con información incompleta. Lo que cambia es que sabrá reconocer el punto donde ya tiene lo suficiente para actuar de forma justificable.</p>
-            </div>
-
+        <!-- CASO REAL (el gancho) -->
+        <section class="case-block">
+            <span style="font-size:0.72rem;color:#9a9a9a;text-transform:uppercase;letter-spacing:1.6px;">El caso que usamos en el seminario</span>
+            <p style="font-family:'Playfair Display',serif;font-size:1.5rem;color:#fff;margin:8px 0 6px;">El socio que desviaba 10 millones</p>
+            <p>Un empresario descubre que su socio de confianza ha estado desviando cerca de diez millones de pesos al año. La evidencia es irrefutable.</p>
+            <p class="impact">La decisión "correcta" desde la ética es denunciarlo. La decisión "correcta" desde el negocio es no hacerlo, porque la empresa colapsa.</p>
+            <p class="muted">No hay respuesta correcta. Hay una decisión defendible. Eso es lo que entrenamos en el seminario. No para "no equivocarse". Para decidir con claridad cuando no hay claridad. Y para ver, en ese mismo proceso, la oportunidad que nadie más está viendo.</p>
         </section>
 
-        <section style="margin-top:22px">
+        <hr style="border:none;border-top:1px solid rgba(255,255,255,0.04);margin:22px 0">
+
+        <!-- EL NÚCLEO: LAS 12 TRANSFORMACIONES -->
+        <section class="panel">
+            <span class="section-tag">El núcleo de la experiencia</span>
+            <h2>Las 12 transformaciones</h2>
+            <p class="muted">No venimos a enseñarte un método. Venimos a desmontar la forma en que ves los problemas. Las 12 transformaciones no son un temario. Son el viaje que ocurre cuando dejas de confiar en tu propio juicio y aprendes a ver lo que siempre estuvo ahí, pero no veías.</p>
+
+            <div style="margin:12px 0;display:grid;grid-template-columns:1fr 1fr;gap:8px;font-size:0.9rem;">
+                <div style="background:rgba(255,255,255,0.02);padding:8px 12px;border-radius:4px;">1. El problema no era la decisión</div>
+                <div style="background:rgba(255,255,255,0.02);padding:8px 12px;border-radius:4px;">2. El escenario también se construye</div>
+                <div style="background:rgba(255,255,255,0.02);padding:8px 12px;border-radius:4px;">3. Separar disciplina de sistema</div>
+                <div style="background:rgba(255,255,255,0.02);padding:8px 12px;border-radius:4px;">4. Lo que no aparece en el expediente</div>
+                <div style="background:rgba(255,255,255,0.02);padding:8px 12px;border-radius:4px;">5. El tiempo real</div>
+                <div style="background:rgba(255,255,255,0.02);padding:8px 12px;border-radius:4px;">6. Explicar y justificar no son lo mismo</div>
+                <div style="background:rgba(255,255,255,0.02);padding:8px 12px;border-radius:4px;">7. Las capas de un mismo caso</div>
+                <div style="background:rgba(255,255,255,0.02);padding:8px 12px;border-radius:4px;">8. La soledad de quien decide</div>
+                <div style="background:rgba(255,255,255,0.02);padding:8px 12px;border-radius:4px;">9. Reconstruir la propia historia</div>
+                <div style="background:rgba(255,255,255,0.02);padding:8px 12px;border-radius:4px;">10. La transferencia</div>
+                <div style="background:rgba(255,255,255,0.02);padding:8px 12px;border-radius:4px;">11. Un lenguaje compartido</div>
+                <div style="background:rgba(255,255,255,0.02);padding:8px 12px;border-radius:4px;">12. Salida</div>
+            </div>
+            <p class="muted" style="font-size:0.85rem;">* El orden y la profundidad se ajustan a la dinámica de cada grupo.</p>
+        </section>
+
+        <hr style="border:none;border-top:1px solid rgba(255,255,255,0.04);margin:22px 0">
+
+        <!-- FORMATO -->
+        <section class="panel">
+            <span class="section-tag">Formato exclusivo</span>
+            <h2>Un fin de semana de inmersión total</h2>
+            <p class="muted">Trabajamos sobre decisiones reales. Con presión real. En un entorno donde nadie puede decidir por usted.</p>
+
+            <div class="format-card">
+                <h4>Duración</h4>
+                <p>Viernes 6:00 pm — Domingo 5:00 pm</p>
+                <p class="muted">Inmersión ininterrumpida: sin salir de la sede, sin regreso a la rutina, durante todo el fin de semana.</p>
+            </div>
+            <div class="format-card">
+                <h4>Grupo Reducido</h4>
+                <p>Entre 4 y 10 participantes</p>
+                <p class="muted">Por encima de 10 se pierde la exposición individual real que el formato requiere.</p>
+            </div>
+            <div class="format-card">
+                <h4>Sede Privada</h4>
+                <p>Hotel boutique en sede turística (montaña o lago)</p>
+                <p class="muted">Garantiza confidencialidad, profundidad en el análisis y un entorno que comunica: "esto no es un curso, es una experiencia".</p>
+            </div>
+            <div class="format-card">
+                <h4>Condición</h4>
+                <p>Sin celulares. Sin distracciones. Sin salida.</p>
+                <p class="muted">El criterio no se desarrolla en condiciones cómodas. Se desarrolla bajo presión real, con información parcial y consecuencias reales.</p>
+            </div>
+        </section>
+
+        <hr style="border:none;border-top:1px solid rgba(255,255,255,0.04);margin:22px 0">
+
+        <!-- LO QUE TE LLEVAS -->
+        <section class="panel">
+            <span class="section-tag">Transformación</span>
+            <h2>Lo que te llevas</h2>
+            <ul class="takeaway-list">
+                <li><strong style="color:#fff;">Una capacidad instalada:</strong> Construir escenarios antes de decidir.</li>
+                <li><strong style="color:#fff;">Un lenguaje compartido:</strong> Para discutir escenarios complejos con otros decisores que vivieron lo mismo.</li>
+                <li><strong style="color:#fff;">Una arquitectura de decisión:</strong> Que puedes aplicar en cualquier dominio.</li>
+                <li><strong style="color:#fff;">La experiencia de haber enfrentado, con otros CEOs, las mismas condiciones que enfrentas en tu organización.</strong></li>
+                <li><strong style="color:#fff;">Una pregunta nueva.</strong> No la respuesta que te trajo. La pregunta que te va a mover hacia adelante.</li>
+            </ul>
+        </section>
+
+        <hr style="border:none;border-top:1px solid rgba(255,255,255,0.04);margin:22px 0">
+
+        <!-- FILTRO DE ADMISIÓN (segundo bloque) -->
+        <div class="filtro-box">
+            <p style="color:#fff;font-weight:600;margin-bottom:2px;">¿Es para ti?</p>
+            <p class="muted" style="font-size:0.9rem;">Este seminario es para ti si:</p>
+            <ul style="color:#b3b3b3;font-size:0.9rem;margin-left:18px;margin-bottom:8px;">
+                <li>Eres Fundador, Dueño de Negocio o Director General.</li>
+                <li>Tus decisiones afectan el futuro de toda la organización.</li>
+                <li>Has tenido que decidir sin información completa y con consecuencias reales.</li>
+                <li>Estás dispuesto a exponer tus dilemas reales en un entorno confidencial.</li>
+            </ul>
+            <p class="muted" style="font-size:0.9rem;">Si no estás en este nivel, el <a href="entrenamiento.html" style="color:#fff;">Programa de Desarrollo</a> es tu puerta de entrada.</p>
+        </div>
+
+        <hr style="border:none;border-top:1px solid rgba(255,255,255,0.04);margin:22px 0">
+
+        <!-- CTA FINAL -->
+        <section style="text-align:center;">
             <div class="panel">
-                <h3 style="color:#fff">Disponibilidad</h3>
-                <p class="muted">Cupo limitado por edición. La disponibilidad se confirma directamente al recibir su solicitud de contacto.</p>
-                <p style="margin-top:12px"><a href="index.html#contacto" class="btn">Consultar Disponibilidad</a></p>
+                <h3 style="color:#fff;font-size:1.1rem;">El siguiente paso</h3>
+                <p class="muted">Una conversación de 20 minutos para confirmar que el seminario es el espacio adecuado para ti.</p>
+                <p style="margin-top:12px;">
+                    <a href="index.html#contacto" class="btn">Solicitar conversación de admisión</a>
+                </p>
+                <p class="muted" style="font-size:0.85rem;margin-top:8px;">Sin compromiso · Cupo limitado · Confidencialidad garantizada</p>
             </div>
         </section>
 
