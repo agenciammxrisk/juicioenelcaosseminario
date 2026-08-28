@@ -1,31 +1,260 @@
-<!-- POR QUÉ DIFERENTE: DECISIONES BASADAS EN INFORMACIÓN VS DECISIONES BASADAS EN ESCENARIOS -->
-<section class="panel" style="border-left:3px solid rgba(255,255,255,0.1);">
-    <span class="tag">La diferencia</span>
-    <h2>Decisiones basadas en información vs. Decisiones basadas en escenarios</h2>
-    
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:12px;">
-        <!-- Columna Izquierda: Información -->
-        <div style="background:rgba(255,255,255,0.02);padding:16px;border-radius:6px;border-left:2px solid rgba(255,255,255,0.05);">
-            <p style="color:#9a9a9a;font-size:0.85rem;font-weight:600;text-transform:uppercase;letter-spacing:1.2px;">Decisiones basadas en información</p>
-            <ul style="color:#b3b3b3;font-size:0.9rem;margin-left:14px;margin-top:6px;list-style:none;padding-left:0;">
-                <li style="padding-left:14px;position:relative;margin-bottom:4px;">· Preguntan: <strong style="color:#9a9a9a;">"¿Qué tenemos?"</strong></li>
-                <li style="padding-left:14px;position:relative;margin-bottom:4px;">· El criterio se aplica <strong style="color:#9a9a9a;">sobre el dato</strong></li>
-                <li style="padding-left:14px;position:relative;margin-bottom:4px;">· La decisión es una <strong style="color:#9a9a9a;">respuesta</strong> a lo que ya pasó</li>
-                <li style="padding-left:14px;position:relative;margin-bottom:4px;color:#7a7a7a;">· Se agotan cuando los datos se agotan</li>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Juicio en el Caos · Arquitectura de Escenarios para Organizaciones</title>
+    <meta name="description" content="Arquitectura de Escenarios: el sistema que diseña la capacidad de decisión de su organización. Para equipos directivos que quieren anticipar, interpretar y decidir antes que la competencia." />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
+    <style>
+        /* RESET & BASE */
+        *{box-sizing:border-box;margin:0;padding:0}
+        html,body{height:100%}
+
+        body{
+            background: #0d0d0d;
+            color: #e8e8e8;
+            font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+            font-weight:300;
+            line-height:1.6;
+            -webkit-font-smoothing:antialiased;
+            padding: 24px;
+        }
+
+        .wrap{
+            max-width:880px;
+            margin:36px auto;
+            padding:44px 48px;
+            background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+            border-radius:12px;
+            border:1px solid rgba(255,255,255,0.03);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+        }
+
+        header{margin-bottom:28px}
+        .kicker{font-size:0.78rem;color:#9a9a9a;letter-spacing:1.6px;text-transform:uppercase;margin-bottom:10px}
+        h1{
+            font-family:'Playfair Display', serif;
+            font-weight:700;
+            font-size:2.4rem;
+            color:#ffffff;
+            line-height:1.05;
+            margin-bottom:6px;
+        }
+        .subtitle{color:#cfcfcf;font-size:1.05rem;max-width:72ch;font-weight:300}
+
+        /* NAVEGACIÓN */
+        .main-nav{display:flex;gap:10px;flex-wrap:wrap;margin:14px 0}
+        .main-nav a{color:#dcdcdc;text-decoration:none;padding:8px 12px;border-radius:8px;border:1px solid rgba(255,255,255,0.03);background:transparent;font-weight:600;font-size:0.95rem}
+        .main-nav a:hover{background:rgba(255,255,255,0.03)}
+        .main-nav a.active{background:#ffffff;color:#0d0d0d}
+
+        hr.sep{border:none;border-top:1px solid rgba(255,255,255,0.04);margin:36px 0}
+
+        /* CARDS & PANELS */
+        .panel{background: linear-gradient(180deg, #151515, #121212);padding:22px;border-radius:10px;border:1px solid rgba(255,255,255,0.03)}
+        .tag{display:inline-block;padding:6px 10px;border-radius:999px;font-size:0.72rem;color:#bdbdbd;background:rgba(255,255,255,0.02);text-transform:uppercase;letter-spacing:1.6px}
+
+        h2{font-size:1.5rem;margin:8px 0 12px;color:#ffffff}
+        h3{font-size:1.1rem;margin:10px 0 6px;color:#ffffff;font-weight:600}
+        p{color:#d0d0d0;font-size:1rem;margin-bottom:12px}
+        .muted{color:#9a9a9a}
+        .highlight{color:#ffffff;font-weight:400}
+
+        /* FORMAT CARDS */
+        .format-card{background:transparent;padding:14px;border-radius:8px;border:1px solid rgba(255,255,255,0.02);margin-bottom:12px}
+        .format-card h4{color:#fff;font-weight:600;margin-bottom:2px}
+        .format-card p{margin-bottom:4px}
+
+        /* CASE BLOCK (evidencia) */
+        .case-block{
+            background: linear-gradient(180deg, #151515, #121212);
+            padding: 20px;
+            border-radius: 10px;
+            border: 1px solid rgba(255,255,255,0.03);
+            border-left: 3px solid rgba(255,255,255,0.1);
+            margin-top: 16px;
+        }
+        .case-block .impact{font-family:'Playfair Display',serif;font-size:1.5rem;color:#fff;margin:8px 0}
+
+        /* LISTS */
+        .takeaway-list{list-style:none;margin:8px 0}
+        .takeaway-list li{color:#b3b3b3;font-size:0.9rem;margin-bottom:4px;position:relative;padding-left:14px}
+        .takeaway-list li::before{content:"·";position:absolute;left:0;color:#fff;font-weight:bold}
+
+        /* CTA */
+        .cta{display:flex;flex-direction:column;align-items:center;gap:12px;padding-top:18px}
+        .btn{display:inline-block;background:#ffffff;color:#0d0d0d;padding:12px 28px;border-radius:999px;text-decoration:none;font-weight:700;box-shadow:0 8px 20px rgba(0,0,0,0.6);border:none;cursor:pointer;margin-top:8px}
+        .btn:hover{background:#e2e2e2}
+        .note{font-size:0.85rem;color:#9a9a9a}
+
+        /* RESPONSIVE */
+        @media(max-width:800px){
+            .wrap{padding:20px}
+            h1{font-size:1.8rem}
+            .main-nav{gap:8px}
+            .main-nav a{padding:8px 10px;font-size:0.9rem}
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <!-- HEADER -->
+        <header>
+            <div class="kicker">Dimensión · Organizaciones</div>
+            <h1>Arquitectura de Escenarios</h1>
+            <p class="subtitle">Diseñar la capacidad de decisión de su organización. Para equipos directivos que quieren anticipar, interpretar y decidir antes que la competencia.</p>
+
+            <!-- NAVEGACIÓN -->
+            <nav class="main-nav" aria-label="Navegación principal">
+                <a href="index.html">Inicio</a>
+                <a href="arquitectura.html">Seminario CEOs</a>
+                <a href="entrenamiento.html">Programa de Desarrollo</a>
+                <a href="intervenciones.html" class="active">Arquitectura de Escenarios</a>
+                <a href="blog.html">Blog</a>
+                <a href="simulador.html">Simulador</a>
+                <a href="evaluacion.html">Evaluación</a>
+                <a href="libro.html">Libro</a>
+            </nav>
+        </header>
+
+        <hr class="sep" />
+
+        <!-- INTRO: EL PROBLEMA ORGANIZACIONAL -->
+        <section class="panel">
+            <span class="tag">El problema que resuelve</span>
+            <h2 style="margin-top:8px">Su organización tiene sistemas para todo. ¿Tiene un sistema para decidir bajo incertidumbre?</h2>
+            <p style="font-size:1.05rem;color:#ffffff;font-weight:400;">Si la respuesta es no, está dejando sus decisiones más importantes al azar.</p>
+            <p class="muted">Su equipo directivo toma decisiones críticas sin un marco común. Cada uno interpreta la información de forma distinta. No hay un lenguaje compartido para la incertidumbre. Eso tiene un costo: decisiones inconsistentes, oportunidades perdidas, riesgos no evaluados.</p>
+        </section>
+
+        <hr class="sep" />
+
+        <!-- QUÉ ES LA ARQUITECTURA DE ESCENARIOS -->
+        <section class="panel">
+            <span class="tag">La solución</span>
+            <h2>¿Qué es la Arquitectura de Escenarios?</h2>
+            <p>No es un curso. No es una consultoría tradicional. Es un <strong style="color:#fff;">sistema</strong> que se instala en su organización para diseñar su capacidad de decisión.</p>
+            <p class="muted">La Arquitectura de Escenarios es el marco que permite a su equipo directivo:</p>
+            <ul style="color:#b3b3b3;margin-left:18px;margin-bottom:12px;">
+                <li>Construir escenarios antes de decidir, no después.</li>
+                <li>Hablar el mismo lenguaje sobre la incertidumbre.</li>
+                <li>Identificar la estructura que hace posible el evento, no solo el síntoma.</li>
+                <li>Decidir con claridad cuando la información es incompleta o contradictoria.</li>
             </ul>
+            <p class="muted">La decisión basada en información pregunta <strong style="color:#fff;">"¿Qué tenemos?"</strong> y se agota cuando los datos se acaban. La decisión basada en escenarios pregunta <strong style="color:#fff;">"¿Qué condiciones permiten que este escenario exista?"</strong> y se sostiene cuando la estructura se modifica.</p>
+        </section>
+
+        <hr class="sep" />
+
+        <!-- EL PROCESO -->
+        <section class="panel">
+            <span class="tag">Cómo funciona</span>
+            <h2>El proceso</h2>
+
+            <div class="format-card">
+                <h4>1. Diagnóstico inicial</h4>
+                <p class="muted">Evaluación de la capacidad de decisión actual de su equipo directivo. Identificamos brechas, puntos ciegos y oportunidades.</p>
+            </div>
+            <div class="format-card">
+                <h4>2. Diseño a la medida</h4>
+                <p class="muted">Diseñamos la intervención específica para su organización, con casos y escenarios de su sector.</p>
+            </div>
+            <div class="format-card">
+                <h4>3. Inmersión del equipo directivo</h4>
+                <p class="muted">El equipo vive las 12 transformaciones de Juicio en el Caos, adaptadas a su realidad organizacional.</p>
+            </div>
+            <div class="format-card">
+                <h4>4. Implementación del sistema</h4>
+                <p class="muted">Instalamos la Arquitectura de Escenarios en los procesos de decisión de su organización. El sistema permanece.</p>
+            </div>
+            <div class="format-card">
+                <h4>5. Seguimiento y mentoría</h4>
+                <p class="muted">Acompañamiento continuo para asegurar que el sistema se consolida y genera resultados.</p>
+            </div>
+        </section>
+
+        <hr class="sep" />
+
+        <!-- EVIDENCIA: CASO REAL -->
+        <section class="case-block">
+            <span class="tag">Evidencia</span>
+            <p class="impact">200 millones al año</p>
+            <p>Un empresario descubrió que su socio le estaba extrayendo valor de forma sistemática. La decisión de investigar era correcta. El fraude era real. La investigación fue impecable.</p>
+            <p class="impact" style="font-size:1.2rem;">Al siguiente lunes, la empresa que facturaba 200 millones al año ya no existía.</p>
+            <p class="muted">La investigación detonó una reacción en cadena que ninguno de los dos anticipó. El escenario completo había quedado fuera de la lectura inicial. La Arquitectura de Escenarios está diseñada para que eso no ocurra.</p>
+        </section>
+
+        <hr class="sep" />
+
+        <!-- LO QUE LA ORGANIZACIÓN SE LLEVA -->
+        <section class="panel">
+            <span class="tag">Resultado</span>
+            <h2>Lo que su organización se lleva</h2>
+            <ul class="takeaway-list">
+                <li><strong style="color:#fff;">Un lenguaje común</strong> para discutir escenarios complejos en todo el equipo directivo.</li>
+                <li><strong style="color:#fff;">Una arquitectura de decisión</strong> que permanece en la organización, no en una persona.</li>
+                <li><strong style="color:#fff;">La capacidad de construir escenarios</strong> antes de decidir, de forma sistemática y compartida.</li>
+                <li><strong style="color:#fff;">Un retorno medible</strong> en valor protegido y oportunidades capturadas.</li>
+            </ul>
+        </section>
+
+        <hr class="sep" />
+
+        <!-- POR QUÉ DIFERENTE: DECISIONES BASADAS EN INFORMACIÓN VS DECISIONES BASADAS EN ESCENARIOS -->
+        <section class="panel" style="border-left:3px solid rgba(255,255,255,0.1);">
+            <span class="tag">La diferencia</span>
+            <h2>Decisiones basadas en información vs. Decisiones basadas en escenarios</h2>
+
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:12px;">
+                <!-- Columna Izquierda: Información -->
+                <div style="background:rgba(255,255,255,0.02);padding:16px;border-radius:6px;border-left:2px solid rgba(255,255,255,0.05);">
+                    <p style="color:#9a9a9a;font-size:0.85rem;font-weight:600;text-transform:uppercase;letter-spacing:1.2px;">Decisiones basadas en información</p>
+                    <ul style="color:#b3b3b3;font-size:0.9rem;margin-left:14px;margin-top:6px;list-style:none;padding-left:0;">
+                        <li style="padding-left:14px;position:relative;margin-bottom:4px;">· Preguntan: <strong style="color:#9a9a9a;">"¿Qué tenemos?"</strong></li>
+                        <li style="padding-left:14px;position:relative;margin-bottom:4px;">· El criterio se aplica <strong style="color:#9a9a9a;">sobre el dato</strong></li>
+                        <li style="padding-left:14px;position:relative;margin-bottom:4px;">· La decisión es una <strong style="color:#9a9a9a;">respuesta</strong> a lo que ya pasó</li>
+                        <li style="padding-left:14px;position:relative;margin-bottom:4px;color:#7a7a7a;">· Se agotan <strong style="color:#7a7a7a;">cuando los datos se agotan</strong></li>
+                    </ul>
+                </div>
+
+                <!-- Columna Derecha: Escenarios -->
+                <div style="background:rgba(255,255,255,0.02);padding:16px;border-radius:6px;border-left:2px solid rgba(255,255,255,0.15);">
+                    <p style="color:#ffffff;font-size:0.85rem;font-weight:600;text-transform:uppercase;letter-spacing:1.2px;">Decisiones basadas en escenarios</p>
+                    <ul style="color:#b3b3b3;font-size:0.9rem;margin-left:14px;margin-top:6px;list-style:none;padding-left:0;">
+                        <li style="padding-left:14px;position:relative;margin-bottom:4px;">· Preguntan: <strong style="color:#ffffff;">"¿Qué condiciones permiten que este escenario exista?"</strong></li>
+                        <li style="padding-left:14px;position:relative;margin-bottom:4px;">· El criterio se aplica <strong style="color:#ffffff;">sobre la construcción del caso</strong></li>
+                        <li style="padding-left:14px;position:relative;margin-bottom:4px;">· La decisión es una <strong style="color:#ffffff;">intervención sobre la estructura</strong> que hace posible el evento</li>
+                        <li style="padding-left:14px;position:relative;margin-bottom:4px;color:#b3b3b3;">· Se sostienen <strong style="color:#b3b3b3;">cuando la estructura se modifica</strong></li>
+                    </ul>
+                </div>
+            </div>
+
+            <p style="margin-top:16px;font-size:0.95rem;color:#cfcfcf;">La decisión basada en información se detiene cuando los datos se acaban. La decisión basada en escenarios <strong style="color:#fff;">modifica las condiciones que hacen posible el escenario</strong> — y por eso no necesita esperar a que los datos lleguen.</p>
+        </section>
+
+        <hr class="sep" />
+
+        <!-- CTA FINAL -->
+        <div class="cta">
+            <div class="panel" style="text-align:center;max-width:700px;width:100%">
+                <h2>El siguiente paso</h2>
+                <p class="muted" style="max-width:600px;margin:8px auto 16px;font-size:1.05rem;">
+                    Una conversación de diagnóstico para determinar si la Arquitectura de Escenarios es el sistema que su organización necesita.
+                </p>
+                <a href="index.html#contacto" class="btn">Solicitar diagnóstico para mi organización</a>
+                <p class="note" style="margin-top:12px;">Sin compromiso · Diseño a la medida de su sector</p>
+            </div>
         </div>
 
-        <!-- Columna Derecha: Escenarios -->
-        <div style="background:rgba(255,255,255,0.02);padding:16px;border-radius:6px;border-left:2px solid rgba(255,255,255,0.15);">
-            <p style="color:#ffffff;font-size:0.85rem;font-weight:600;text-transform:uppercase;letter-spacing:1.2px;">Decisiones basadas en escenarios</p>
-            <ul style="color:#b3b3b3;font-size:0.9rem;margin-left:14px;margin-top:6px;list-style:none;padding-left:0;">
-                <li style="padding-left:14px;position:relative;margin-bottom:4px;">· Preguntan: <strong style="color:#ffffff;">"¿Qué condiciones permiten que este escenario exista?"</strong></li>
-                <li style="padding-left:14px;position:relative;margin-bottom:4px;">· El criterio se aplica <strong style="color:#ffffff;">sobre la construcción del caso</strong></li>
-                <li style="padding-left:14px;position:relative;margin-bottom:4px;">· La decisión es una <strong style="color:#ffffff;">intervención sobre la estructura</strong> que hace posible el evento</li>
-                <li style="padding-left:14px;position:relative;margin-bottom:4px;color:#b3b3b3;">· Se sostienen cuando la estructura se modifica</li>
-            </ul>
-        </div>
+        <hr class="sep" />
+
+        <footer style="color:#8f8f8f;font-size:0.85rem;margin-top:8px;">
+            <p>&copy; 2026 Juicio en el Caos. Todos los derechos reservados.</p>
+        </footer>
+
     </div>
-
-    <p style="margin-top:16px;font-size:0.95rem;color:#cfcfcf;">La decisión basada en información se detiene cuando los datos se acaban. La decisión basada en escenarios <strong style="color:#fff;">modifica las condiciones que hacen posible el escenario</strong> — y por eso no necesita esperar a que los datos lleguen.</p>
-</section>
+</body>
+</html>
