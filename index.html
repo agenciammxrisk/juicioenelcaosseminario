@@ -362,22 +362,36 @@
 
         <hr class="sep" />
 
-        <!-- CTA FINAL: LEAD MAGNET -->
+        <!-- CTA FINAL: LEAD MAGNET CON DOBLE OPCIÓN DE ENVÍO -->
         <div class="cta">
             <div class="panel" style="text-align:center;max-width:700px;width:100%">
                 <p style="font-size:1.15rem;color:#fff;margin-bottom:6px">El Mapa de las 12 Transformaciones</p>
                 <p class="muted" style="max-width:640px;margin:0 auto 14px">Descarga esta herramienta de auto-diagnóstico y descubre en qué áreas de tu criterio directivo tienes mayor oportunidad de crecimiento.</p>
 
-                <form class="contact-form" action="mailto:contacto@juicioenelcaos.com" method="post" enctype="text/plain">
+                <form id="leadForm" class="contact-form">
+                    <!-- Campo Nombre -->
                     <div class="form-group">
                         <label for="nombre">Nombre Completo</label>
-                        <input type="text" id="nombre" name="Nombre" placeholder="Tu nombre" required />
+                        <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required />
                     </div>
+
+                    <!-- Campo Correo Electrónico -->
                     <div class="form-group">
                         <label for="email">Correo Electrónico</label>
-                        <input type="email" id="email" name="Correo" placeholder="ejemplo@empresa.com" required />
+                        <input type="email" id="email" name="email" placeholder="ejemplo@empresa.com" required />
                     </div>
-                    <button type="submit" class="btn">Descargar el Mapa</button>
+
+                    <!-- Campo Teléfono (WhatsApp) -->
+                    <div class="form-group">
+                        <label for="telefono">Teléfono (WhatsApp)</label>
+                        <input type="tel" id="telefono" name="telefono" placeholder="+52 55 0000 0000" required />
+                    </div>
+
+                    <!-- Dos botones -->
+                    <div style="display:flex;gap:12px;margin-top:8px;flex-wrap:wrap;">
+                        <button type="submit" id="btnCorreo" class="btn" style="flex:1;min-width:140px;">Enviar por Correo</button>
+                        <button type="button" id="btnWhatsApp" class="btn" style="flex:1;min-width:140px;background:#25d366;color:#fff;">Enviar por WhatsApp</button>
+                    </div>
                 </form>
 
                 <p class="note" style="margin-top:12px;">Al descargar, recibirás el PDF y guardaremos tu contacto para futuras comunicaciones.</p>
@@ -426,14 +440,70 @@
         </svg>
     </a>
 
-    <!-- Script para redirigir al PDF después del envío -->
+    <!-- SCRIPT PARA EL FORMULARIO -->
     <script>
-        document.querySelector('.contact-form').addEventListener('submit', function(e) {
-            // Le da tiempo al correo para enviarse (2 segundos)
+    document.addEventListener('DOMContentLoaded', function() {
+
+        function getFormData() {
+            var nombre = document.getElementById('nombre').value.trim();
+            var email = document.getElementById('email').value.trim();
+            var telefono = document.getElementById('telefono').value.trim();
+            return { nombre: nombre, email: email, telefono: telefono };
+        }
+
+        function validateForm(data) {
+            if (!data.nombre || !data.email || !data.telefono) {
+                alert('Por favor, completa todos los campos.');
+                return false;
+            }
+            return true;
+        }
+
+        // Botón "Enviar por Correo"
+        document.getElementById('btnCorreo').addEventListener('click', function(e) {
+            e.preventDefault();
+
+            var data = getFormData();
+            if (!validateForm(data)) return;
+
+            var asunto = "Solicitud del Mapa de las 12 Transformaciones";
+            var cuerpo = "Nombre: " + data.nombre + "%0A";
+            cuerpo += "Correo: " + data.email + "%0A";
+            cuerpo += "Teléfono: " + data.telefono + "%0A%0A";
+            cuerpo += "Solicito el Mapa de las 12 Transformaciones.";
+
+            var mailtoUrl = "mailto:contacto@juicioenelcaos.com?subject=" + encodeURIComponent(asunto) + "&body=" + cuerpo;
+            window.open(mailtoUrl, '_blank');
+
+            // Redirigir al PDF después de 2 segundos
             setTimeout(function() {
-                window.location.href = '/img/mapa_transformaciones_actualizado.pdf';
+                window.location.href = '/img/mapa-transformaciones-actualizado.pdf';
             }, 2000);
         });
+
+        // Botón "Enviar por WhatsApp"
+        document.getElementById('btnWhatsApp').addEventListener('click', function(e) {
+            e.preventDefault();
+
+            var data = getFormData();
+            if (!validateForm(data)) return;
+
+            var mensaje = "Hola, me interesa descargar el Mapa de las 12 Transformaciones.%0A";
+            mensaje += "Nombre: " + encodeURIComponent(data.nombre) + "%0A";
+            mensaje += "Correo: " + encodeURIComponent(data.email) + "%0A";
+            mensaje += "Teléfono: " + encodeURIComponent(data.telefono) + "%0A%0A";
+            mensaje += "Por favor, envíenme el PDF.";
+
+            var url = "https://wa.me/528717821011?text=" + mensaje;
+            window.open(url, '_blank');
+
+            // Redirigir al PDF después de 2 segundos
+            setTimeout(function() {
+                window.location.href = '/img/mapa-transformaciones-actualizado.pdf';
+            }, 2000);
+        });
+
+    });
     </script>
 
 </body>
